@@ -14,7 +14,8 @@
 
     <hr>
 
-    <button id="btn-next-level" class="btn btn-primary">Generate next level</button>
+    <button id="btn-previous-level" class="btn btn-primary">Previous level</button>
+    <button id="btn-next-level" class="btn btn-primary">Next level</button>
 
     <hr>
 
@@ -31,6 +32,10 @@
         var game = new Game();
         $("#btn-next-level").click((event) => {
             game.nextLevel();
+        });
+
+        $("#btn-previous-level").click((event) => {
+            game.previousLevel();
         });
     });
 </script>

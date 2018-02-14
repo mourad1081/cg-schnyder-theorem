@@ -1,9 +1,13 @@
 # cg-schnyder-theorem
 Projet computational geometry - Schnyder's theorem
-## Introduction
-lorem ipsum va au diable.
+## Comment run
+- Simplement lancer un serveur local (Apache, PHP), perso
+j'utilise Wampp et je me casse pas la tête.
+- Le site se trouve à l'adresse ´localhost/cg-schnyder-theorem´
+
+Aussi, il y a un bouton déjà disponible pour charger le next level
 
 ## Libraries
 - jQuery 3
 - Bootstrap 4
-- d3.js
+- p5.js
