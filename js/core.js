@@ -4,6 +4,7 @@ class Game {
         this.containerGame = $("#game-container");
         this.currentLevel  = 0;
         this.nbLevels = 2;
+        
         /** 
          * Charge le niveau suivant 
          */
@@ -14,7 +15,6 @@ class Game {
             } else {
                 swal("Niveau max atteint.");
             }
-            
         }
 
         /**
@@ -36,9 +36,17 @@ class Game {
         this.loadLevel = () => {
             $.ajax({
                 url: "/cg-schnyder-theorem/views/level-" + this.currentLevel + ".php",
-                type: "GET"
+                type: "GET",
+                async: true
             }).done((data) => {
                 this.containerGame.html(data);
+            });
+
+            $.getScript("/cg-schnyder-theorem/js/level-" + this.currentLevel + ".js", (data, textStatus, jqxhr) => {
+                console.log(data); // Data returned
+                console.log(textStatus); // Success
+                console.log(jqxhr.status); // 200
+                console.log("Load was performed.");
             });
         };
     }

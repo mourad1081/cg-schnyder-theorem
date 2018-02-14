@@ -5,7 +5,7 @@
 
 
 <div class="container">
-    <h1>Jeu schnyder</h1>
+    <h1 class="text-center">Schnyder's game</h1>
     
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Facere deserunt inventore illo aperiam, aspernatur omnis 
@@ -20,7 +20,7 @@
     <hr>
 
     <main id="game-container">
-        no level
+        no level loader (click on the above buttons to load other levels)
     </main>
 
     <hr>

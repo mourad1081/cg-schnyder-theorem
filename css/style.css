@@ -3,7 +3,26 @@
     src: url('../fonts/ARCADECLASSIC.TTF');
 }
 
+@font-face {
+    font-family: Ferrum;
+    src: url('../fonts/ferrum.otf');
+}
+
+
+html, body {
+    background-color: #0c2461;
+    color: #fad390;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.container {
+    font-size: 1.5rem;
+}
 
 h1 {
-    font-family: ArcadeClassic, serif;
+    font-family: ArcadeClassic, Roboto, serif;
+    font-size: 5rem;
+    text-shadow: 0 6px 0px #ff5200;
 }
+
+

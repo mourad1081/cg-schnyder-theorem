@@ -7,6 +7,6 @@
         molestiae quaerat ratione harum dolores vitae perspiciatis 
         nemo, sit vero at suscipit a, molestias recusandae.
     </p>
-</main>
+    <button id="btn-1" class="btn btn-warning"> (clickez ici) Du JS chargé en ajax avec cette page</button>
 
-<script src="/cg-schnyder-theorem/js/level-1.js"></script>
+</main>
