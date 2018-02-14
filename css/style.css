@@ -1,0 +1,9 @@
+@font-face {
+    font-family: ArcadeClassic;
+    src: url('../fonts/ARCADECLASSIC.TTF');
+}
+
+
+h1 {
+    font-family: ArcadeClassic, serif;
+}
