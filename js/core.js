@@ -51,3 +51,57 @@ class Game {
         };
     }
 }
+
+
+class Question {
+
+   /**
+    * Creates a question
+    * @param {string} title 
+    * @param {string[]} answers
+    * @param {numeric} rightAnswer 
+    */
+    constructor(title, answers, rightAnswer) {
+        this.title = title;
+        this.answers = answers;
+        this.rightAnswer = rightAnswer;
+        // A counter to know
+        this.timer = null;
+
+        this.score = 10000;
+
+        this.startTimer = () => {
+            this.timer = setTimeout(() => {
+                this.decrementScore();
+            }, 100);
+        }
+
+        this.stopTimer = () => {
+            if (this.timer != null)
+                clearTimeout(this.timer);
+        }
+
+        this.decrementScore = () => {
+            this.score -= 100;
+            console.log("score decremented", this.score);
+
+            setTimeout(() => {
+                this.decrementScore();
+            }, 100);
+        };
+
+        this.toHTML = () => {
+            var html = '<p class="question text-center col-12 animated bounceInUp">Question<br>' + this.title + '</p>';
+            var cpt = 0.0;
+            for(var i in this.answers) {
+                cpt += 0.2;
+                html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
+                            '<button class="answer w-100">' + this.answers[i] + '</button>' +
+                        '</div>';
+            }
+            return html;
+        };
+
+
+    }
+}

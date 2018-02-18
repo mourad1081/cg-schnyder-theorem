@@ -26,7 +26,7 @@
 html, body {
     background-color: #0c2461;
     color: #fad390;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: Pixel, cursive;
     line-height: initial;
 }
 
@@ -93,6 +93,21 @@ h2 {
     color: #ff5200;
 }
 
+.answer {
+    padding: 10px;
+    background-color: gold;
+    box-shadow: 0 5px 0 0 #ffc800, 0 -20px 0 0 #ff52006b inset;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.answer:hover {
+    box-shadow: 0 5px 0 0 #ffc800, 0 -20px 0 0 #ff52006b inset, 0 4px 11px 7px #ff8100c2;
+    color: #ff5200;
+}
+
 .small-button {
     display: inline-block;
     margin-left: auto;
@@ -125,6 +140,11 @@ h2 {
     height: 600px;
     overflow-y: auto;
     font-size: 12px;
+}
+
+.question {
+    background-color: black;
+    padding: 10px;
 }
 
 #terminal .pwd {
