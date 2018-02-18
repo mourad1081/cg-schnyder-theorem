@@ -37,14 +37,14 @@ class Game {
          */
         this.loadLevel = (level) => {
             $.ajax({
-                url: "/cg-schnyder-theorem/views/level-" + level + ".php",
+                url: "views/level-" + level + ".php",
                 type: "GET",
                 async: true
             }).done((data) => {
                 this.containerGame.html(data);
             });
 
-            $.getScript("/cg-schnyder-theorem/js/level-" + level + ".js", (data, textStatus, jqxhr) => {
+            $.getScript("js/level-" + level + ".js", (data, textStatus, jqxhr) => {
                 console.log("Load was performed.");
                 renderMathInElement(document.body);
             });
