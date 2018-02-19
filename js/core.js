@@ -91,7 +91,7 @@ class Question {
         };
 
         this.toHTML = () => {
-            var html = '<p class="question text-center col-12 animated bounceInUp">Question<br>' + this.title + '</p>';
+            var html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
             var cpt = 0.0;
             for(var i in this.answers) {
                 cpt += 0.2;
@@ -100,10 +100,59 @@ class Question {
                             '<button class="answer w-100" onClick="'+ funcAnswer + '">' + this.answers[i] + '</button>' +
                         '</div>';
             }
-            html += '<button id="show-theory" class="btn big-button animated bounceInUp" style="animation-delay:' + cpt + 's" onClick="displayTheory()">help</button>';
             return html;
         };
 
 
     }
+}
+
+
+class Level {
+    constructor(listOfQuestions) {
+        this.questions = listOfQuestions;
+        this.indexCurrentQuestion = 0;
+
+        this.nextQuestion = function() {
+            // C'est cyclique. La question après la dernière est la première genre.
+            this.indexCurrentQuestion = (this.indexCurrentQuestion + 1) % listOfQuestions.length;
+            return this.questions[this.indexCurrentQuestion].toHTML();
+        }
+
+        this.previousQuestion = function() {
+            this.indexCurrentQuestion = (this.indexCurrentQuestion - 1) % listOfQuestions.length;
+            return this.questions[this.indexCurrentQuestion].toHTML();
+        }
+
+        this.currentQuestion = function() {
+            return this.questions[this.indexCurrentQuestion].toHTML();
+        }
+    }
+}
+
+/**
+ * Cette fonction retourne un array de Question basé sur l'XML
+ * @param {JQuery} xmlContent 
+ */
+var loadQuestions = function(xmlContent) {
+    var xml = $(xmlContent.html());
+        xml = $(xml.find("level")[0]);
+
+    var questions = [];
+
+    xml.find("question").each((i, question) => {
+        var answers = [];
+
+        $(question).find("answer").each((j, answer) => {
+            answers.push($(answer).text());
+        });
+        
+        questions.push(new Question(
+            $(question).find("title").text(), 
+            answers, 
+            $(question).attr('correct-answer')
+        ));
+    });
+    console.log(questions);
+    return questions;
 }

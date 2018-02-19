@@ -1,0 +1,68 @@
+<levels>
+    <!-- level 1 -->
+    <level>
+        <name>Level 1 - Orders</name>
+        <title>Orders - explanations</title>
+        <content>
+            <![CDATA[
+            <p>
+                Before digging further to the limbos of the Schynder's 
+                theorem, one must first see some notions in order to 
+                understand it clearly.
+            </p>
+            <p>
+                The first one is 
+                <strong>the order</strong>.
+            </p>
+            <p>
+                An order is a notion which enable us to compare elements
+                 of a set with each others. One define it as following:
+            </p>
+            <p>
+                An order is a binary relation which is reflexive, antisymmetric 
+                and transitive. Let \(E\) be a set. An internal relation 
+                \( \leq \) on \( E \) is called an order relation if for
+                 all elements \( x, y, z \in E \), we have :
+                <br/>
+                <ul>
+                    <li>\( x \leq x \), which is the reflexivity. 
+                        An element is related, comparable to itself.</li>
+
+                    <li>\( (x \leq y \wedge y \leq x) \Rightarrow x = y \), which is the antisymmetry. 
+                        Two different elements cannot be related in two different directions, otherwise
+                         they must be equal.</li>
+
+                    <li>\( (x \leq y \wedge y \leq z) \Rightarrow x \leq z \), which is the transitivity. 
+                        If an element is related to a second one and that second element is alo related with 
+                        a third one, then the first and the third elements are related each other.</li>
+                </ul>
+            </p>
+            ]]>
+        </content>
+
+        <!-- Les questions -->
+        <questions>
+            <!-- Bonne réponse, la troisième donc indice 2 -->
+            <question correct-answer="2">
+                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
+                <title>Let \(E = \{ 0, 2, 1, 5, (2, 1) \} \). Has this set a relation of order ?</title>
+                <answer>Totally</answer>
+                <answer>Absolutely not</answer>
+                <answer>Well, there is an order but only for some elements.</answer>
+            </question>
+        </questions>
+    </level>
+
+    <!-- level 2 -->
+    <level></level>
+
+    <!-- level 3 -->
+    <level></level>
+
+    <!-- level 4 -->
+    <level></level>
+
+    <!-- level 5 -->
+    <level></level>
+</levels>
+

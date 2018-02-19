@@ -1,31 +1,42 @@
 // 1st level game's logic
 $(function() {
+    console.log();
     renderMathInElement(document.body);
     var btnStartQuizz = $('#btn-start-quizz-level-1');
-    var theory = $('.theory');
+    var theory        = $('.theory');
     var containerQuestions = $('#container-questions-level-1');
+    var containerActions   = $('#container-actions-questions');
+    var btnNextQuestion = $('#btn-next-question');
 
+    // On charge les questions du level -- les questions sont dans le fichier XML
+    var level = new Level(loadQuestions($('#xml-content')));
+    
+    // On démarre 
     btnStartQuizz.on("click", (event) => {
         var newClassTheory = theory.attr('class').replace("bounceInUp", "bounceOutUp");
         theory.attr('class', newClassTheory);
         
         setTimeout(() => {
+            // On fait disparaitre le bloc théorique
             theory.addClass('d-none');
-
-            var question = new Question(
-                "Let \\(E = \\{ 0, 2, 1, 5, (2, 1) \\} \\). Has this set a relation of order ?",
-                ["Totally", "Absolutely not", "Well, there is an order but only for some elements."], 1
-                );
-            containerQuestions.html(question.toHTML());
-            containerQuestions.append('<div class="theory-explanations"> </div>');
+            // On fait apparaitre la première question
+            containerQuestions.html(level.currentQuestion());
             renderMathInElement(document.body);
+            // Ainsi que les actions possibles
+            containerActions.removeClass('d-none');
         }, 1000);
-
     });
 
+    btnNextQuestion.on('click', (event) => {
+        // On fait apparaitre la question suivante
+        containerQuestions.html(level.nextQuestion());
+        // On render le latex s'il y en a
+        renderMathInElement(document.body);
+        // Ainsi que les actions possibles
+        containerActions.removeClass('d-none');
+    });
 
-    $('#btn-next-level-1').on("click", (event) => {
-        //game = new Game();
+    $('#btn-finish-level').on("click", (event) => {
         game.nextLevel();
     });
 });
@@ -39,6 +50,7 @@ var displayTheory = function(){
     var btn = $('#show-theory');
     if(!toggle){
         $('.theory-explanations').html($(".explanations"));
+
 
         // Si c'est la 1er fois, on ajoute l'animation, sinon on change l'animation
         var newClass = (explain.attr('class').indexOf('animated') == -1)? explain.attr('class') + ' animated bounceInUp' : explain.attr('class').replace('bounceOutDown', 'bounceInUp');
