@@ -7,5 +7,8 @@
     "p4":"Un ordre est une relation binaire réflexive, antisymmétrique et transitive. Soit \\(E\\) un ensemble. Une relation interne \\( \\leq \\) sur \\(E\\) est appelée <em>une relation d'ordre</em> si pour chaque éléments \\( x, y, z \\in E \\), nous avons :",
     "li1":"\\( x \\leq x \\), qui définit la réfléxivité. C'est-à-dire qu'un élément est en relation/comparable avec lui-même.",
     "li2":"\\( (x \\leq y \\wedge y \\leq x) \\Rightarrow x = y \\), qui définit l'antisymmétrie. Deux éléments différents ne peuvent pas être reliées dans deux directions différentes à moins d'être toutes les deux les mêmes.",
-    "li3":"\\( (x \\leq y \\wedge y \\leq z) \\Rightarrow x \\leq z \\), qui définit la transitivité. Si un élément est en relation avec un deuxième tandis que ce dernier l'est aussi avec un troisième, alors le premier et le troisième élément sont également en relation."
+    "li3":"\\( (x \\leq y \\wedge y \\leq z) \\Rightarrow x \\leq z \\), qui définit la transitivité. Si un élément est en relation avec un deuxième tandis que ce dernier l'est aussi avec un troisième, alors le premier et le troisième élément sont également en relation.",
+    "congratulation-title":"Félicitations",
+	"congratulation-txt":"Maintenant vous avez compris ou une bonne compréhension de ce qu'est un <strong>ordre</strong>. <br/> Vous pouvez passer au niveau suivant: <strong> NIVEAU 2 - Les ordres partiels</strong>",
+	"btn-next-level":"Niveau suivant"
 }
