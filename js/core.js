@@ -4,8 +4,8 @@ class Game {
         // Propriétés propre au jeu
         this.containerGame = $("#game-container");
         this.score = 0;
-        this.currentLevel  = 0;
-        this.nbLevels = 2;
+        this.currentLevel  = 1;
+        this.nbLevels = 3;
 
         /** 
          * Charge le niveau suivant 
@@ -13,7 +13,7 @@ class Game {
         this.nextLevel = () => {
             if (this.currentLevel + 1 <= this.nbLevels) {
                 this.currentLevel++;
-                this.loadLevel(this.currentLeve); 
+                this.loadLevel(this.currentLevel); 
             } else {
                 swal("Niveau max atteint.");
             }
@@ -25,7 +25,7 @@ class Game {
         this.previousLevel = () => {
             if (this.currentLevel - 1 > 0) {
                 this.currentLevel--;
-                this.loadLevel(this.currentLeve);  
+                this.loadLevel(this.currentLevel);  
             } else {
                 swal("Premier niveau atteint.");
             }

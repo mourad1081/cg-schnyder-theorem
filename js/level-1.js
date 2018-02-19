@@ -25,8 +25,8 @@ $(function() {
 
 
     $('#btn-next-level-1').on("click", (event) => {
-        game = new Game();
-        game.loadLevel(2);
+        //game = new Game();
+        game.nextLevel();
     });
 });
 

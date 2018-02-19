@@ -1,5 +1,5 @@
 <?php 
-    $json = file_get_contents("../locales/level-1/en.json");
+    $json = file_get_contents("../locales/level-1/fr.json");
     $level = json_decode($json, true);
 ?>
 

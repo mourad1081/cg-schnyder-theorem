@@ -40,6 +40,8 @@ require_once("views/partials/header.php");
     $('#terminal').hide();
 
     renderMathInElement(document.body);
+    // On démarre une instance du jeu
+    var game = null;
 
     $(function() {
 
@@ -49,8 +51,7 @@ require_once("views/partials/header.php");
         var btnHackNasa = $('#hack-the-nasa');
         var levelsContainer = $('#levels');
         
-        // On démarre une instance du jeu
-        var game = null;
+        
 
         // Lorsqu'on clik sur un level pas locked, 
         // on charge le niveau en question
