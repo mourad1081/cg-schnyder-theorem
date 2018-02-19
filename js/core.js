@@ -95,10 +95,12 @@ class Question {
             var cpt = 0.0;
             for(var i in this.answers) {
                 cpt += 0.2;
+                var funcAnswer = (i == rightAnswer)? "good()" : "bad()";
                 html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
-                            '<button class="answer w-100">' + this.answers[i] + '</button>' +
+                            '<button class="answer w-100" onClick="'+ funcAnswer + '">' + this.answers[i] + '</button>' +
                         '</div>';
             }
+            html += '<button id="show-theory" class="btn big-button animated bounceInUp" style="animation-delay:' + cpt + 's" onClick="displayTheory()">help</button>';
             return html;
         };
 
