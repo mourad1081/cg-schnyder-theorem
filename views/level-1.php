@@ -41,4 +41,15 @@
     <div id="container-questions-level-1" class="row">
 
     </div>
+
+    <div id="congratulations-level-1" class="container d-none">
+        <div class="row explanations">
+            <h2 class="text-center col-12"><?php echo $level['congratulation-title'] ?></h2>
+            <div class="col-12 col-md-12">
+                <?php echo $level['congratulation-txt'] ?>
+            </div>
+        </div>
+        <button id="btn-next-level-1" class="btn big-button"><?php echo $level['btn-next-level'] ?></button>
+    </div>
+</div>
 </main>

@@ -19,8 +19,14 @@ $(function() {
             containerQuestions.html(question.toHTML());
             containerQuestions.append('<div class="theory-explanations"> </div>');
             renderMathInElement(document.body);
-        }, 1500);
+        }, 1000);
 
+    });
+
+
+    $('#btn-next-level-1').on("click", (event) => {
+        game = new Game();
+        game.loadLevel(2);
     });
 });
 
@@ -47,7 +53,16 @@ var displayTheory = function(){
 
 
 var good = function(){
-    swal("Bonne réponse");
+    var containerQuestions = $('#container-questions-level-1');
+    var containerCongrat = $('#congratulations-level-1');
+    var newClass = containerQuestions.attr('class') + ' animated bounceOutUp';
+    containerQuestions.attr('class', newClass);
+
+    setTimeout(() => {
+        containerQuestions.addClass('d-none');
+        var newClass = containerCongrat.attr('class').replace('d-none', '') + " animated bounceInUp";
+        containerCongrat.attr('class', newClass);
+    }, 1000);
 }
 
 var bad = function(){
