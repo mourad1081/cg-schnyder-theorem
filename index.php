@@ -44,6 +44,8 @@ require_once("views/partials/header.php");
                 <button class="small-button level-locked animated bounceIn" style="animation-delay: 1.4s;">3</button>
                 <button class="small-button level-locked animated bounceIn" style="animation-delay: 1.6s;">4</button>
                 <button class="small-button level-locked animated bounceIn" style="animation-delay: 1.8s;">5</button>
+                <hr>
+                <button class="select-level-back big-button animated bounceIn" style="animation-delay: 1.1s;">Back</button>
             </div>
 
             <main id="game-container" class="animated fadeInDown">
@@ -75,31 +77,48 @@ require_once("views/partials/header.php");
         var btnOptions = $('#options');
         var btnHackNasa = $('#hack-the-nasa');
         var levelsContainer = $('#levels');
-        
+        var btnBackFromLevelSelection = $('.select-level-back');
         
 
         // Lorsqu'on clik sur un level pas locked, 
         // on charge le niveau en question
-        levelsContainer.find('button:not(.level-locked)').click((event) => {
+        levelsContainer.find('.small-button:not(.level-locked)').click((event) => {
             levelsContainer.addClass('animated bounceOutUp');
             setTimeout(() => {
                 levelsContainer.addClass('d-none');
                 game.loadLevel(event.target.textContent);
             }, 600);            
         });
+
+        btnBackFromLevelSelection.click((event) => {
+            // Pour simuler un délai dans les animations,
+            // j'utilise setTimeout()
+            levelsContainer.removeClass('animated bounceInDown')
+                           .addClass('animated bounceOutDown');
+            setTimeout(() => {
+                btnPlay.parent().removeClass('animated bounceOutUp')
+                                .addClass('animated bounceInDown')
+                                .removeClass('d-none');
+                setTimeout(() => {
+                    levelsContainer.addClass('d-none');
+                }, 300);
+            }, 500);
+        });
         
-        // Lorsqu'on click sur le bouton play, on démarre une nouvelle partie
+        // Lorsqu'on click sur le bouton play, 
+        // on démarre une nouvelle partie
         // et on invite le joueur à choisir un level.
         btnPlay.click((event) => {
-
-    
-            btnPlay.parent().addClass('animated bounceOutUp');
+            btnPlay.parent().removeClass('animated bounceInDown')
+                            .addClass('animated bounceOutUp');
             // Pour simuler un délai dans les animations,
             // j'utilise setTimeout()
             setTimeout(() => {
                 btnPlay.parent().addClass('d-none');
+                levelsContainer.removeClass('animated bounceOutDown')
+                               .addClass('animated bounceInUp');
                 setTimeout(() => {
-                    $('#levels').removeClass('d-none');
+                    levelsContainer.removeClass('d-none');
                 }, 300);
             }, 500);
         });

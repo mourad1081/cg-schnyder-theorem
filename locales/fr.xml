@@ -82,13 +82,13 @@
             <question correct-answer="2">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
                 <title>
-                    Soit \(E = \{ 1, 2, 3, 4 \} \) un ensemble d'entiers et la relation d'ordre * 
-                    qui est satisfaite si \( \exists x \in E | x + 1 * y \Rightarrow x = y \). 
-                    \(E\) satisfait-il la relation d'ordre * ?
+                    Soit \(E = \{ 5 \} \) un ensemble d'entiers et la relation d'ordre \( \divideontimes \) 
+                    qui est satisfaite si \( x \divideontimes y \Rightarrow x = y, \forall x,y \in E\). 
+                    \(E\) satisfait-il la relation d'ordre \(\divideontimes\) ?
                 </title>
-                <answer>Lol</answer>
-                <answer>Absolutely lol</answer>
-                <answer>Well, lolz.</answer>
+                <answer>Oui, la relation d'ordre pour cet ensemble est satisfaite.</answer>
+                <answer>Non, il faut au moins deux élément pour vérifier cela.</answer>
+                <answer>Non, la relation d'ordre n'est pas satisfaite pour cet ensemble.</answer>
             </question>
         </questions>
     </level>
