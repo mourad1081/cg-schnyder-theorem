@@ -6,13 +6,31 @@ require_once("views/partials/header.php");
 
 <div class="container">
 
-    <img src="img/sound.png" alt="sound ON" style="position: absolute; top: 0; right: 0; width: 64px;">
+    
+    
+    <div style="position: absolute; top: 0; left: 10px; top: 10px">
+        <p class="current-score">
+            score : 
+            <span id="value-current-score">0</span> 
+            <img src="img/dogecoin.png" alt="points" style="width: 32px;">
+        </p>
+    </div>
+    
+    <img src="img/sound.png"
+         alt="sound ON" 
+         id="icon-sound"
+         style="position: absolute; top: 10px; right: 10px; width: 64px; cursor:pointer;" 
+         onclick="toggleMusic()">
+    <audio id="music" autoplay loop>
+        <source src="sounds/A-Bit of Memes.mp3" type="audio/mpeg"/>
+    </audio>
+
     <h1 class="text-center animated zoomInDown" style="animation-delay: .3s">Schnyder's game</h1>
     <div class="row">
         <div class="col-12">
             <div class="text-center animated bounceIn">
                 <button id="play" class="big-button">Play</button>
-                <button id="options" class="big-button">Options</button>
+                <button id="options" class="big-button">Best scores</button>
                 <button id="hack-the-nasa" class="big-button">Hack the NASA</button>                
             </div>
             
@@ -79,7 +97,7 @@ require_once("views/partials/header.php");
         });
         
         btnOptions.click((event) => {
-
+            swal('lol');
         });
 
         btnHackNasa.click((event) => {
@@ -136,6 +154,13 @@ require_once("views/partials/header.php");
             });
         });
     });
+
+    var toggleMusic = function() {
+        var srcMusic = $('#music').attr('src');
+        var iconMusic = $('#icon-sound').attr('src');
+        $('#music').attr('src', srcMusic === '' ? 'sounds/A-Bit of Memes.mp3' : '');
+        $('#icon-sound').attr('src', iconMusic === 'img/no-sound.png' ? 'img/sound.png' : 'img/no-sound.png');
+    }
 </script>
 
 <?php

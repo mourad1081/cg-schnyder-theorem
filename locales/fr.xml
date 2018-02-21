@@ -50,10 +50,10 @@
             <!-- Bonne réponse, la troisième donc indice 2 -->
             <question correct-answer="2">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Let \(E = \{ 0, 2, 1, 5, (2, 1) \} \). Has this set a relation of order ?</title>
-                <answer>Totally</answer>
-                <answer>Absolutely not</answer>
-                <answer>Well, there is an order but only for some elements.</answer>
+                <title>Let \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et l'opérateur de comparaison usuel \(\leq\). Existe-t-il un relation d'ordre entre tous les éléments de cet ensemble ?</title>
+                <answer>Oui, on peut mettre tous les éléments en relation avec cet opérateur.</answer>
+                <answer>Non, aucun élément n'est en relation avec les autres avec cet opérateur.</answer>
+                <answer>Partiellement. Certains éléments sont comparables tandis que d'autres non.</answer>
             </question>
             <question correct-answer="2">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->

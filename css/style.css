@@ -28,6 +28,11 @@ html, body {
     color: #fad390;
     font-family: Pixel, cursive;
     line-height: initial;
+    height: 100vh;
+}
+
+body {
+    background: url('../img/bg.gif') center center;
 }
 
 .container {

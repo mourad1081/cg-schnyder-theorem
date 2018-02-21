@@ -24,6 +24,8 @@ $(function() {
             renderMathInElement(document.body);
             // Ainsi que les actions possibles
             containerActions.removeClass('d-none');
+            // On démarre le timer pour les score
+            level.startTimer();
         }, 1000);
     });
 
@@ -64,7 +66,7 @@ var displayTheory = function(){
 };
 
 
-var good = function(){
+var good = function() {
     var containerQuestions = $('#container-questions-level-1');
     var containerCongrat = $('#congratulations-level-1');
     var newClass = containerQuestions.attr('class') + ' animated bounceOutUp';
