@@ -1,47 +1,64 @@
 <levels>
     <!-- level 1 -->
     <level>
-        <name>Niveau 1 - Les ordres</name>
-        <title>Les ordres - definition</title>
+        <name>Niveau 1 - Theorie de l'ordre</name>
+        <title>Les ordres - Introduction</title>
         <content>
             <![CDATA[
             <p>
                 Avant de s'aventurer plus profondément dans les 
-                limbes du théorème de Schnyder, nous devons d'abord 
-                voir quelques notions afin de le comprendre clairement.
+                limbes du théorème de Schnyder, nous allons d'abord 
+                étudier quelques notions en <strong>théorie des ordres</strong> afin de
+                comprendre clairement ce théorème.
             </p>
             <p>
-                La première notion que nous allons voir s'appelle 
-                <strong>l'ordre</strong>.
+                Les <strong>ordres</strong> sont partout dans notre monde, 
+                nous pouvons notamment les rencontrer dans des domaines 
+                tels que les mathématiques ou l'informatique. En fait, depuis
+                tout petit nous sommes baignés dedans et nous sommes capable d'ordonner
+                énormément de choses. 
             </p>
             <p>
-                Un ordre est une notion nous permettant de comparer
-                différents éléments d'un ensemble entre eux, il 
-                s'agit d'une relation binaire entre deux éléments
-                d'un ensemble. Elle est définit ainsi :
-            </p>
-            <p>
-                Un ordre est une relation binaire réflexive, antisymmétrique
-                et transitive. Soit \(E\) un ensemble. Une relation interne
-                \( \leq \) sur \(E\) est appelée <em>une relation d'ordre</em> 
-                si pour chaque éléments \( x, y, z \in E \), nous avons :                
+                Par exemple, dès la primaire, nous établissons une relation d'ordre
+                entre les nombres. 
                 <br/>
-                <ul>
-                    <li>\( x \leq x \), qui définit la réfléxivité. 
-                        C'est-à-dire qu'un élément est en relation/comparable 
-                        avec lui-même.</li>
-
-                    <li>\( (x \leq y \wedge y \leq x) \Rightarrow x = y \), 
-                        qui définit l'antisymmétrie. Deux éléments différents 
-                        ne peuvent pas être reliées dans deux directions différentes
-                        à moins d'être toutes les deux les mêmes.</li>
-
-                    <li>\( (x \leq y dge y \leq z) \Rightarrow x \leq z \), 
-                        qui définit la transitivité. Si un élément est en 
-                        relation avec un deuxième tandis que ce dernier l'est aussi 
-                        avec un troisième, alors le premier et le troisième élément
-                        sont également en relation.</li>
-                </ul>
+                "Deux est plus petit que quatre." - nous disait notre institutrice. 
+                <br/>
+                "Est-ce que Daoud possède plus de points que Mourad ?".
+                <br/>
+                Toutes ces phrases sous-entendent explicitement 
+                qu'il existe une relation d'ordre entre les éléments comparés.
+            </p>
+            <p>
+                Un autre exemple avec lequel nous sommes tous familier est 
+                l'ordre alphabétique où la lettre "a" vient avant la lettre "b",
+                "x" vient avant "y", etc. Également, dans les arbres généalogiques où
+                notre descendance vient le noeud nous représentant.
+            </p>
+            <p>
+                La notion d'ordre est très générale et se définie bien au-delà 
+                des contextes où nous avons l'intuition qu'il existe un ordre 
+                dans telle séquence de nombres, symboles, etc. Il existe des 
+                tas d'ordres possibles. Pensons simplement à la surcharge
+                des opérateurs de comparaisons dans certains langages de
+                programmation tel que le C++.
+            </p>
+            <p>
+                En effet, prenons l'ordre \( \leq \) que l'on connait tous, le 
+                fameux "plus petit que". Si nous considérons les nombres réels ou 
+                les lettres, il est évident qu'une propriété nous apparaît immédiatement :
+                tous les éléments peuvent être comparés avec n'importe quel autre.
+                <br/>
+                Lorsque toutes les paires d'éléments d'un ensemble sont comparables, 
+                nous disons qu'il existe un <strong>ordre total</strong> dans cet ensemble
+                pour la relation d'ordre qu'on a utilisé.
+            </p>
+            <p>
+                À contrario, il existe d'autres types d'ordre où les entités sont incomparables.
+                Prenons l'ensemble des oiseaux et l'ensemble des chiens. Tout deux appartiennent
+                à l'ensemble des Animaux mais tous les oiseaux du premier ensemble ne peut pas 
+                intuitivement être comparés avec tous les chiens du second ensemble.
+                <br/>
             </p>
             ]]>
         </content>
@@ -50,21 +67,25 @@
             <!-- Bonne réponse, la troisième donc indice 2 -->
             <question correct-answer="2">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Let \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et l'opérateur de comparaison usuel \(\leq\). Existe-t-il un relation d'ordre entre tous les éléments de cet ensemble ?</title>
+                <title>Soit \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et la relation d'ordre usuelle \(\leq\). Existe-t-il un relation d'ordre entre tous les éléments de cet ensemble ?</title>
                 <answer>Oui, on peut mettre tous les éléments en relation avec cet opérateur.</answer>
                 <answer>Non, aucun élément n'est en relation avec les autres avec cet opérateur.</answer>
                 <answer>Partiellement. Certains éléments sont comparables tandis que d'autres non.</answer>
             </question>
-            <question correct-answer="2">
+            <question correct-answer="0">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Two plus two is four, minus one that's ?</title>
-                <answer>Three</answer>
-                <answer>Trees</answer>
-                <answer>Smoke treez ?</answer>
+                <title>On dit qu'un ordre est total si toute paire d'élément d'un ensemble peuvent être mis en relation avec un ordre donné.</title>
+                <answer>Oui, c'est vrai.</answer>
+                <answer>Non, ce n'est pas vrai.</answer>
+                <answer>Pas toujours vrai.</answer>
             </question>
             <question correct-answer="2">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Is P = NP ?</title>
+                <title>
+                    Soit \(E = \{ 1, 2, 3, 4 \} \) un ensemble d'entiers et la relation d'ordre * 
+                    qui est satisfaite si \( \exists x \in E | x + 1 * y \Rightarrow x = y \). 
+                    \(E\) satisfait-il la relation d'ordre * ?
+                </title>
                 <answer>Lol</answer>
                 <answer>Absolutely lol</answer>
                 <answer>Well, lolz.</answer>
@@ -73,7 +94,38 @@
     </level>
 
     <!-- level 2 -->
-    <level></level>
+    <level>
+    <name>Niveau 2 - Les poset</name>
+        <title>Les poset - Introduction</title>
+        <content>
+            <![CDATA[
+                <p>
+                    Formellement, la théorie de l'ordre nous dit qu'il faut satisfaire 
+                    Un ordre est une relation binaire réflexive, antisymmétrique
+                    et transitive. Soit \(E\) un ensemble. Une relation interne
+                    \( \leq \) sur \(E\) est appelée <em>une relation d'ordre</em> 
+                    si pour chaque éléments \( x, y, z \in E \), nous avons :                
+                    <br/>
+                    <ul>
+                        <li>\( x \leq x \), qui définit la réfléxivité. 
+                            C'est-à-dire qu'un élément est en relation/comparable 
+                            avec lui-même.</li>
+
+                        <li>\( (x \leq y \wedge y \leq x) \Rightarrow x = y \), 
+                            qui définit l'antisymmétrie. Deux éléments différents 
+                            ne peuvent pas être reliées dans deux directions différentes
+                            à moins d'être toutes les deux les mêmes.</li>
+
+                        <li>\( (x \leq y dge y \leq z) \Rightarrow x \leq z \), 
+                            qui définit la transitivité. Si un élément est en 
+                            relation avec un deuxième tandis que ce dernier l'est aussi 
+                            avec un troisième, alors le premier et le troisième élément
+                            sont également en relation.</li>
+                    </ul>
+                </p>
+            ]]>
+        </content>
+    </level>
 
     <!-- level 3 -->
     <level></level>

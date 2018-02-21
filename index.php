@@ -8,10 +8,10 @@ require_once("views/partials/header.php");
 
     
     
-    <div style="position: absolute; top: 0; left: 10px; top: 10px">
+    <div style="position: absolute; top: 0; left: 20px; top: 20px">
         <p class="current-score">
             score : 
-            <span id="value-current-score">0</span> 
+            <span id="value-current-score" style="font-weight:600;">0</span> 
             <img src="img/dogecoin.png" alt="points" style="width: 32px;">
         </p>
     </div>
@@ -31,7 +31,8 @@ require_once("views/partials/header.php");
             <div class="text-center animated bounceIn">
                 <button id="play" class="big-button">Play</button>
                 <button id="options" class="big-button">Best scores</button>
-                <button id="hack-the-nasa" class="big-button">Hack the NASA</button>                
+                <button id="hack-the-nasa" class="big-button">Hack the NASA</button>
+                <small>(Cliquez en haut à droite sur l'icone de son pour retirer le son.)</small>  
             </div>
             
             <div id="levels" class="text-center d-none">
@@ -46,11 +47,17 @@ require_once("views/partials/header.php");
             </div>
 
             <main id="game-container" class="animated fadeInDown">
-                <?php //include("views/level-1.php"); ?>
+                
             </main>
         </div>
     </div>
     <div id="terminal" class="hidden"></div>
+    <small style="
+    position:fixed;
+    bottom:10px;
+    left:10px;">
+    &copy; Daoud & Mourad - Computational Geometry 2017 - 2018.
+</small>   
 </div>    
 
 <script>
@@ -58,8 +65,8 @@ require_once("views/partials/header.php");
     $('#terminal').hide();
 
     renderMathInElement(document.body);
-    // On démarre une instance du jeu
-    var game = null;
+    // On démarre une instance du jeu -- variable globale
+    var game = new Game();
 
     $(function() {
 
@@ -84,7 +91,8 @@ require_once("views/partials/header.php");
         // Lorsqu'on click sur le bouton play, on démarre une nouvelle partie
         // et on invite le joueur à choisir un level.
         btnPlay.click((event) => {
-            game = new Game(btnPlay, btnOptions, btnHackNasa, levelsContainer);
+
+    
             btnPlay.parent().addClass('animated bounceOutUp');
             // Pour simuler un délai dans les animations,
             // j'utilise setTimeout()
@@ -152,6 +160,7 @@ require_once("views/partials/header.php");
                     typed.destroy();
                 }
             });
+        
         });
     });
 

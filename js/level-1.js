@@ -29,6 +29,26 @@ $(function() {
         }, 1000);
     });
 
+    $(document).on('click', '.answer', (event) => {
+        var isGoodAnswer = event.target.getAttribute('good-answer');
+        
+        var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();
+        
+        if (nbQuestionsLeft > 0) {
+            // On fait apparaitre la question suivante
+            containerQuestions.html(level.nextQuestion());
+            // On render le latex s'il y en a
+            renderMathInElement(document.body);
+            // Ainsi que les actions possibles
+            containerActions.removeClass('d-none');
+            level.startTimer();
+        } else {
+            // On passe au level suivant.
+            swal('Félicitation ! Vous avez terminé le premier niveau !');
+            game.nextLevel();
+        }
+    });
+
     btnNextQuestion.on('click', (event) => {
         // On fait apparaitre la question suivante
         containerQuestions.html(level.nextQuestion());
@@ -52,8 +72,6 @@ var displayTheory = function(){
     var btn = $('#show-theory');
     if(!toggle){
         $('.theory-explanations').html($(".explanations"));
-
-
         // Si c'est la 1er fois, on ajoute l'animation, sinon on change l'animation
         var newClass = (explain.attr('class').indexOf('animated') == -1)? explain.attr('class') + ' animated bounceInUp' : explain.attr('class').replace('bounceOutDown', 'bounceInUp');
         explain.attr('class', newClass);
@@ -65,8 +83,9 @@ var displayTheory = function(){
     }
 };
 
-
+/*
 var good = function() {
+    
     var containerQuestions = $('#container-questions-level-1');
     var containerCongrat = $('#congratulations-level-1');
     var newClass = containerQuestions.attr('class') + ' animated bounceOutUp';
@@ -80,5 +99,6 @@ var good = function() {
 }
 
 var bad = function(){
-    swal('Mauvaise réponse');
+    // swal('Mauvaise réponse');
 }
+*/

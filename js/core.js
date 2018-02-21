@@ -45,7 +45,6 @@ class Game {
             });
 
             $.getScript("js/level-" + level + ".js", (data, textStatus, jqxhr) => {
-                console.log("Load was performed.");
                 renderMathInElement(document.body);
             });
         };
@@ -75,9 +74,9 @@ class Question {
             var cpt = 0.0;
             for(var i in this.answers) {
                 cpt += 0.2;
-                var funcAnswer = (i == rightAnswer)? "good()" : "bad()";
+                var funcAnswer = (i == rightAnswer)? "true" : "false";
                 html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
-                            '<button class="answer w-100" onClick="' + funcAnswer + '">' 
+                            '<button good-answer="' + funcAnswer + '" class="answer w-100" onClick="' + funcAnswer + '">' 
                                 + this.answers[i] + 
                             '</button>' +
                         '</div>';
@@ -92,7 +91,7 @@ class Question {
 
 class Level {
     constructor(listOfQuestions) {
-        
+
         this.questions = listOfQuestions;
         this.indexCurrentQuestion = 0;
         this.timer = null;
@@ -119,22 +118,57 @@ class Level {
             }, 100);
         }
 
+        this.goodAnswer = () => {
+            this.stopTimer();
+            var scoreNode = $('#value-current-score');
+            var currentScore = parseInt(scoreNode.text());
+            // On incrémente le score du gars.
+            scoreNode.text(currentScore + this.score);
+            // On réinitialise le score qui diminue en
+            // fonction du temps (comme QuizzUp)
+            this.score = 10000;
+            // Cette question ayant été répondue, 
+            // on la retire de la liste des questions
+            this.questions.splice(this.indexCurrentQuestion, 1);
+            // On indique combien il reste de questions
+            // à répondre.
+            return this.questions.length;
+        }
+
+        this.badAnswer = () => {
+            this.stopTimer();
+            var scoreNode = $('#value-current-score');
+            var currentScore = parseInt(scoreNode.text());
+            // On met à jour le score du gars.
+            scoreNode.text(currentScore - 10000);
+            // On réinitialise le score qui diminue en
+            // fonction du temps (comme QuizzUp)
+            this.score = 10000;
+            // Cette question ayant été répondue, 
+            // on la retire de la liste des questions
+            this.questions.splice(this.indexCurrentQuestion, 1);
+            // On indique combien il reste de questions
+            // à répondre.
+            return this.questions.length;
+        };
+
         this.stopTimer = () => {
             if (this.timer != null)
                 clearTimeout(this.timer);
         }
 
         this.decrementScore = () => {
-            this.score -= 100;
-            console.log("score decremented", this.score);
-
-            setTimeout(() => {
+            this.score -= (100 + getRandomInt(10));
+            this.timer = setTimeout(() => {
                 this.decrementScore();
-            }, 300);
+            }, 500);
         };
+
     }
 }
-
+var getRandomInt = function (max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
 /**
  * Cette fonction retourne un array de Question basé sur l'XML
  * @param {JQuery} xmlContent 
