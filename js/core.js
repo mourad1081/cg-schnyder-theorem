@@ -44,9 +44,9 @@ class Game {
                 this.containerGame.html(data);
             });
 
-            $.getScript("js/level-" + level + ".js", (data, textStatus, jqxhr) => {
-                renderMathInElement(document.body);
-            });
+           $.getScript("js/level-" + level + ".js", function() {
+                console.debug("Script loaded.");
+           }); 
         };
     }
 }
@@ -69,14 +69,14 @@ class Question {
             return indexAnswer === this.rightAnswer;
         }
 
-        this.toHTML = () => {
+        this.toHTML = (level) => {
             var html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
             var cpt = 0.0;
             for(var i in this.answers) {
                 cpt += 0.2;
                 var funcAnswer = (i == rightAnswer)? "true" : "false";
                 html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
-                            '<button good-answer="' + funcAnswer + '" class="answer w-100" onClick="' + funcAnswer + '">' 
+                            '<button good-answer="' + funcAnswer + '" class="answer answer-level-'+ level + ' w-100" onClick="' + funcAnswer + '">' 
                                 + this.answers[i] + 
                             '</button>' +
                         '</div>';
@@ -91,25 +91,24 @@ class Question {
 
 class Level {
     constructor(listOfQuestions) {
-
         this.questions = listOfQuestions;
         this.indexCurrentQuestion = 0;
         this.timer = null;
         this.score = 10000;
 
-        this.nextQuestion = function() {
+        this.nextQuestion = function(level) {
             // C'est cyclique. La question après la dernière est la première genre.
             this.indexCurrentQuestion = (this.indexCurrentQuestion + 1) % listOfQuestions.length;
-            return this.questions[this.indexCurrentQuestion].toHTML();
+            return this.questions[this.indexCurrentQuestion].toHTML(level);
         }
 
-        this.previousQuestion = function() {
+        this.previousQuestion = function(level) {
             this.indexCurrentQuestion = (this.indexCurrentQuestion - 1) % listOfQuestions.length;
-            return this.questions[this.indexCurrentQuestion].toHTML();
+            return this.questions[this.indexCurrentQuestion].toHTML(level);
         }
 
-        this.currentQuestion = function() {
-            return this.questions[this.indexCurrentQuestion].toHTML();
+        this.currentQuestion = function(level) {
+            return this.questions[this.indexCurrentQuestion].toHTML(level);
         }
 
         this.startTimer = () => {
@@ -173,9 +172,9 @@ var getRandomInt = function (max) {
  * Cette fonction retourne un array de Question basé sur l'XML
  * @param {JQuery} xmlContent 
  */
-var loadQuestions = function(xmlContent) {
+var loadQuestions = function(xmlContent, level) {
     var xml = $(xmlContent.html());
-        xml = $(xml.find("level")[0]);
+        xml = $(xml.find("level")[level]);
 
     var questions = [];
 

@@ -1,3 +1,6 @@
+var currentLevel = 1;
+
+
 // 1st level game's logic
 $(function() {
     console.log();
@@ -9,7 +12,7 @@ $(function() {
     var btnNextQuestion = $('#btn-next-question');
 
     // On charge les questions du level -- les questions sont dans le fichier XML
-    var level = new Level(loadQuestions($('#xml-content')));
+    var level = new Level(loadQuestions($('#xml-content'), 0));
     
     // On démarre 
     btnStartQuizz.on("click", (event) => {
@@ -20,29 +23,30 @@ $(function() {
             // On fait disparaitre le bloc théorique
             theory.addClass('d-none');
             // On fait apparaitre la première question
-            containerQuestions.html(level.currentQuestion());
+            containerQuestions.html(level.currentQuestion(currentLevel));
             renderMathInElement(document.body);
             // Ainsi que les actions possibles
             containerActions.removeClass('d-none');
-            // On démarre le timer pour les score
+            // On démarre le timer pour les scores
             level.startTimer();
         }, 1000);
     });
 
-    $(document).on('click', '.answer', (event) => {
+    $(document).on('click', '.answer-level-1', (event) => {
         var isGoodAnswer = event.target.getAttribute('good-answer');
         
         var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();
         
         if (nbQuestionsLeft > 0) {
             // On fait apparaitre la question suivante
-            containerQuestions.html(level.nextQuestion());
+            containerQuestions.html(level.nextQuestion(currentLevel));
             // On render le latex s'il y en a
             renderMathInElement(document.body);
             // Ainsi que les actions possibles
             containerActions.removeClass('d-none');
             level.startTimer();
         } else {
+            console.log("level-1.js");
             // On passe au level suivant.
             swal('Félicitation ! Vous avez terminé le premier niveau !');
             game.nextLevel();
@@ -51,7 +55,7 @@ $(function() {
 
     btnNextQuestion.on('click', (event) => {
         // On fait apparaitre la question suivante
-        containerQuestions.html(level.nextQuestion());
+        containerQuestions.html(level.nextQuestion(currentLevel));
         // On render le latex s'il y en a
         renderMathInElement(document.body);
         // Ainsi que les actions possibles
@@ -82,23 +86,3 @@ var displayTheory = function(){
         toggle = !toggle;
     }
 };
-
-/*
-var good = function() {
-    
-    var containerQuestions = $('#container-questions-level-1');
-    var containerCongrat = $('#congratulations-level-1');
-    var newClass = containerQuestions.attr('class') + ' animated bounceOutUp';
-    containerQuestions.attr('class', newClass);
-
-    setTimeout(() => {
-        containerQuestions.addClass('d-none');
-        var newClass = containerCongrat.attr('class').replace('d-none', '') + " animated bounceInUp";
-        containerCongrat.attr('class', newClass);
-    }, 1000);
-}
-
-var bad = function(){
-    // swal('Mauvaise réponse');
-}
-*/
