@@ -10,7 +10,7 @@ class Game {
         /** 
          * Charge le niveau suivant 
          */
-        this.nextLevel = () => {
+         this.nextLevel = () => {
             if (this.currentLevel + 1 <= this.nbLevels) {
                 this.currentLevel++;
                 this.loadLevel(this.currentLevel); 
@@ -22,20 +22,20 @@ class Game {
         /**
          * Charge le niveau précédent
          */
-        this.previousLevel = () => {
+         this.previousLevel = () => {
             if (this.currentLevel - 1 > 0) {
                 this.currentLevel--;
                 this.loadLevel(this.currentLevel);  
             } else {
                 swal("Premier niveau atteint.");
             }
-           
+
         }
 
         /** 
          * Charge le niveau courant de manière asynchrone 
          */
-        this.loadLevel = (level) => {
+         this.loadLevel = (level) => {
             $.ajax({
                 url: "views/level-" + level + ".php",
                 type: "GET",
@@ -44,9 +44,9 @@ class Game {
                 this.containerGame.html(data);
             });
 
-           $.getScript("js/level-" + level + ".js", function() {
+            $.getScript("js/level-" + level + ".js", function() {
                 console.debug("Script loaded.");
-           }); 
+            }); 
         };
     }
 }
@@ -60,26 +60,43 @@ class Question {
     * @param {string[]} answers
     * @param {numeric} rightAnswer 
     */
-    constructor(title, answers, rightAnswer) {
+    constructor(title, answers, rightAnswer, type, number, placeholder) {
         this.title = title;
         this.answers = answers;
         this.rightAnswer = rightAnswer;
+        this.type = type;
+        this.number = number;
+        this.placeholder = placeholder;
 
         this.isCorrect = function(indexAnswer) {
             return indexAnswer === this.rightAnswer;
         }
 
         this.toHTML = (level) => {
-            var html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
-            var cpt = 0.0;
-            for(var i in this.answers) {
-                cpt += 0.2;
-                var funcAnswer = (i == rightAnswer)? "true" : "false";
-                html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
-                            '<button good-answer="' + funcAnswer + '" class="answer answer-level-'+ level + ' w-100" onClick="' + funcAnswer + '">' 
-                                + this.answers[i] + 
-                            '</button>' +
+            var html = "";
+            console.log("type = " + this.type);
+            switch(this.type){
+                case "1":
+                    console.log("Question à réponse libre");
+                    html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
+                    var cpt = 0.2;
+                    html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
+                                '{ <input type="text" id="text-answer-'+ number +'-level-'+level+'" placeholder="' + this.placeholder + '"> </input> }'  +
+                                '<button id="check-answer-'+number+'-level-'+level+'" class="btn small-button">Check</button>'      
+                           + '</div>';
+                    break;       
+                default:
+                    html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
+                    var cpt = 0.0;
+                    for(var i in this.answers) {
+                        cpt += 0.2;
+                        var funcAnswer = (i == rightAnswer)? "true" : "false";
+                        html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
+                        '<button good-answer="' + funcAnswer + '" class="answer answer-level-'+ level + ' w-100" onClick="' + funcAnswer + '">' 
+                        + this.answers[i] + 
+                        '</button>' +
                         '</div>';
+                    }
             }
             return html;
         };
@@ -172,9 +189,9 @@ var getRandomInt = function (max) {
  * Cette fonction retourne un array de Question basé sur l'XML
  * @param {JQuery} xmlContent 
  */
-var loadQuestions = function(xmlContent, level) {
+ var loadQuestions = function(xmlContent, level) {
     var xml = $(xmlContent.html());
-        xml = $(xml.find("level")[level]);
+    xml = $(xml.find("level")[level]);
 
     var questions = [];
 
@@ -188,8 +205,11 @@ var loadQuestions = function(xmlContent, level) {
         questions.push(new Question(
             $(question).find("title").text(), 
             answers, 
-            $(question).attr('correct-answer')
-        ));
+            $(question).attr('correct-answer'),
+            $(question).attr('type'),
+            i+1,
+            $(question).find("placeholder").text()
+            ));
     });
     console.log(questions);
     return questions;

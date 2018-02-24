@@ -2,21 +2,21 @@ var currentLevel = 2;
 
 $(function() {
 	renderMathInElement(document.body);
-   	var btnStartQuizz = $('#btn-start-quizz-level-2');
-    var theory        = $('.theory');
-    var containerQuestions = $('#container-questions-level-2');
-    var containerActions   = $('#container-actions-questions');
-    var btnNextQuestion = $('#btn-next-question');
+	var btnStartQuizz = $('#btn-start-quizz-level-2');
+	var theory        = $('.theory');
+	var containerQuestions = $('#container-questions-level-2');
+	var containerActions   = $('#container-actions-questions');
+	var btnNextQuestion = $('#btn-next-question');
 
     // On charge les questions du level -- les questions sont dans le fichier XML
     var level = new Level(loadQuestions($('#xml-content'), 1));
     
     // On démarre 
     btnStartQuizz.on("click", (event) => {
-        var newClassTheory = theory.attr('class').replace("bounceInUp", "bounceOutUp");
-        theory.attr('class', newClassTheory);
-        
-        setTimeout(() => {
+    	var newClassTheory = theory.attr('class').replace("bounceInUp", "bounceOutUp");
+    	theory.attr('class', newClassTheory);
+
+    	setTimeout(() => {
             // On fait disparaitre le bloc théorique
             theory.addClass('d-none');
             // On fait apparaitre la première question
@@ -30,11 +30,11 @@ $(function() {
     });
 
     $(document).on('click', '.answer-level-2', (event) => {
-        var isGoodAnswer = event.target.getAttribute('good-answer');
-        
-        var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();
+    	var isGoodAnswer = event.target.getAttribute('good-answer');
 
-        if (nbQuestionsLeft > 0) {
+    	var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();
+
+    	if (nbQuestionsLeft > 0) {
             // On fait apparaitre la question suivante
             containerQuestions.html(level.nextQuestion(currentLevel));
             // On render le latex s'il y en a
@@ -43,12 +43,36 @@ $(function() {
             containerActions.removeClass('d-none');
             level.startTimer();
         } else {
-            console.log("level-2.js");
             // On passe au level suivant.
             swal('Félicitation ! Vous avez terminé le niveau 2 !');
             game.nextLevel();
         }
     });
+
+    $(document).on('click', '#check-answer-2-level-2', (event) => {
+    	var answer = $('#text-answer-2-level-2').val();
+    	var numbers = answer.replace(",", " ");
+    	
+    	if(numbers.indexOf("0") !== -1 && numbers.indexOf("2") !== -1 && numbers.indexOf("5") !== -1 && numbers.indexOf("4") !== -1){
+    		var nbQuestionsLeft = level.goodAnswer();
+
+    		if (nbQuestionsLeft > 0) {
+	            // On fait apparaitre la question suivante
+	            containerQuestions.html(level.nextQuestion(currentLevel));
+	            // On render le latex s'il y en a
+	            renderMathInElement(document.body);
+	            // Ainsi que les actions possibles
+	            containerActions.removeClass('d-none');
+	            level.startTimer();
+	        } else {
+	            // On passe au level suivant.
+	            swal('Félicitation ! Vous avez terminé le niveau 2 !');
+	            game.nextLevel();
+	        }
+	    } else {
+	    	swal('Aaah.. c\'est faux..');
+	    }
+});
 
     btnNextQuestion.on('click', (event) => {
         // On fait apparaitre la question suivante
@@ -59,8 +83,8 @@ $(function() {
         containerActions.removeClass('d-none');
     });
 
-   $('#btn-finish-level').on("click", (event) => {
-        game.nextLevel();
+    $('#btn-finish-level').on("click", (event) => {
+    	game.nextLevel();
     });
 });
 
@@ -69,17 +93,17 @@ var toggle = false;
 
 // Fonction pour bounceIn ou bounceOut l'aide dans le quizz 
 var displayTheory = function(){
-    var explain =  $('.theory-explanations');
-    var btn = $('#show-theory');
-    if(!toggle){
-        $('.theory-explanations').html($(".explanations"));
+	var explain =  $('.theory-explanations');
+	var btn = $('#show-theory');
+	if(!toggle){
+		$('.theory-explanations').html($(".theory .explanations"));
         // Si c'est la 1er fois, on ajoute l'animation, sinon on change l'animation
         var newClass = (explain.attr('class').indexOf('animated') == -1)? explain.attr('class') + ' animated bounceInUp' : explain.attr('class').replace('bounceOutDown', 'bounceInUp');
         explain.attr('class', newClass);
         toggle = !toggle;
     } else {
-        var newClass = explain.attr('class').replace('bounceInUp', 'bounceOutDown');
-        explain.attr('class', newClass);
-        toggle = !toggle;
+    	var newClass = explain.attr('class').replace('bounceInUp', 'bounceOutDown');
+    	explain.attr('class', newClass);
+    	toggle = !toggle;
     }
 };

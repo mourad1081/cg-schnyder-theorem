@@ -65,21 +65,21 @@
         <!-- Les questions -->
         <questions>
             <!-- Bonne réponse, la troisième donc indice 2 -->
-            <question correct-answer="2">
+            <question correct-answer="2" type="0">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
                 <title>Soit \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et la relation d'ordre usuelle \(\leq\). Existe-t-il un relation d'ordre entre tous les éléments de cet ensemble ?</title>
                 <answer>Oui, on peut mettre tous les éléments en relation avec cet opérateur.</answer>
                 <answer>Non, aucun élément n'est en relation avec les autres avec cet opérateur.</answer>
                 <answer>Partiellement. Certains éléments sont comparables tandis que d'autres non.</answer>
             </question>
-            <question correct-answer="0">
+            <question correct-answer="0" type="0">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
                 <title>On dit qu'un ordre est total si toute paire d'élément d'un ensemble peuvent être mis en relation avec un ordre donné.</title>
                 <answer>Oui, c'est vrai.</answer>
                 <answer>Non, ce n'est pas vrai.</answer>
                 <answer>Pas toujours vrai.</answer>
             </question>
-            <question correct-answer="2">
+            <question correct-answer="2" type="0">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
                 <title>
                     Soit \(E = \{ 5 \} \) un ensemble d'entiers et la relation d'ordre \( \divideontimes \) 
@@ -129,26 +129,23 @@
          <!-- Les questions -->
         <questions>
             <!-- Bonne réponse, la troisième donc indice 2 -->
-            <question correct-answer="1">
+            <question correct-answer="0" type="0">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Test question 1</title>
-                <answer>réponse 1</answer>
-                <answer>réponse 2</answer>
-                <answer>réponse 3</answer>
+                <title>Soit \(E = \{0, 2, 5, 4, (2,3) \} \) un ensemble d'entiers, existe-t-il un poset ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
             </question>
-            <question correct-answer="1">
+            <question correct-answer="0" type="1">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Test question 3</title>
-                <answer>réponse 1</answer>
-                <answer>réponse 2</answer>
-                <answer>réponse 3</answer>
+                <title>Soit \( E = \{0, 2, 5, 4, (2,3) \} \) un ensemble d'entiers, donnez le poset correspondant à cet ensemble</title>
+                <placeholder>Ex : 8,2,5,4</placeholder>
             </question>
-            <question correct-answer="2">
+            <question correct-answer="1" type="0">
                 <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Test question 3</title>
-                <answer>réponse 1</answer>
-                <answer>réponse 2</answer>
-                <answer>réponse 3</answer>
+                <title>Quelle est la taille du poset sur l'ensemble des nombres entiers naturels ?</title>
+                <answer>Fini</answer>
+                <answer>Infini</answer>
+                <answer>Ca dépends</answer>
             </question>
         </questions>
     </level>

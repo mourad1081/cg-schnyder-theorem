@@ -46,7 +46,6 @@ $(function() {
             containerActions.removeClass('d-none');
             level.startTimer();
         } else {
-            console.log("level-1.js");
             // On passe au level suivant.
             swal('Félicitation ! Vous avez terminé le premier niveau !');
             game.nextLevel();
@@ -75,7 +74,7 @@ var displayTheory = function(){
     var explain =  $('.theory-explanations');
     var btn = $('#show-theory');
     if(!toggle){
-        $('.theory-explanations').html($(".explanations"));
+        $('.theory-explanations').html($(".theory .explanations"));
         // Si c'est la 1er fois, on ajoute l'animation, sinon on change l'animation
         var newClass = (explain.attr('class').indexOf('animated') == -1)? explain.attr('class') + ' animated bounceInUp' : explain.attr('class').replace('bounceOutDown', 'bounceInUp');
         explain.attr('class', newClass);
