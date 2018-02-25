@@ -5,7 +5,7 @@ class Game {
         this.containerGame = $("#game-container");
         this.score = 0;
         this.currentLevel  = 1;
-        this.nbLevels = 3;
+        this.nbLevels = 5;
 
         /** 
          * Charge le niveau suivant 
@@ -42,6 +42,7 @@ class Game {
                 async: true
             }).done((data) => {
                 this.containerGame.html(data);
+                renderMathInElement(document.body);
             });
 
             $.getScript("js/level-" + level + ".js", function() {

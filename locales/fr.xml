@@ -139,7 +139,7 @@
             ]]>
         </content>
 
-         <!-- Les questions -->
+        <!-- Les questions -->
         <questions>
             <question correct-answer="1" type="0">
                 <title>Soit \(E = \{0, 2, 5, 4, 2 + 3i \} \) un ensemble. 
@@ -162,7 +162,92 @@
     </level>
 
     <!-- level 3 -->
-    <level></level>
+    <level>
+        <name>Niveau 3 - Les diagrammes de Hasse</name>
+        <title>Les diagrammes de Hasse - Introduction</title>
+        <content>
+            <![CDATA[
+                <p>
+                    Nous approchons tout doucement de la formulation du théorème
+                    de Schnyder. Discutons d'abord de la notion de diagramme de 
+                    Hasse.
+                    Lorsque le poset considéré est de taille fini, il existe
+                    une représentation graphique de celui-ci afin de visualiser
+                    un peu mieux les relations entre les éléments de l'ensemble.
+                    Si jamais l'ensemble considéré est de taille infini, nous
+                    représentons habituellement qu'une partie de celui-ci.
+                </p>
+                <p>
+                    Concrètement, dans un diagramme de Hasse, nous représentons
+                    les éléments de l'ensemble par des sommets. La relation entre
+                    deux éléments se représente par une arrête allant du premier
+                    d'un sommet vers l'autre.
+                </p>
+                <p>
+                    Si \( x \leq y \), alors nous placerons le sommet \(x\) plus bas
+                    que le sommet \(y\). Ainsi, les arrêtes des diagrammes de sont
+                    pas dirigés, la hauteur relative d'un sommet par rapport à un autre 
+                    indique directement lequel "est plus petit" que l'autre.
+                </p>
+                <p>
+                    Aussi, afin d'éviter de trop surcharger le diagramme, nous ne dessinons
+                    pas les arrêtes pouvant être déduites par transitivité et réfléxivité.
+                    Par exemple, \(x \leq x\). Nous ne mettrons pas d'arrête allant de \(x\)
+                    vers \(x\) (réfléxivité). Pareil pour \( x \leq y \leq z \), nous
+                    mettrons une arrête de \(x\) à \(y\) et de \(y\) à \(z\) mais pas de 
+                    \(x\) à \(z\).
+                </p>
+                <p>
+                    Enfin, nous essayons de ne pas faire croiser les arrêtes sur le diagramme.
+                <\p>
+                <p>
+                    Prenons l'ensemble \( E = \{ 0,1,2,3 \} \) et la relation d'ordre usuelle \( \leq \),
+                    nous obtenons ce diagramme de Hasse pour \( (E, \leq) \) :
+                </p>
+                <p class="text-center">
+                    <img src="img/hasse-1.png" style="height:300px"/>
+                    <br/>
+                    Dans le diagramme ci-dessus, 0 est tout en bas car il est \( \leq \) à 1,
+                     et par transitivité, à 2 et 3. Nous remarquons que les éléments tout en bas sont toujours
+                     \( \leq \) à ceux au-dessus d'eux.
+                </p>
+                <p>
+                    Prenons une autre relation d'ordre : la divisibilité |. Il s'agit d'une relation d'ordre car
+                    la divisibilité respecte la transitivité, l'antisymmétrie et la réfléxivitité.
+                    Exemple, \( 10 | 50 \)  : 10 divise 50 car 5 * 10 = 50.
+                </p>
+                <p>
+                    Autre exemple de poset : Prenons l'ensemble \( E = \{ 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60 \} \)
+                    et la relation d'ordre | qui est la divisibilité. Le diagramme de Hasse obtenu est :
+                </p>
+                <p class="text-center">
+                    <img src="img/hasse-2.svg" style="height:200px"/>
+                    <br/>
+                    En effet, nous remarquons, entre autre, dans ce diagramme que 1 divise 5 et donc une arrête relie ces deux
+                    éléments. Nous constatons également par exemple que 2 divise 6, d'où l'arrête reliant 2 à 6. Par contre, 4
+                    ne divise pas 30 et donc, aucune arrête ne relie ces deux éléments. Par transitivité, nous voyons que 5 divise
+                    60 car 60 est relié à 30, lui-même relié 15, lui-même relié à 5.
+                </p>
+            ]]>
+        </content>
+        <questions>
+            <question correct-answer="0" type="0">
+                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{N} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+            <question correct-answer="1" type="0">
+                <title>Reprenez le deuxième diagramme de Hasse (cliquez sur help) dans la théorie. Est-ce qu'il existe une relation d'ordre entre 15 et 20 ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+            <question correct-answer="1" type="0">
+                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{Z} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+        </questions>
+    </level>
 
     <!-- level 4 -->
     <level></level>

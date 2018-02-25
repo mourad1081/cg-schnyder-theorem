@@ -60,10 +60,6 @@ $(function() {
         // Ainsi que les actions possibles
         containerActions.removeClass('d-none');
     });
-
-    $('#btn-finish-level').on("click", (event) => {
-        game.nextLevel();
-    });
 });
 
 // Une variable pour afficher ou des-afficher la theorie dans le quizz

@@ -41,9 +41,9 @@
         soit passer à la question suivante.
      -->
     <div id="container-actions-questions" class="row d-none animated bounceIn">
-        <button id="show-theory"       class="btn big-button" onClick="displayTheory()">Help</button>
-        <button id="btn-next-question" class="btn big-button">Next question</button>
-        <button id="btn-finish-level"  class="btn big-button">Finish</button>
+        <button id="show-theory"          class="btn big-button" onClick="displayTheory()">Help</button>
+        <button id="btn-next-question"    class="btn big-button">Next question</button>
+        <button class="btn-finish-level btn big-button">Finish</button>
     </div>
 
     <div class="theory-explanations"></div>

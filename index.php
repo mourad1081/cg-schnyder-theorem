@@ -22,7 +22,7 @@ require_once("views/partials/header.php");
          style="position: absolute; top: 10px; right: 10px; width: 64px; cursor:pointer;" 
          onclick="toggleMusic()">
     <audio id="music" autoplay loop>
-        <source src="sounds/A-Bit of Memes.mp3" type="audio/mpeg"/>
+        <source src="sounds/bg.mp3" type="audio/mpeg"/>
     </audio>
 
     <h1 class="text-center animated zoomInDown" style="animation-delay: .3s">Schnyder's game</h1>
@@ -125,6 +125,10 @@ require_once("views/partials/header.php");
         
         btnOptions.click((event) => {
             swal('lol');
+        });
+
+        $(document).on("click", ".btn-finish-level", (event) => {
+            game.nextLevel();
         });
 
         btnHackNasa.click((event) => {
