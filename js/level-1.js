@@ -5,9 +5,9 @@ var currentLevel = 1;
 $(function() {
     console.log();
     renderMathInElement(document.body);
-    var btnStartQuizz = $('#btn-start-quizz-level-1');
+    var btnStartQuizz = $('#btn-start-quizz-level-' + currentLevel);
     var theory        = $('.theory');
-    var containerQuestions = $('#container-questions-level-1');
+    var containerQuestions = $('#container-questions-level-' + currentLevel);
     var containerActions   = $('#container-actions-questions');
     var btnNextQuestion = $('#btn-next-question');
 
@@ -32,7 +32,7 @@ $(function() {
         }, 1000);
     });
 
-    $(document).on('click', '.answer-level-1', (event) => {
+    $(document).on('click', '.answer-level-' + currentLevel, (event) => {
         var isGoodAnswer = event.target.getAttribute('good-answer');
         
         var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();

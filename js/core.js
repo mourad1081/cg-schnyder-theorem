@@ -80,11 +80,11 @@ class Question {
                     console.log("Question à réponse libre");
                     html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
                     var cpt = 0.2;
-                    html += '<div class="col-12 animated bounceInUp" style="animation-delay:' + cpt + 's">' +
+                    html += '<div class="col-12 animated bounceInUp text-center" style="animation-delay:' + cpt + 's">' +
                                 '{ <input type="text" id="text-answer-'+ number +'-level-'+level+'" placeholder="' + this.placeholder + '"> </input> }'  +
                                 '<button id="check-answer-'+number+'-level-'+level+'" class="btn small-button">Check</button>'      
                            + '</div>';
-                    break;       
+                    break;
                 default:
                     html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
                     var cpt = 0.0;

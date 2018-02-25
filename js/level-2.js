@@ -2,9 +2,9 @@ var currentLevel = 2;
 
 $(function() {
 	renderMathInElement(document.body);
-	var btnStartQuizz = $('#btn-start-quizz-level-2');
+	var btnStartQuizz = $('#btn-start-quizz-level-' + currentLevel);
 	var theory        = $('.theory');
-	var containerQuestions = $('#container-questions-level-2');
+	var containerQuestions = $('#container-questions-level-' + currentLevel);
 	var containerActions   = $('#container-actions-questions');
 	var btnNextQuestion = $('#btn-next-question');
 
@@ -29,7 +29,7 @@ $(function() {
         }, 1000);
     });
 
-    $(document).on('click', '.answer-level-2', (event) => {
+    $(document).on('click', '.answer-level-' + currentLevel, (event) => {
     	var isGoodAnswer = event.target.getAttribute('good-answer');
 
     	var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();
@@ -44,16 +44,20 @@ $(function() {
             level.startTimer();
         } else {
             // On passe au level suivant.
-            swal('Félicitation ! Vous avez terminé le niveau 2 !');
+            swal('Félicitation ! Vous avez terminé le niveau ' + currentLevel + ' !');
             game.nextLevel();
         }
     });
 
-    $(document).on('click', '#check-answer-2-level-2', (event) => {
-    	var answer = $('#text-answer-2-level-2').val();
+    $(document).on('click', '#check-answer-2-level-' + currentLevel, (event) => {
+    	var answer = $('#text-answer-2-level-' + currentLevel).val();
     	var numbers = answer.replace(",", " ");
     	
-    	if(numbers.indexOf("0") !== -1 && numbers.indexOf("2") !== -1 && numbers.indexOf("5") !== -1 && numbers.indexOf("4") !== -1){
+        if(numbers.indexOf("0") !== -1 && 
+           numbers.indexOf("2") !== -1 && 
+           numbers.indexOf("5") !== -1 && 
+           numbers.indexOf("4") !== -1)
+        {
     		var nbQuestionsLeft = level.goodAnswer();
 
     		if (nbQuestionsLeft > 0) {
@@ -66,7 +70,7 @@ $(function() {
 	            level.startTimer();
 	        } else {
 	            // On passe au level suivant.
-	            swal('Félicitation ! Vous avez terminé le niveau 2 !');
+	            swal('Félicitation ! Vous avez terminé le niveau ' + currentLevel + ' !');
 	            game.nextLevel();
 	        }
 	    } else {

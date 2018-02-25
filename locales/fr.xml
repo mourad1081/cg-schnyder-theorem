@@ -49,7 +49,7 @@
                 les lettres, il est évident qu'une propriété nous apparaît immédiatement :
                 tous les éléments peuvent être comparés avec n'importe quel autre.
                 <br/>
-                Lorsque toutes les paires d'éléments d'un ensemble sont comparables, 
+                Lorsque toutes les paires d'éléments d'un ensemble satisfont la relation d'ordre, 
                 nous disons qu'il existe un <strong>ordre total</strong> dans cet ensemble
                 pour la relation d'ordre qu'on a utilisé.
             </p>
@@ -66,24 +66,21 @@
         <questions>
             <!-- Bonne réponse, la troisième donc indice 2 -->
             <question correct-answer="2" type="0">
-                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
                 <title>Soit \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et la relation d'ordre usuelle \(\leq\). Existe-t-il un relation d'ordre entre tous les éléments de cet ensemble ?</title>
                 <answer>Oui, on peut mettre tous les éléments en relation avec cet opérateur.</answer>
                 <answer>Non, aucun élément n'est en relation avec les autres avec cet opérateur.</answer>
                 <answer>Partiellement. Certains éléments sont comparables tandis que d'autres non.</answer>
             </question>
             <question correct-answer="0" type="0">
-                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
                 <title>On dit qu'un ordre est total si toute paire d'élément d'un ensemble peuvent être mis en relation avec un ordre donné.</title>
                 <answer>Oui, c'est vrai.</answer>
                 <answer>Non, ce n'est pas vrai.</answer>
                 <answer>Pas toujours vrai.</answer>
             </question>
-            <question correct-answer="2" type="0">
-                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
+            <question correct-answer="0" type="0">
                 <title>
                     Soit \(E = \{ 5 \} \) un ensemble d'entiers et la relation d'ordre \( \divideontimes \) 
-                    qui est satisfaite si \( x \divideontimes y \Rightarrow x = y, \forall x,y \in E\). 
+                    qui est satisfaite si \( x \divideontimes y \Leftrightarrow x = y, \forall x,y \in E\). 
                     \(E\) satisfait-il la relation d'ordre \(\divideontimes\) ?
                 </title>
                 <answer>Oui, la relation d'ordre pour cet ensemble est satisfaite.</answer>
@@ -100,27 +97,43 @@
         <content>
             <![CDATA[
                 <p>
-                    Formellement, la théorie de l'ordre nous dit qu'il faut satisfaire 
-                    Un ordre est une relation binaire réflexive, antisymmétrique
-                    et transitive. Soit \(E\) un ensemble. Une relation interne
-                    \( \leq \) sur \(E\) est appelée <em>une relation d'ordre</em> 
-                    si pour chaque éléments \( x, y, z \in E \), nous avons :                
+                    Au niveau précédent, nous avons vu qu'il existe des ensembles
+                    où toutes les paires d'éléments ne sont pas nécessairement
+                    comparables. Lorsque les éléments d'un ensemble ne satisfont
+                    pas tous une relation d'ordre donnée, nous disons que cet 
+                    ensemble est <em>un ensemble partiellement ordonné</em> pour
+                    la relation d'ordre spécifiée. Nous abrégons le terme <em>
+                    ensemble partiellement ordonné</em> en <strong>poset</strong>.
+                </p>
+                <p>
+                    Par exemple, si nous prenons la relation d'ordre usuelle
+                    \( \leq \) et l'ensemble \( E = \{ 2, 1, 0, "Hello" \}  \),
+                    alors cet ensemble muni de la relation \( \leq \) est un poset
+                    car tous les éléments ne satisfont pas la relation donnée, en 
+                    l'occurence \( 2 \leq "Hello" \) n'est pas défini.
+                </p>
+                <p>
+                    Formellement, la théorie de l'ordre nous dit qu'un ordre est 
+                    une relation binaire <em>sur un ensemble \(E\)</em> et est
+                    réflexive, antisymmétrique et transitive. Soit \(E\) un ensemble. 
+                    Une relation interne \( \leq \) sur \(E\) est appelée <em>une 
+                    relation d'ordre</em> si pour chaque éléments \( x, y, z \in E \), 
+                    nous avons :                
                     <br/>
                     <ul>
-                        <li>\( x \leq x \), qui définit la réfléxivité. 
-                            C'est-à-dire qu'un élément est en relation/comparable 
-                            avec lui-même.</li>
+                        <li>\( x \leq x \) (la réfléxivité), c'est-à-dire qu'un 
+                            élément est en relation/comparable avec lui-même.</li>
 
                         <li>\( (x \leq y \wedge y \leq x) \Rightarrow x = y \), 
-                            qui définit l'antisymmétrie. Deux éléments différents 
-                            ne peuvent pas être reliées dans deux directions différentes
+                            (l'antisymmétrie). Deux éléments différents ne peuvent 
+                            pas être reliés dans deux directions différentes
                             à moins d'être toutes les deux les mêmes.</li>
 
                         <li>\( (x \leq y \wedge y \leq z) \Rightarrow x \leq z \), 
-                            qui définit la transitivité. Si un élément est en 
-                            relation avec un deuxième tandis que ce dernier l'est aussi 
-                            avec un troisième, alors le premier et le troisième élément
-                            sont également en relation.</li>
+                            (la transitivité). Si un élément est en relation avec un 
+                            deuxième tandis que ce dernier l'est aussi avec un troisième, 
+                            alors le premier et le troisième élément sont également en 
+                            relation.</li>
                     </ul>
                 </p>
             ]]>
@@ -128,24 +141,22 @@
 
          <!-- Les questions -->
         <questions>
-            <!-- Bonne réponse, la troisième donc indice 2 -->
-            <question correct-answer="0" type="0">
-                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Soit \(E = \{0, 2, 5, 4, (2,3) \} \) un ensemble d'entiers, existe-t-il un poset ?</title>
+            <question correct-answer="1" type="0">
+                <title>Soit \(E = \{0, 2, 5, 4, 2 + 3i \} \) un ensemble. 
+                \(E\) est-il un poset lorsqu'il est muni de la relation d'ordre usuelle \( \leq \) ?</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
             </question>
             <question correct-answer="0" type="1">
-                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Soit \( E = \{0, 2, 5, 4, (2,3) \} \) un ensemble d'entiers, donnez le poset correspondant à cet ensemble</title>
+                <title>Soit \( E = \{0, 2, 5, 4, (2,3) \} \) un un poset lorsque muni de la relation
+                 d'ordre usuelle \( \leq \). donnez les éléments pouvant être comparés avec la relation \( \leq \).</title>
                 <placeholder>Ex : 8,2,5,4</placeholder>
             </question>
             <question correct-answer="1" type="0">
-                <!-- N'oublie pas, si on veut mettre de l'HTML, faut entourer le contenu par <![CDATA[ blablablacontenuHTML ]]> -->
-                <title>Quelle est la taille du poset sur l'ensemble des nombres entiers naturels ?</title>
-                <answer>Fini</answer>
-                <answer>Infini</answer>
-                <answer>Ca dépends</answer>
+                <title>Quelle est la taille du poset formé par l'ensemble des nombres entiers naturels et la divisibilité ?</title>
+                <answer>Un taille finie</answer>
+                <answer>Un taille infinie</answer>
+                <answer>Ca dépend</answer>
             </question>
         </questions>
     </level>

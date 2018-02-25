@@ -84,6 +84,10 @@ h2 {
     text-align: justify;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .big-button {
     display: block;
     margin-left: auto;
