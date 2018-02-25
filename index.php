@@ -131,6 +131,10 @@ require_once("views/partials/header.php");
             game.nextLevel();
         });
 
+        $(document).on('click', '.btn-go-to-home', (event) => {
+            swal('go home lol');
+        });
+
         btnHackNasa.click((event) => {
             var sshCommand = function(cmd) {
                 return '`<span class="ssh">ssh.nasa.gov@root# </span> `^500<span class="command">' + cmd + '</span><br>';

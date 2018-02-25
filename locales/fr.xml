@@ -250,7 +250,34 @@
     </level>
 
     <!-- level 4 -->
-    <level></level>
+    <level>
+            <name>Niveau 3 - Les poset d'incidence</name>
+        <title>Poset d'incidence - Introduction</title>
+        <content>
+            <![CDATA[
+                <p>
+                    
+                </p>
+            ]]>
+        </content>
+        <questions>
+            <question correct-answer="0" type="0">
+                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{N} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+            <question correct-answer="1" type="0">
+                <title>Reprenez le deuxième diagramme de Hasse (cliquez sur help) dans la théorie. Est-ce qu'il existe une relation d'ordre entre 15 et 20 ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+            <question correct-answer="1" type="0">
+                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{Z} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+        </questions>
+    </level>
 
     <!-- level 5 -->
     <level></level>

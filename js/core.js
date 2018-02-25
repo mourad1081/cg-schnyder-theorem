@@ -13,7 +13,8 @@ class Game {
          this.nextLevel = () => {
             if (this.currentLevel + 1 <= this.nbLevels) {
                 this.currentLevel++;
-                this.loadLevel(this.currentLevel); 
+                this.loadLevel(this.currentLevel);
+                $($('.level-button')[this.currentLevel - 1]).removeClass('level-locked');
             } else {
                 swal("Niveau max atteint.");
             }
