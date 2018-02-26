@@ -46,7 +46,7 @@ class Game {
                 this.containerGame.html(data);
                 renderMathInElement(document.body);
             });
-
+            
             $.getScript("js/level-" + level + ".js", function() {
                 console.debug("Script loaded.");
             }); 
