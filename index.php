@@ -41,7 +41,7 @@ require_once("views/partials/header.php");
                 <button class="level-button level-locked animated bounceIn" style="animation-delay: 1.2s;">2</button>
                 <button class="level-button level-locked animated bounceIn" style="animation-delay: 1.4s;">3</button>
                 <button class="level-button level-locked animated bounceIn" style="animation-delay: 1.6s;">4</button>
-                <button class="level-button animated bounceIn" style="animation-delay: 1.8s;">5</button>
+                <button class="level-button level-locked animated bounceIn" style="animation-delay: 1.8s;">5</button>
                 <hr>
                 <button class="select-level-back big-button animated bounceIn" style="animation-delay: 1.1s;">Back</button>
             </div>
