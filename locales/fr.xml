@@ -264,7 +264,6 @@
                         Soit \( G(V,E) \) un graphe où \( V \) est l'ensemble des sommets et \( E \), 
                         l'ensemble des arrêtes. Soit \( P(G) \) le poset d'incidence de \( G \). \( G \)
                         est planaire si et seulement si la dimension d'ordre de \( P(G) \) est d'au plus 3.
-                        d'ordre 
                     </em>
                 </p>
                 <p>
@@ -304,20 +303,9 @@
             ]]>
         </content>
         <questions>
-            <question correct-answer="0" type="0">
-                <title>Soit ...</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Soit ?</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Soit !</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
+            <question correct-answer="0" type="2">
+                <title>Posons ce graphe G (figure ci-dessous), donnez le poset d'incidence.</title>
+                <image></image>
             </question>
         </questions>
     </level>
@@ -368,19 +356,12 @@
         </content>
         <questions>
             <question correct-answer="0" type="0">
-                <title>Soit ...</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Soit ?</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Soit !</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
+                <title>
+                    Soit les ordres suivant : \( a \leq_1 b \leq_1 c \) et \( b \leq_2 c \leq_2 a \). 
+                    Quel relation d'ordre existe-t-il lorsque nous faisons l'intersection \( \leq \) de \( \leq_1 \) et \( \leq_2 \) ?
+                </title>
+                <answer>b ≤ c</answer>
+                <answer>a ≤ b ≤ c</answer>
             </question>
         </questions>
     </level>

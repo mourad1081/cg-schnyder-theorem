@@ -87,6 +87,10 @@ class Question {
                                 '<button id="check-answer-'+number+'-level-'+level+'" class="btn small-button">Check</button>'      
                            + '</div>';
                     break;
+                case "2":
+                     html = '<p class="question text-center col-12 animated bounceInUp">'+ '<em>Question</em><br>' + this.title + '</p>';
+                     var cpt = 0.2;
+                     break;
                 default:
                     html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
                     var cpt = 0.0;
