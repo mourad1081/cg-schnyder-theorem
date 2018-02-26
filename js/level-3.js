@@ -12,7 +12,7 @@ $(function() {
     var btnNextQuestion = $('#btn-next-question');
 
     // On charge les questions du level -- les questions sont dans le fichier XML
-    var level = new Level(loadQuestions($('#xml-content'), 2));
+    var level = new Level(loadQuestions($('#xml-content'), currentLevel - 1));
     
     // On démarre 
     btnStartQuizz.on("click", (event) => {

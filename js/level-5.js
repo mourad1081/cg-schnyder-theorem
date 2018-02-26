@@ -1,4 +1,4 @@
-var currentLevel = 1;
+var currentLevel = 5;
 
 
 // 1st level game's logic

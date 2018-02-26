@@ -251,28 +251,71 @@
 
     <!-- level 4 -->
     <level>
-            <name>Niveau 3 - Les poset d'incidence</name>
+        <name>Niveau 4 - Les poset d'incidence</name>
         <title>Poset d'incidence - Introduction</title>
         <content>
             <![CDATA[
                 <p>
-                    
+                    Nous voici dans la première notion directement liée au théorème de Schnyder.
+                    Voici l'énoncé du théorème : 
                 </p>
+                <p class="text-center">
+                    <em>
+                        Soit \( G(V,E) \) un graphe où \( V \) est l'ensemble des sommets et \( E \), 
+                        l'ensemble des arrêtes. Soit \( P(G) \) le poset d'incidence de \( G \). \( G \)
+                        est planaire si et seulement si la dimension d'ordre de \( P(G) \) est d'au plus 3.
+                        d'ordre 
+                    </em>
+                </p>
+                <p>
+                    La première notion à voir est le poset d'incidence. Il s'agit en fait d'un type 
+                    particulier de poset dans le sens où il applique aux graphes non-dirigés et se
+                    construit d'une certaine manière ressemblant aux diagrammes de Hasse.
+                    Premièrement, supposons que nous ayons un graphe \( G(V, E) \) non vide. L'ensemble
+                    des éléments dans l'ensemble associé au poset d'incidence est \( V \cup E \).
+                    Chaque sommet et arrête de \(G\) est un élément dans l'ensemble associé au poset.
+                </p>
+                <ol>
+                    <li>
+                        Tout d'abord, nous plaçons tous les éléments représentant les sommets de G en 
+                        bas du diagramme (ils sont appelés les éléments minimaux car ils n'existe pas 
+                        d'élément innférieur à eux)
+                    </li>
+                    <li>
+                        Ensuite, les éléments représentant les arrêtes de G sont placés plus haut dans
+                        le diagramme par rapport aux éléments représentant les sommets. Par exemple, soit
+                        le graphe \( G_1 (\{a,b,c,d\}, \{ab,cd,ad\})  \), alors les deux premières étapes
+                        de la construction du poset d'incidence est se représente comme suit :
+                        <div class="text-center" style="margin-top: 15px;">
+                            <img src="img/iposet-1.png" style="height:200px;"/>
+                        </div>
+                    </li>
+                    <li>
+                        Enfin, il faut relier un élément \( x \) du bas avec un élément \( y \) du haut
+                        si et seulement si le sommet \( x \) est une des deux extremités de l'arrête \(y\) dans G.
+                        Dans notre graphe ci-dessus, il faudra relier \(a\) à \(ab\) car \(a\) est une 
+                        extremité de l'arrête \( ab \). Nous obtenons donc un poset d'incidence tel que 
+                        ci-dessous :
+                        <div class="text-center" style="margin-top: 15px;">
+                            <img src="img/iposet-2.png" style="height:200px;"/>
+                        </div>
+                    </li>
+                </ol>
             ]]>
         </content>
         <questions>
             <question correct-answer="0" type="0">
-                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{N} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <title>Soit ...</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
             </question>
             <question correct-answer="1" type="0">
-                <title>Reprenez le deuxième diagramme de Hasse (cliquez sur help) dans la théorie. Est-ce qu'il existe une relation d'ordre entre 15 et 20 ?</title>
+                <title>Soit ?</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
             </question>
             <question correct-answer="1" type="0">
-                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{Z} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <title>Soit !</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
             </question>
@@ -280,6 +323,14 @@
     </level>
 
     <!-- level 5 -->
-    <level></level>
+    <level>
+        <name>Niveau 3 - Dimension d'incidence</name>
+        <title>Dimension d'incidence - Introduction</title>
+        <content>
+            <![CDATA[
+
+            ]]>
+        </content>
+    </level>
 </levels>
 
