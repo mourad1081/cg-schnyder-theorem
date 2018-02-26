@@ -324,13 +324,65 @@
 
     <!-- level 5 -->
     <level>
-        <name>Niveau 3 - Dimension d'incidence</name>
-        <title>Dimension d'incidence - Introduction</title>
+        <name>Niveau 5 - Dimension d'ordre</name>
+        <title>Dimension d'ordre - Introduction</title>
         <content>
             <![CDATA[
-
+                <p>
+                    Nous voici enfin arrivés au dernier niveau théorique du Schnyder's Game !
+                    La seconde partie sera plus... pratique !    
+                </p>
+                <p>
+                    Le dernier niveau concerne la dimension d'ordre d'un poset. Nous disons 
+                    qu'un poset possède une dimension d'au moins \(K\) lorsque nous faisons
+                    <strong>l'intersection</strong> de \( K \) ordres totaux différents et 
+                    obtenons le poset.
+                </p>
+                <p>
+                    Imaginons que nous ayons l'ensemble \( E = \{a,b,c,d,e,f\} \) et avec la
+                    relation d'ordre \( \leq_1 \), nous avons l'ordre total \( b \leq_1 a
+                    \leq_1 d \leq_1 c \leq_1 e \leq_1 f\) et qu'avec la relation d'ordre 
+                    \( \leq_2 \), nous avons l'ordre total \( f \leq_2 e \leq_2 c \leq_2 a
+                    \leq_2 b \leq_2 d \).
+                </p>
+                <p>
+                    L'intersection \( \leq \) des relations \( \leq_1 \) et \( \leq_2 \) est
+                    définie comme suit : \( a \leq b \Leftrightarrow a \leq_1 b \wedge a 
+                    \leq_2 b \).
+                </p>
+                <p>
+                    Par exemple, prenons le diagramme de Hasse ci-dessous où nous avons créé
+                    quatre ordres totaux différents :
+                </p>
+                <p class="text-center">
+                    <img style="height:250px;" src="img/order-dim.svg"/>
+                </p>
+                <p>
+                    Le poset représenté par le diagramme de Hasse ci-dessus possède une dimension
+                    d'au-moins 4 car toutes les relations du poset sont compris dans l'intersection
+                    des quatres ordres totaux. Par exemple, dans le diagramme de Hasse, nous avons
+                    que \( a_1 < b_2 \) et nous retrouvons cette relation dans les quatres
+                    ordres totaux.
+                </p>
             ]]>
         </content>
+        <questions>
+            <question correct-answer="0" type="0">
+                <title>Soit ...</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+            <question correct-answer="1" type="0">
+                <title>Soit ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+            <question correct-answer="1" type="0">
+                <title>Soit !</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+            </question>
+        </questions>
     </level>
 </levels>
 
