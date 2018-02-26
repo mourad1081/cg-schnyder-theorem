@@ -13,6 +13,7 @@
     $content = $level->level[$level_index]->content;
     $name    = $level->level[$level_index]->name;
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
 
 <main id="level-4" class="container">
     <h2 class="text-center">
@@ -31,7 +32,7 @@
         </div>
     </div>
 
-    <div id="container-questions-level-4" class="row">
+    <div id="container-questions-level-4" class="row d-none">
 
     </div>
 

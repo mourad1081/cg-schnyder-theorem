@@ -264,7 +264,6 @@
                         Soit \( G(V,E) \) un graphe où \( V \) est l'ensemble des sommets et \( E \), 
                         l'ensemble des arrêtes. Soit \( P(G) \) le poset d'incidence de \( G \). \( G \)
                         est planaire si et seulement si la dimension d'ordre de \( P(G) \) est d'au plus 3.
-                        d'ordre 
                     </em>
                 </p>
                 <p>
@@ -304,27 +303,16 @@
             ]]>
         </content>
         <questions>
-            <question correct-answer="0" type="0">
-                <title>Soit ...</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Soit ?</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Soit !</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
+            <question correct-answer="0" type="2">
+                <title>Posons ce graphe G (figure ci-dessous), donnez le poset d'incidence.</title>
+                <image></image>
             </question>
         </questions>
     </level>
 
     <!-- level 5 -->
     <level>
-        <name>Niveau 3 - Dimension d'incidence</name>
+        <name>Niveau 5 - Dimension d'incidence</name>
         <title>Dimension d'incidence - Introduction</title>
         <content>
             <![CDATA[
