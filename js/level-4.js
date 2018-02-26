@@ -10,64 +10,7 @@ var links = [[], [], [], []];
 var canvasHeight = 480;
 var canvasWidth = 840;
 
-// Initialise le canvas 
-function setup(){
-    var canvas = createCanvas(canvasWidth, canvasHeight);
-    canvas.parent("container-questions-level-4");
-    background(0);
-    noLoop();
-    noFill();
-}
 
-function draw(){
-    var d = 70;
-    stroke(153);
-
-    // ligne de délimitation pour savoir ce que l'utilisateur met en sommet ou en arc
-    line(0, canvasHeight/2, canvasWidth, canvasHeight/2);
-
-    // Event de gestion des cliques
-    $('canvas').click(function() {
-        console.log('draw func');
-        noFill(153);
-        var p = {
-            x: mouseX,
-            y: mouseY
-        }
-        if(toggleLineP5){
-            if (previous == null) {
-                previous = p;
-            }else {
-                // récupère les points correspondant (arc ou sommet) par rapport au position du clic
-                var link = getLink(previous, p);
-                
-                // Push à l'arc, le sommet
-                var idx = links[link.edge].length;
-                links[link.edge][idx] = link.vertice;
-
-                // Dessine la liaison
-                line(previous.x, previous.y, p.x, p.y);
-
-                // reinitialise le point précédent
-                previous = null;
-            }
-            
-        } else {
-            // Le point est un arc
-            if(p.y <= canvasHeight/2){
-                edges.push(p);
-                fill('red');
-                text("e" + edges.length, p.x, p.y);
-            } else {
-                fill('yellow');
-                vertices.push(p);
-                text("v" + vertices.length, p.x, p.y);
-            }
-            noFill(153);
-            ellipse(p.x, p.y, 20, 20);
-        }
-    });
-}
 
 // 1st level game's logic
 $(function() {
@@ -146,6 +89,8 @@ $(function() {
         // Ainsi que les actions possibles
         containerActions.removeClass('d-none');
     });
+
+    
 });
 
 // Une variable pour afficher ou des-afficher la theorie dans le quizz
@@ -168,7 +113,64 @@ var displayTheory = function(){
     }
 };
 
+// Initialise le canvas 
+function setup(){
+    var canvas = createCanvas(canvasWidth, canvasHeight);
+    canvas.parent("container-questions-level-4");
+    background(0);
+    noLoop();
+    noFill();
+}
 
+function draw(){
+    var d = 70;
+    stroke(153);
+
+    // ligne de délimitation pour savoir ce que l'utilisateur met en sommet ou en arc
+    line(0, canvasHeight/2, canvasWidth, canvasHeight/2);
+
+    // Event de gestion des cliques
+    $('canvas').click(function() {
+        console.log('draw func');
+        noFill(153);
+        var p = {
+            x: mouseX,
+            y: mouseY
+        }
+        if(toggleLineP5){
+            if (previous == null) {
+                previous = p;
+            }else {
+                // récupère les points correspondant (arc ou sommet) par rapport au position du clic
+                var link = getLink(previous, p);
+                
+                // Push à l'arc, le sommet
+                var idx = links[link.edge].length;
+                links[link.edge][idx] = link.vertice;
+
+                // Dessine la liaison
+                line(previous.x, previous.y, p.x, p.y);
+
+                // reinitialise le point précédent
+                previous = null;
+            }
+            
+        } else {
+            // Le point est un arc
+            if(p.y <= canvasHeight/2){
+                edges.push(p);
+                fill('red');
+                text("e" + edges.length, p.x, p.y);
+            } else {
+                fill('yellow');
+                vertices.push(p);
+                text("v" + vertices.length, p.x, p.y);
+            }
+            noFill(153);
+            ellipse(p.x, p.y, 20, 20);
+        }
+    });
+}
 // Permet d'alterner entre ligne et ellipse
 var swapForm = function(){
     toggleLineP5 = !toggleLineP5;
