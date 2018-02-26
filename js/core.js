@@ -43,12 +43,15 @@ class Game {
                 async: true
             }).done((data) => {
                 this.containerGame.html(data);
+                 
                 renderMathInElement(document.body);
+
+                $.getScript("js/level-" + level + ".js", function() {
+                    console.debug("Script loaded.");
+                });
             });
 
-            $.getScript("js/level-" + level + ".js", function() {
-                console.debug("Script loaded.");
-            }); 
+            
         };
     }
 }

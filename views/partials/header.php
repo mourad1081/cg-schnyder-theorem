@@ -23,6 +23,7 @@
     <link rel="icon" type="image/png" href="logo.png" />
     <script src="js/typed.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+
     <script src="js/core.js"></script>
 
 </head>
