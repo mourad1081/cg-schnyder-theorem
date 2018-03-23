@@ -41,15 +41,15 @@ class Game {
             $.ajax({
                 url: "views/level-" + level + ".php",
                 type: "GET",
-                async: true
+                async: false
             }).done((data) => {
                 this.containerGame.html(data);
                 renderMathInElement(document.body);
-            });
-            
-            $.getScript("js/level-" + level + ".js", function() {
-                console.debug("Script loaded.");
-            }); 
+
+                $.getScript("js/level-" + level + ".js", function() {
+                    console.log("Script loaded.");
+                }); 
+            });  
         };
     }
 }
