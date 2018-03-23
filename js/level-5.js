@@ -1,4 +1,4 @@
-var currentLevel = 3;
+var currentLevel = 5;
 
 
 // 1st level game's logic
@@ -47,7 +47,7 @@ $(function() {
             level.startTimer();
         } else {
             // On passe au level suivant.
-            swal('Félicitation ! Vous avez terminé le niveau 3 !');
+            swal('Félicitation ! Vous avez terminé le premier niveau !');
             game.nextLevel();
         }
     });

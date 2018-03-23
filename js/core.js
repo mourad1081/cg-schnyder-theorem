@@ -5,7 +5,7 @@ class Game {
         this.containerGame = $("#game-container");
         this.score = 0;
         this.currentLevel  = 1;
-        this.nbLevels = 5;
+        this.nbLevels = 6;
 
         /** 
          * Charge le niveau suivant 
@@ -37,6 +37,7 @@ class Game {
          * Charge le niveau courant de manière asynchrone 
          */
          this.loadLevel = (level) => {
+            this.currentLevel = level;
             $.ajax({
                 url: "views/level-" + level + ".php",
                 type: "GET",
@@ -45,7 +46,7 @@ class Game {
                 this.containerGame.html(data);
                 renderMathInElement(document.body);
             });
-
+            
             $.getScript("js/level-" + level + ".js", function() {
                 console.debug("Script loaded.");
             }); 
@@ -87,6 +88,10 @@ class Question {
                                 '<button id="check-answer-'+number+'-level-'+level+'" class="btn small-button">Check</button>'      
                            + '</div>';
                     break;
+                case "2":
+                     html = '<p class="question text-center col-12 animated bounceInUp">'+ '<em>Question</em><br>' + this.title + '</p>';
+                     var cpt = 0.2;
+                     break;
                 default:
                     html = '<p class="question text-center col-12 animated bounceInUp"><em>Question</em><br>' + this.title + '</p>';
                     var cpt = 0.0;

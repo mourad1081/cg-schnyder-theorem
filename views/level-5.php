@@ -6,14 +6,13 @@
     // Il suffit de changer juste cette variable 
     // si on veut reprendre le même template pour 
     // les futurs levels
-    $level_index = 3; 
+    $level_index = 4; 
 
     // Les datas du XML décrivant le level
     $title   = $level->level[$level_index]->title;
     $content = $level->level[$level_index]->content;
     $name    = $level->level[$level_index]->name;
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
 
 <main id="level-4" class="container">
     <h2 class="text-center">
@@ -27,12 +26,12 @@
                 <?php echo $content ?>
             </div>
         </div>
-        <div id="actions-level-4">
-            <button id="btn-start-quizz-level-4" class="btn big-button">Play quizz</button>
+        <div id="actions-level-5">
+            <button id="btn-start-quizz-level-5" class="btn big-button">Play quizz</button>
         </div>
     </div>
 
-    <div id="container-questions-level-4" class="row d-none">
+    <div id="container-questions-level-5" class="row">
 
     </div>
 
@@ -49,7 +48,7 @@
 
     <div class="theory-explanations"></div>
 
-    <div id="congratulations-level-4" class="container d-none">
+    <div id="congratulations-level-5" class="container d-none">
         <div class="row explanations">
             <h2 class="text-center col-12">Congratulations</h2>
             <div class="col-12 col-md-12">
@@ -60,7 +59,7 @@
             </div>
         </div>
         
-        <button id="btn-next-level-4" class="btn big-button">Next level</button>
+        <button id="btn-next-level-5" class="btn big-button">Next level</button>
     </div>
 </main>
 

@@ -9,10 +9,10 @@ $(function() {
 	var btnNextQuestion = $('#btn-next-question');
 
     // On charge les questions du level -- les questions sont dans le fichier XML
-    var level = new Level(loadQuestions($('#xml-content'), 1));
+    var level = new Level(loadQuestions($('#xml-content'), currentLevel - 1));
     
     // On démarre 
-    btnStartQuizz.on("click", (event) => {
+    $(document).on("click", '#btn-start-quizz-level-' + currentLevel, (event) => {
     	var newClassTheory = theory.attr('class').replace("bounceInUp", "bounceOutUp");
     	theory.attr('class', newClassTheory);
 
@@ -78,7 +78,7 @@ $(function() {
 	    }
 });
 
-    btnNextQuestion.on('click', (event) => {
+    $(document).on('click', '#btn-next-question', (event) => {
         // On fait apparaitre la question suivante
         containerQuestions.html(level.nextQuestion(currentLevel));
         // On render le latex s'il y en a
