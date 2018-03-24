@@ -4,7 +4,7 @@ require_once("views/partials/header.php");
 
 
 
-<div class="container">
+<div  class="container">
 
     <div style="position: absolute; top: 0; left: 20px; top: 20px">
         <p class="current-score">
@@ -24,7 +24,7 @@ require_once("views/partials/header.php");
     </audio>
 
     <h1 class="text-center animated zoomInDown" style="animation-delay: .3s">Schnyder's game</h1>
-    <div class="row">
+    <div id="main-container" class="row">
         <div class="col-12">
             <div class="text-center animated bounceIn">
                 <button id="play" class="big-button">Play</button>
@@ -52,6 +52,12 @@ require_once("views/partials/header.php");
         </div>
     </div>
     <div id="terminal" class="hidden"></div>
+
+    <div id="ending" class="d-none" style="text-align:center;">
+        
+        <img src="img/end.gif" alt="" style="border: solid orange 5px; border-radius: 50%;">
+    </div>
+   
     <small style="
     position:fixed;
     bottom:10px;
@@ -81,6 +87,7 @@ require_once("views/partials/header.php");
         // Lorsqu'on clik sur un level pas locked, 
         // on charge le niveau en question
         levelsContainer.find('.level-button:not(.level-locked)').click((event) => {
+
             levelsContainer.addClass('animated bounceOutUp');
             setTimeout(() => {
                 levelsContainer.addClass('d-none');
@@ -91,16 +98,7 @@ require_once("views/partials/header.php");
         btnBackFromLevelSelection.click((event) => {
             // Pour simuler un délai dans les animations,
             // j'utilise setTimeout()
-            levelsContainer.removeClass('animated bounceInDown')
-                           .addClass('animated bounceOutDown');
-            setTimeout(() => {
-                btnPlay.parent().removeClass('animated bounceOutUp')
-                                .addClass('animated bounceInDown')
-                                .removeClass('d-none');
-                setTimeout(() => {
-                    levelsContainer.addClass('d-none');
-                }, 300);
-            }, 500);
+            bouncingTransition(levelsContainer, btnPlay.parent());
         });
         
         // Lorsqu'on click sur le bouton play, 

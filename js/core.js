@@ -5,7 +5,7 @@ class Game {
         this.containerGame = $("#game-container");
         this.score = 0;
         this.currentLevel  = 1;
-        this.nbLevels = 6;
+        this.nbLevels = 5;
 
         /** 
          * Charge le niveau suivant 
@@ -16,7 +16,12 @@ class Game {
                 this.loadLevel(this.currentLevel);
                 $($('.level-button')[this.currentLevel - 1]).removeClass('level-locked');
             } else {
-                swal("Niveau max atteint.");
+                swal('fin', 'fin !');
+                $("#main-container").fadeOut();
+                setTimeout(() => {
+                    $("#ending").addClass('animated fadeInUp').removeClass("d-none");
+                }, 500);
+                // bouncingTransition($('#game-container'), $('#play').parent());
             }
         }
 
@@ -30,7 +35,6 @@ class Game {
             } else {
                 swal("Premier niveau atteint.");
             }
-
         }
 
         /** 
@@ -63,16 +67,21 @@ class Question {
     * @param {string[]} answers
     * @param {numeric} rightAnswer 
     */
-    constructor(title, answers, rightAnswer, type, number, placeholder) {
+    constructor(title, answers, rightAnswer, type, number, placeholder, explanation) {
         this.title = title;
         this.answers = answers;
         this.rightAnswer = rightAnswer;
         this.type = type;
         this.number = number;
         this.placeholder = placeholder;
+        this.explanation = explanation;
 
         this.isCorrect = function(indexAnswer) {
             return indexAnswer === this.rightAnswer;
+        }
+        
+        this.getExplanation = () => {
+            return this.explanation;
         }
 
         this.toHTML = (level) => {
@@ -162,6 +171,11 @@ class Level {
             this.stopTimer();
             var scoreNode = $('#value-current-score');
             var currentScore = parseInt(scoreNode.text());
+            swal({
+                title: "Mauvaise réponse :-(",
+                content: $("<div>" + this.questions[this.indexCurrentQuestion].getExplanation() + "</div>")[0],
+                className: 'bad-answer'
+            })  ;
             // On met à jour le score du gars.
             scoreNode.text(currentScore - 10000);
             // On réinitialise le score qui diminue en
@@ -189,14 +203,16 @@ class Level {
 
     }
 }
+
 var getRandomInt = function (max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
+
 /**
  * Cette fonction retourne un array de Question basé sur l'XML
  * @param {JQuery} xmlContent 
  */
- var loadQuestions = function(xmlContent, level) {
+var loadQuestions = function(xmlContent, level) {
     var xml = $(xmlContent.html());
     xml = $(xml.find("level")[level]);
 
@@ -215,9 +231,36 @@ var getRandomInt = function (max) {
             $(question).attr('correct-answer'),
             $(question).attr('type'),
             i+1,
-            $(question).find("placeholder").text()
-            ));
+            $(question).find("placeholder").text(),
+            $(question).find("explanation").html()
+            )
+        );
     });
     console.log(questions);
     return questions;
+}
+
+/**
+ * 
+ * @param {JQuery} elementToHide 
+ * @param {JQuery} elementToShow 
+ */
+var fadingTransition = (elementToHide, elementToShow) => {
+    elementToHide.removeClass('animated fadeInDown').addClass('animated fadeOutUp');
+    setTimeout(() => {
+        elementToShow.removeClass('animated fadeOutUp').addClass('animated fadeInDown').removeClass('d-none');
+        setTimeout(() => {
+            elementToHide.addClass('d-none');
+        }, 300);
+    }, 500);
+}
+
+var bouncingTransition = (elementToHide, elementToShow) => {
+    elementToHide.removeClass('animated bounceInDown').addClass('animated bounceOutDown');
+    setTimeout(() => {
+        elementToShow.removeClass('animated bounceOutUp').addClass('animated bounceInDown').removeClass('d-none');
+        setTimeout(() => {
+            elementToHide.addClass('d-none');
+        }, 300);
+    }, 500);
 }

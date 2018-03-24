@@ -189,3 +189,26 @@ h2 {
 #terminal .ssh {
     color: red;
 }
+
+.bad-answer .swal-button {
+    width: 100% !important;
+    background-color: rgb(177, 106, 0) !important;
+    font-family: ArcadeClassic, sans-serif !important; 
+}
+
+.bad-answer .swal-title:first-child {
+    margin-top: 5px !important;
+}
+.bad-answer .swal-button-container {
+    display: block !important;
+}
+.bad-answer.swal-modal {
+    background-color: #ff9e97 !important;
+    box-shadow: 0 7px 0px 0px #ff6a44 !important;
+    border-radius: 0 !important;
+}
+
+.bad-answer .swal-content {
+    padding: 0 !important;
+    color: #593735 !important;
+}

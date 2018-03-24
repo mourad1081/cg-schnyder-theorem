@@ -37,6 +37,7 @@ $(function() {
         
         var nbQuestionsLeft = isGoodAnswer === 'true' ? level.goodAnswer() : level.badAnswer();
         
+
         if (nbQuestionsLeft > 0) {
             // On fait apparaitre la question suivante
             containerQuestions.html(level.nextQuestion(currentLevel));
@@ -47,7 +48,6 @@ $(function() {
             level.startTimer();
         } else {
             // On passe au level suivant.
-            swal('Félicitation ! Vous avez terminé le premier niveau !');
             game.nextLevel();
         }
     });
