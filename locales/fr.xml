@@ -70,12 +70,14 @@
                 <answer>Oui, on peut mettre tous les éléments en relation avec cet opérateur.</answer>
                 <answer>Non, aucun élément n'est en relation avec les autres avec cet opérateur.</answer>
                 <answer>Partiellement. Certains éléments sont comparables tandis que d'autres non.</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! L'ensemble associé à la relation d'ordre mentionné n'est pas totalement ordonnable car on ne peut, entre autre, pas comparer le tupe (2,1) avec les autres éléments qui sont de simples scalaires/nombres. </explanation>
             </question>
             <question correct-answer="0" type="0">
                 <title>On dit qu'un ordre est total si toute paire d'élément d'un ensemble peuvent être mis en relation avec un ordre donné.</title>
                 <answer>Oui, c'est vrai.</answer>
                 <answer>Non, ce n'est pas vrai.</answer>
                 <answer>Pas toujours vrai.</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Un ensemble muni d'une relation d'ordre possède un ordre total lorsque toute paire d'élément de cet ensemble peuvent être mis en relation.</explanation>
             </question>
             <question correct-answer="0" type="0">
                 <title>
@@ -86,6 +88,7 @@
                 <answer>Oui, la relation d'ordre pour cet ensemble est satisfaite.</answer>
                 <answer>Non, il faut au moins deux élément pour vérifier cela.</answer>
                 <answer>Non, la relation d'ordre n'est pas satisfaite pour cet ensemble.</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! le nombre 5 étant égal à 5, la relation est satisfaite.</explanation>
             </question>
         </questions>
     </level>
@@ -142,21 +145,24 @@
         <!-- Les questions -->
         <questions>
             <question correct-answer="1" type="0">
-                <title>Soit \(E = \{0, 2, 5, 4, 2 + 3i \} \) un ensemble. 
+                <title>Soit \(E = \{0, 2, 5, 4, 2 + 3i \} \) un ensemble contenant des entiers et un complexe. 
                 \(E\) est-il un poset lorsqu'il est muni de la relation d'ordre usuelle \( \leq \) ?</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Nous ne pouvons pas comparer un entier avec un complexe avant la relation d'ordre donnée.</explanation>
             </question>
             <question correct-answer="0" type="1">
-                <title>Soit \( E = \{0, 2, 5, 4, (2,3) \} \) un un poset lorsque muni de la relation
-                 d'ordre usuelle \( \leq \). donnez les éléments pouvant être comparés avec la relation \( \leq \).</title>
+                <title>Soit \( E = \{0, 2, 5, 4, (2,3) \} \) un poset lorsque muni de la relation
+                 d'ordre usuelle \( \leq \). donnez les éléments pouvant être comparés avec la relation usuelle \( \leq \).</title>
                 <placeholder>Ex : 8,2,5,4</placeholder>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! La bonne réponse est 0, 2, 5, 4.</explanation>
             </question>
             <question correct-answer="1" type="0">
                 <title>Quelle est la taille du poset formé par l'ensemble des nombres entiers naturels et la divisibilité ?</title>
                 <answer>Un taille finie</answer>
                 <answer>Un taille infinie</answer>
                 <answer>Ca dépend</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Sa taille est infinie puisqu'il existe une infinité de nombre divisible entre eux. Par exemple, 2 et tous ses multiples.</explanation>
             </question>
         </questions>
     </level>
@@ -232,19 +238,22 @@
         </content>
         <questions>
             <question correct-answer="0" type="0">
-                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{N} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
+                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{N} \) muni de la relation de divisibilité, nous pouvons former un poset ?</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Tous les naturels ne sont pas divisibles entre eux, nous avons donc un poset.</explanation>
             </question>
             <question correct-answer="1" type="0">
                 <title>Reprenez le deuxième diagramme de Hasse (cliquez sur help) dans la théorie. Est-ce qu'il existe une relation d'ordre entre 15 et 20 ?</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Il est impossible d'aller de 15 à 20, ils ne sont donc pas en relation.</explanation>
             </question>
             <question correct-answer="1" type="0">
                 <title>Est-ce qu'en prenant l'ensemble \( \mathbb{Z} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Nous ne pouvons pas construire de poset car la divisibilité ne respecte pas l'antisymmétrie. Par exemple, 2 divise -2 et -2 divise 2 également mais -2 n'est pas égal à 2.</explanation>
             </question>
         </questions>
     </level>
@@ -306,6 +315,7 @@
             <question correct-answer="0" type="2">
                 <title>Posons ce graphe G (figure ci-dessous), donnez le poset d'incidence.</title>
                 <image></image>
+                <explanation><p>Ce n'est malheureusement pas la bonne réponse ! <br/><br/> Hint: Il faut tout d'abord créer quatre sommets dans la partie basse du canvas, quatre autre dans la partie haute. Regardez bien quels sommets sont reliés à quels autres sommets et par quelles arrêtes ! <br/> <br/> (Solution si vous abandonnez : Après avoir créé les huit sommets, il faut ensuite relier v1 à e1, v2 à e1, v1 à e2, v3 à e2, v1 à e3, v4 à e3, v4 à e4 et enfin v3 à e4.)</p></explanation>
             </question>
         </questions>
     </level>
@@ -358,10 +368,11 @@
             <question correct-answer="0" type="0">
                 <title>
                     Soit les ordres suivant : \( a \leq_1 b \leq_1 c \) et \( b \leq_2 c \leq_2 a \). 
-                    Quel relation d'ordre existe-t-il lorsque nous faisons l'intersection \( \leq \) de \( \leq_1 \) et \( \leq_2 \) ?
+                    Quelle relation d'ordre existe-t-il lorsque nous faisons l'intersection \( \leq \) de \( \leq_1 \) et \( \leq_2 \) ?
                 </title>
                 <answer>b ≤ c</answer>
                 <answer>a ≤ b ≤ c</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Il n'est pas vrai que \( a \leq_2 b \) donc la bonne réponse est la première.</explanation>
             </question>
         </questions>
     </level>

@@ -44,7 +44,6 @@ $(function() {
             level.startTimer();
         } else {
             // On passe au level suivant.
-            swal('Félicitation ! Vous avez terminé le niveau ' + currentLevel + ' !');
             game.nextLevel();
         }
     });
