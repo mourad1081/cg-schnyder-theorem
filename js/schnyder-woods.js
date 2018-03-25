@@ -5,7 +5,7 @@ var switch_form = false;
 var myp5 = null;
 
 $(function() {
-
+	renderMathInElement(document.body);
 	$('#switch').on("click", function(){
 		switch_form = !switch_form;
 		var text = (switch_form)? "point" : "line";
