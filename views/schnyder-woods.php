@@ -64,9 +64,7 @@
             <div class="demo animated bounceInUp text-center col-12">
                 <div class="col-sm-12">
                     <div id="canvas-holder"></div>
-                    <button id="switch"    class="btn btn-warning">line</button>
                     <button id="clear_sol" class="btn btn-warning" onclick="clear_solution()">Clear</button>
-                    <button id="reset"     class="btn btn-warning" onclick="reset()">Reset</button>
                 </div>
                 <div class="col-sm-12">
                     <button id="schnyder-wood" style="display:inline-block; width: auto;" class="btn big-button">Schnyder's Woods</button>

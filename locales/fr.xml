@@ -158,7 +158,7 @@
                 <explanation>Ce n'est malheureusement pas la bonne réponse ! La bonne réponse est 0, 2, 5, 4.</explanation>
             </question>
             <question correct-answer="1" type="0">
-                <title>Quelle est la taille du poset formé par l'ensemble des nombres entiers naturels et la divisibilité ?</title>
+                <title>Quelle est la taille du poset formé par l'ensemble des nombres naturels et la relation d'ordre divisibilité ?</title>
                 <answer>Un taille finie</answer>
                 <answer>Un taille infinie</answer>
                 <answer>Ca dépend</answer>
@@ -313,7 +313,7 @@
         </content>
         <questions>
             <question correct-answer="0" type="2">
-                <title>Posons ce graphe G (figure ci-dessous), donnez le poset d'incidence.</title>
+                <title>Soit le graphe G (figure ci-dessous), construisez son diagramme de Hasse.</title>
                 <image></image>
                 <explanation><p>Ce n'est malheureusement pas la bonne réponse ! <br/><br/> Hint: Il faut tout d'abord créer quatre sommets dans la partie basse du canvas, quatre autre dans la partie haute. Regardez bien quels sommets sont reliés à quels autres sommets et par quelles arrêtes ! <br/> <br/> (Solution si vous abandonnez : Après avoir créé les huit sommets, il faut ensuite relier v1 à e1, v2 à e1, v1 à e2, v3 à e2, v1 à e3, v4 à e3, v4 à e4 et enfin v3 à e4.)</p></explanation>
             </question>

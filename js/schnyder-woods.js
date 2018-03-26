@@ -31,32 +31,7 @@ function draw(){
 	var d = 70;
 	stroke(153);
 
-	$('canvas').click(function(){
-		var p = {
-			x: mouseX,
-			y: mouseY,
-			colors: [false, false, false]
-		};
 
-
-		if(!switch_form){
-			ellipse(p.x, p.y, 20, 20);
-			points.push(p);
-		} else {
-			if (previous == null) {
-                previous = p;
-            } else {
-                // récupère les points correspondant (arc ou sommet) par rapport au position du clic
-                var edge = getEdge(previous, p);
-                // Push à l'arc, le sommet
-                edges.push(edge);
-                // Dessine la liaison
-                line(edge.p1.x, edge.p1.y, edge.p2.x, edge.p2.y);
-                // reinitialise le point précédent
-                previous = null;
-            }
-		}
-	});
 }
 
 	
