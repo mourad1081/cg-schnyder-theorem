@@ -16,7 +16,7 @@ class Game {
                 this.loadLevel(this.currentLevel);
                 $($('.level-button')[this.currentLevel - 1]).removeClass('level-locked');
             } else {
-                swal('fin', 'fin !');
+                swal('fin', 'fin de la première partie !');
                 $("#main-container").fadeOut();
                 setTimeout(() => {
                     $("#ending").addClass('animated fadeInUp').removeClass("d-none");

@@ -56,6 +56,10 @@ require_once("views/partials/header.php");
     <div id="ending" class="d-none" style="text-align:center;">
         
         <img src="img/end.gif" alt="" style="border: solid orange 5px; border-radius: 50%;">
+        <br/>
+        <button class="level-button animated bounceIn" style="animation-delay: 1s; width: auto;" onclick="location.href='views/schnyder-woods.php'">Passer a la deuxieme partie</button>
+
+
     </div>
    
     <small style="
