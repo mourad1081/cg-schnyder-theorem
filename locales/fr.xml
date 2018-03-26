@@ -376,5 +376,75 @@
             </question>
         </questions>
     </level>
+    <woods>
+        <name>EXTRA - Schnyder's Woods</name>
+        <title>Schnyder's Woods</title>
+        <content>
+            <![CDATA[
+            <p>
+                Avant d'entamer la définition d'un Schnyder's Woods, nous allons introduire la notion de 3-orientations et de quasi-triangulation d'un plan.
+            </p>
+            <p>
+                Nous allons d'abord revoir quelques définitions. Considérons un plan triangulé G. Un vertex interne de G est un vertex qui n'est pas incident à la face extérieur de G tandis qu'un vertex externe est un vertex qui est incident à la face extérieur. Implicitement, un arc interne est un arc qui n'est pas incident à la face extérieur donc possède au moins 1 vertex interne et un arc externe est un arc qui est incident à la face extérieur. <br/>
+                La définition de 3-orientations est la suivante :
+                <quote>
+                    Posons G un plan triangulaire. Une 3-orientation de G est une orientation des arc internes de G dans lequel le degré sortant de chaque vertex interne est de 3.
+                </quote>
+            </p>
+            <p>
+                Nous allons juste revoir la notion de graphe biconnecté avant de voir la quasi-triangulation. Un graphe \( G = (V, E) \) est dit biconnecté si on supprime n'importe quelle vertex de G, le graphe reste connexe. <br/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <figure> 
+                            <img src="../img/5_Node_Biconnected.svg.png" style="height:120px;"/> 
+                            <figcaption>Graphe biconnecté à 5 sommets</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure>
+                            <img src="../img/5_Node_Not-Biconnected.svg.png" style="height:120px;" /> 
+                            <figcaption>Graphe non-biconnecté à 5 sommets</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </p>
+            <p>
+                Un graphe \( T = (V, E) \) est dit une quasi-triangulation bi-connecté du plan, c'est-à-dire, T est un graphe planaire dans lequel toutes les faces internes sont des triangles (mais les faces exterieurs peuvent etre un cycle). Par exemple, posons \( v_1, v_2, ..., v_k\) être les vertex externes de T dans l'ordre horlogique. Donc \(T-v_2\) est une quasi-triangulation avec le cycle extérieur \( v_1, w_1, w_2, ..., w_d, v_3,... v_k \) tel que \( w_1, w_2, ..., w_k \) sont les vertex internes adjacent à v2 (dans l'ordre anti-horlogique). <br/>
+                <img src="../img/near-triangulation.PNG" />
+            </p>
+            <p>
+                La définition d'un Schnyder's Woods est défini tel que : <br/>
+                <quote>
+                    Etant donné un plan triangulaire \( T = (V, E) \), un Schnyder's Woods/Labelling de T est une 3-orientation \( \overrightarrow{T} \) de T de même que un 3-coloration des arcs internes de \( \overrightarrow{T} \) respecte ces conditions :
+                    <img src="../img/schnyder_condition.png" style="float:right;"/>
+                    <ul>
+                        <li> Chaque vertex possède exactement un arc sortant pour chaque couleur dans \( \overrightarrow{T} \).</li>
+                        <li> 
+                            Les couleurs des arcs sortant autour d'un vertex apparaissent toujours dans le même ordre (horlogique). <br/>
+                            
+                        </li>
+                        <li> Les arcs entrants pour une couleur apparaissent toujours entre 2 arcs sortant des 2 autres couleurs.</li>
+                    </ul>
+                </quote>
+            </p>
+
+            <p>
+                L'algorithme Schnyder's Woods est un procédé simple et itératif. L'algorithme s'exécute en un temps polynomial. Considérons un plan triangulaire \( T = (V, E) \). Posons u,v, w les 3 vertex exterieur de T, dans l'ordre horlogique, et posons les couleurs bleu, rouge, vert. A chaque étape i \( \leq \) 0 de l'algorithme, nous allons traiter un sous-graphe \( T_i \) de T dont il est une quasi-triangulation bi-connecté contenant l'arc (u,w). A chaque itération, nous allons choisir un vertex externe \( v_i \) dans \( T_i \) different de u et w, tel que \( v_i \) a exactement 2 voisins qui sont des vertex externes à \( T_i \). Une fois choisi, on oriente et colore les arcs de \( v_i \) et on recommence en i+1 tel que \( T_{i+1} = T_i\)\{\(v_i\)}. <br/> 
+                Dans un premier temps, on initialise \( T_0 = T\) et \( v_0 = v\). Ensuite, de i allant de 0 à n-3 (dont n est le nombre de points dans le plan), on sait que \( T_i \) est un sous graphe de T. Le processus se déroule comme-ci : 
+                <ul>
+                    <li> on choisit, dans \(T_i\), \(v_i\) qui a exactement 2 voisins \( x_i\) et \(y_i\) qui sont 2 vertex externes. On choisit \(x_i\) le sommet qui est le plus proche de u et on choisit \(y_i\) le sommet qui est le plus proche de w. </li>
+                    <li> Maintenant, on oriente l'arc (\(v_i\), \(y_i\)) en direction de \(y_i\) et on le colore en bleu. On oriente l'arc (\(v_i\), \(x_i\)) dans la direction de \(x_i\) et on le colore en vert. Enfin, on oriente tous les autres arcs de \(v_i\) en direction de lui-même et on les colore en rouge </li>
+                    <li> On recommence depuis l'étape 1 avec \(T_i\)\{\(v_i\)}.
+                </ul>
+                L'iteration arrête lorsqu'on a parcouru au plus quand on a parcouru tous les sommets internes. Il peut exister plusieurs solutions pour un même plan triangulaire. Les différentes solutions peuvent etre créer dûe à un parcours différents des vertex internes. <br/>
+                <img src="../img/schnyder_algo.PNG" />
+            </p>
+
+            <p>
+                Ci-dessous, vous pouvez trouver 3 démonstrations de l'algorithme sur 3 plans triangulaire à complexité différentes.
+            </p>
+            ]]>
+        </content>
+    </woods>
 </levels>
 

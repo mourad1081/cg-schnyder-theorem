@@ -1,3 +1,13 @@
+<?php  
+    // Simple parser d'XML
+    $xml_string = file_get_contents("../locales/fr.xml");
+    $xml = new SimpleXMLElement($xml_string);
+
+    $name = $xml->woods->name;
+    $title = $xml->woods->title;
+    $content = $xml->woods->content;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,53 +41,15 @@
 
 </head>
 <body>
-    <h2 class="text-center"> Computational Geometry</h2>
+   <h2 class="text-center">
+        <?php echo $name ?>
+    </h2>
     <div class="theory animated bounceInUp container">
         <div class="explanations row">
-            <h3 class="text-center col-12">Schnyder's Woods</h3>
+            <h3 class="text-center col-12"><?php echo $title ?></h3>
             <hr>
             <div class="col-12 col-md-12">
-                <p>
-                    Avant d'entamer la définition d'un Schnyder's Woods, nous allons introduire la notion de 3-orientations d'un plan triangulaire.
-                </p>
-                <p>
-                    Considérons un plan triangulaire G. Un vertex interne de G est un vertex qui n'est pas incident à la face extérieur de G tandis qu'un vertex externe est un vertex qui
-                    est incident à la face extérieur. Implicitement, un arc interne est un arc qui n'est pas incident à la face extérieur donc possède au moins 1 vertex interne et un arc externe
-                    est un arc qui est incident à la face extérieur. La définition de 3-orientations est la suivante :
-                    <quote>
-                        Posons G un plan triangulaire. Une 3-orientation de G est une orientation des arc internes de G tel que le degré sortant de chaque arc d'incident est de 3.
-                    </quote>
-                </p>
-                <p>
-                    La définition d'un Schnyder's Woods est défini tel que : <br/>
-                    <quote>
-                        Etant donné un plan triangulaire \( T = (V, E) \), un Schnyder's Woods/Labelling de T est une 3-orientation \( \overrightarrow{T} \) de T de même que un 3-coloration des arcs internes de \( \overrightarrow{T} \) respecte ces conditions :
-                        <ul>
-                            <li> Chaque vertex possède exactement un arc sortant pour chaque couleur dans \( \overrightarrow{T} \).</li>
-                            <li> 
-                                Les couleurs des arcs sortant autour d'un vertex apparaissent toujours dans le même ordre (chronologique). <br/>
-                                <img src="../img/schnyder_condition.png"/>
-                            </li>
-                            <li> Les arcs entrants pour une couleur apparaissent toujours entre 2 arcs sortant des 2 autres couleurs.</li>
-                        </ul>
-                    </quote>
-                </p>
-
-                <p>
-                    Maintenant nous allons développer le fonctionnement de l'algorithme de Schnyder's Woods. Considérons un plan triangulaire \( T = (V, E) \). Posons u,v, w les 3 vertex exterieur de T, dans 
-                    l'ordre chronologique, et posons les couleurs bleu, rouge, vert. A chaque étape i \( \leq \) 0 de l'algorithme, nous allons traiter un sous-graphe \( T_i \) de T dont il est 2-connecté à triangulation proche contenant l'arc (u,w). A chaque itération, nous allons choisir un vertex externe \( v_i \) dans \( T_i \) different de u et w, tel que \( v_i \) a exactement 2 voisins qui sont des vertex externes à \( T_i \). Une fois choisi, on oriente et colore les arcs de \( v_i \) et on recommence en i+1 tel que \( T_{i+1} = T_i\)\{\(v_i\)}. Dans un premier temps, on initialise \( T_0 = T\) et \( v_0 = v\). Ensuite, de i allant de 0 à n-3 (dont n est le nombre de points dans le plan), on sait que \( T_i \) est un sous graphe de T. Le processus se déroule comme-ci : 
-                    <ul>
-                        <li> on choisit, dans \(T_i\), \(v_i\) qui a exactement 2 voisins \( x_i\) et \(y_i\) qui sont 2 vertex externes. On choisit \(x_i\) le sommet qui est le plus proche de u et on choisit \(y_i\) le sommet qui est le plus proche de w. </li>
-                        <li> Maintenant, on oriente l'arc (\(v_i\), \(y_i\)) en direction de \(y_i\) et on le colore en bleu. On oriente l'arc (\(v_i\), \(x_i\)) dans la direction de \(x_i\) et on le colore en vert. Enfin, on oriente tous les autres arcs de \(v_i\) en direction de lui-même et on les colore en rouge </li>
-                        <li> On recommence depuis l'étape 1 avec \(T_i\)\{\(v_i\)}.
-                    </ul>
-                    L'iteration arrête lorsqu'on a parcouru au plus quand on a parcouru tous les sommets internes. Il peut exister plusieurs solutions pour un même plan triangulaire. Les différentes solutions peuvent etre créer dûe à un parcours différents des vertex internes. <br/>
-                    <img src="../img/schnyder_algo.PNG" class="center" />
-                </p>
-
-                <p>
-                    Ci-dessous, vous pouvez trouver 3 démonstrations de l'algorithme sur 3 plans triangulaire à complexité différentes.
-                </p>
+                <?php echo $content ?>
             </div>
         </div>
     </div>
