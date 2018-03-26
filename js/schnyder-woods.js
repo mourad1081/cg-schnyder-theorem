@@ -76,10 +76,14 @@ var edges_demo = [edges_demo1, edges_demo2, edges_demo3];
 
 function generateDemo(number){
 	reset();
-	p = points_demo[number];
-	e = edges_demo[number];
+	var p = points_demo[number];
+	var e = edges_demo[number];
+	var name = ["v", "w", "u"];
 
+	fill(153);
 	for(var i = 0; i < p.length; i++){
+		if(i < name.length)
+			text(name[i], p[i].x+15, p[i].y+15);
 		ellipse(p[i].x, p[i].y, 20, 20);
 		var pts = {
 			x: p[i].x,
@@ -224,15 +228,58 @@ function drawArrow(start, end){
 	}
 
 	var end_p = end.x;
+	var pt_base = null;
 	if(end.x > start.x){
-		end_p -= (end.x-start.x)/7;
+		end_p = end.x-5;
+		pt_base = {x: end_p, y: f(end_p)};
+	} else if (end.x < start.x){
+		end_p = end.x+5;
+		pt_base = {x: end_p, y: f(end_p)};
 	} else {
-		end_p += (start.x-end.x)/7;
+		pt_base = {x: end.x, y: end.y-5};
 	}
 
 	line(start.x, start.y, end.x, end.y);
-	ellipse(end_p, f(end_p), 5, 5);
-	//triangle(end.x, end.y, end.x-5, f(end.x+segment.x)/5, end.x+segment.x, f(end.x+segment.x)/5);
+
+	// Computation to find how to orient the triangle along with the orientation of the line
+	var pt_base = {x: end_p, y: f(end_p)};
+	var end_2 = rotate_point(pt_base, 90, end);
+	var end_3 = rotate_point(pt_base, -90, end);
+	var ratio = 2;
+	while(length(segmentData(end, end_2)) > 15){
+		var sc_x = end.x / ratio;
+		var sc_y = end.y / ratio;
+
+		// translation
+		var t_x = end.x - sc_x;
+		var t_y = end.y - sc_y;
+
+		end_2.x = (end_2.x/ratio) + t_x;
+		end_2.y = (end_2.y/ratio) + t_y;
+
+		end_3.x = (end_3.x/ratio) + t_x;
+		end_3.y = (end_3.y/ratio) + t_y;
+	}
+
+	triangle(end.x, end.y, end_2.x, end_2.y, end_3.x, end_3.y);
+}
+
+function rotate_point(base, angle, point){
+	var sin = Math.sin(angle);
+	var cos = Math.cos(angle);
+
+	var p = {
+		x: point.x - base.x,
+		y: point.y - base.y
+	}
+
+	var new_x = p.x * cos - p.y * sin;
+	var new_y = p.x * sin + p.y * cos;
+
+	p.x = new_x + base.x;
+	p.y = new_y + base.y;
+
+	return p; 
 }
 
 function reset(){
@@ -304,4 +351,8 @@ function orientation(p1, p2, p3){
 					[p3.x, p3.y, 1]];
 
 	return math.det(matrice);
+}
+
+function length(vector){
+	return Math.sqrt(Math.pow(vector.x, 2) + Math.pow(vector.y, 2));
 }
