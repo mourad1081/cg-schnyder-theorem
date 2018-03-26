@@ -246,6 +246,9 @@ function drawArrow(start, end){
 	var end_2 = rotate_point(pt_base, 90, end);
 	var end_3 = rotate_point(pt_base, -90, end);
 	var ratio = 2;
+
+	// Scale the triangle
+	// Created an equilateral triangle, so we just need to check one side
 	while(length(segmentData(end, end_2)) > 15){
 		var sc_x = end.x / ratio;
 		var sc_y = end.y / ratio;
@@ -261,7 +264,15 @@ function drawArrow(start, end){
 		end_3.y = (end_3.y/ratio) + t_y;
 	}
 
-	triangle(end.x, end.y, end_2.x, end_2.y, end_3.x, end_3.y);
+	// Position the triangle in the middle of the edge
+	var mid_x = (end.x + start.x)/2;
+	var mid_y = (end.y + start.y)/2;
+
+	var tr_x =  mid_x - end.x;
+	var tr_y = mid_y - end.y;
+
+	// Draw the triangle
+	triangle(end.x + tr_x, end.y + tr_y, end_2.x + tr_x, end_2.y + tr_y, end_3.x + tr_x, end_3.y + tr_y);
 }
 
 function rotate_point(base, angle, point){
