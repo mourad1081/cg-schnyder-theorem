@@ -158,6 +158,11 @@ h2 {
     width: 64px;
     height: 64px;
     line-height: 64px;
+    color: black !important;
+}
+
+.level-button:hover {
+    text-decoration: none;
 }
 
 .level-locked {

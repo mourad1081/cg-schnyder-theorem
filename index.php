@@ -37,12 +37,17 @@ require_once("views/partials/header.php");
                 <h2 class="animated bounceIn">
                     Select the level
                 </h2>
+                <hr>
+                <h4 class="animated bounceIn">Part I - Schnyder theorem understanding</h4>
                 <button class="level-button animated bounceIn" style="animation-delay: 1.0s;">1</button>
                 <button class="level-button animated bounceIn" style="animation-delay: 1.2s;">2</button>
                 <button class="level-button animated bounceIn" style="animation-delay: 1.4s;">3</button>
                 <button class="level-button animated bounceIn" style="animation-delay: 1.6s;">4</button>
                 <button class="level-button animated bounceIn" style="animation-delay: 1.8s;">5</button>
                 <hr>
+                <h4 class="animated bounceIn" style="animation-delay: 2s;">Part II - Schnyder Woods</h4>
+                <a  class="level-button animated bounceIn" href="views/schnyder-woods.php" style="animation-delay: 2.2s;">1</a>
+                <h4 class="animated bounceIn" style="animation-delay: 2.4s;">Part III - 3D representation</h4>
                 <button class="select-level-back big-button animated bounceIn" style="animation-delay: 1.1s;">Back</button>
             </div>
 
@@ -90,7 +95,7 @@ require_once("views/partials/header.php");
 
         // Lorsqu'on clik sur un level pas locked, 
         // on charge le niveau en question
-        levelsContainer.find('.level-button:not(.level-locked)').click((event) => {
+        levelsContainer.find('button.level-button:not(.level-locked)').click((event) => {
 
             levelsContainer.addClass('animated bounceOutUp');
             setTimeout(() => {

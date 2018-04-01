@@ -377,73 +377,119 @@
         </questions>
     </level>
     <woods>
-        <name>EXTRA - Schnyder's Woods</name>
+        <name>Part II - Schnyder's Woods</name>
         <title>Schnyder's Woods</title>
         <content>
             <![CDATA[
             <p>
-                Avant d'entamer la définition d'un Schnyder's Woods, nous allons introduire la notion de 3-orientations et de quasi-triangulation d'un plan.
+                Avant d'entamer la définition d'un Schnyder's Woods, nous allons introduire 
+                la notion de 3-orientation et de quasi-triangulation d'un plan.
             </p>
             <p>
-                Nous allons d'abord revoir quelques définitions. Considérons un plan triangulé G. Un vertex interne de G est un vertex qui n'est pas incident à la face extérieur de G tandis qu'un vertex externe est un vertex qui est incident à la face extérieur. Implicitement, un arc interne est un arc qui n'est pas incident à la face extérieur donc possède au moins 1 vertex interne et un arc externe est un arc qui est incident à la face extérieur. <br/>
-                La définition de 3-orientations est la suivante :
+                Tout d'abord, voyons quelques définitions. 
+                Considérons un plan triangulé G. Un sommet interne de G est un sommet qui n'est pas incident à 
+                la face extérieur de G, tandis qu'un sommet externe est un sommet qui est incident à la face extérieur.
+                
+                Implicitement, un arc interne est un arc qui n'est pas incident à la face extérieur donc possède au moins 
+                un sommet interne, et un arc externe est un arc qui est incident à la face extérieur.
+                <br/>
+                La définition de 3-orientation est la suivante :
                 <quote>
-                    Posons G un plan triangulé. Une 3-orientation de G est une orientation des arc internes de G dans lequel le degré sortant de chaque vertex interne est de 3.
+                    Soit G un plan triangulé. Une 3-orientation de G est une orientation des arc internes de G dans lequel 
+                    le degré sortant de chaque sommet interne est de 3.
                 </quote>
             </p>
             <p>
-                Nous allons juste revoir la notion de graphe bi-connecté avant de voir la quasi-triangulation. Un graphe \( G = (V, E) \) est dit bi-connecté si en supprimant n'importe quel vertex de G, le graphe reste connexe. <br/>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <figure> 
-                            <img src="../img/5_Node_Biconnected.svg.png" style="height:120px;"/> 
-                            <figcaption>Graphe bi-connecté à 5 sommets</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-sm-6">
-                        <figure>
-                            <img src="../img/5_Node_Not-Biconnected.svg.png" style="height:120px;" /> 
-                            <figcaption>Graphe non bi-connecté à 5 sommets</figcaption>
-                        </figure>
-                    </div>
+                Ensuite, revoyons la notion de graphe bi-connecté avant de voir la quasi-triangulation. 
+                Un graphe \( G = (V, E) \) est dit bi-connecté si, en supprimant n'importe 
+                quel sommet de G, le graphe reste connexe. 
+            </p>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <figure> 
+                        <img src="../img/5_Node_Biconnected.svg.png" style="height:120px;"/> 
+                        <figcaption>Graphe bi-connecté à 5 sommets</figcaption>
+                    </figure>
                 </div>
-            </p>
+                <div class="col-sm-6 text-center">
+                    <figure>
+                        <img src="../img/5_Node_Not-Biconnected.svg.png" style="height:120px;" /> 
+                        <figcaption>Graphe non bi-connecté à 5 sommets</figcaption>
+                    </figure>
+                </div>
+            </div>
             <p>
-                Un graphe \( T = (V, E) \) est dit une quasi-triangulation bi-connecté du plan, c'est-à-dire, T est un graphe planaire dans lequel toutes les faces internes sont des triangles (mais les faces exterieurs peuvent être un cycle). Par exemple, posons \( v_1, v_2, ..., v_k\) être les vertex externes de T dans l'ordre horlogique. Donc \(T-v_2\) est une quasi-triangulation avec le cycle extérieur \( v_1, w_1, w_2, ..., w_d, v_3,... v_k \) tel que \( w_1, w_2, ..., w_k \) sont les vertex internes adjacent à v2 (dans l'ordre anti-horlogique). <br/>
-                <figure>
-                    <img src="../img/near-triangulation.PNG" />
-                    <figcaption>Exemple de quasi-triangulation</figcaption>
-                </figure>
+                Nous appelons un graphe \( T = (V, E) \) une quasi-triangulation bi-connectée du plan si \( T \) 
+                est un graphe planaire dans lequel toutes les faces internes sont des triangles (mais 
+                les faces exterieurs peuvent former un cycle). 
+                <br/>
+                Par exemple, soit \( v_1, v_2, ..., v_k\) les sommets externes de \( T \)
+                dans le sens horloger. \(T-v_2\) est une quasi-triangulation avec 
+                le cycle extérieur \( v_1, w_1, w_2, ..., w_d, v_3,... v_k \) tel 
+                que \( w_1, w_2, ..., w_k \) sont les sommets internes adjacents 
+                à v2 (dans le sens anti-horloger).
             </p>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <figure>
+                        <img src="../img/near-triangulation.PNG" />
+                        <figcaption>Exemple de quasi-triangulation</figcaption>
+                    </figure>
+                </div>
+            </div>
             <p>
-                Dorénavant que toutes les notions et bases ont été défini. Nous pouvons parler du Schnyder's Woods. La définition d'un Schnyder's Woods est définie tel que : <br/>
+                Maintenant que toutes les notions et bases ont été définies, nous pouvons discuter de Schnyder's Woods. 
+                Sa définition est la suivante : <br/>
                 <quote>
-                    Etant donné un plan triangulé \( T = (V, E) \), un Schnyder's Woods/Labelling de T est une 3-orientation \( \overrightarrow{T} \) de T de même qu'une 3-coloration des arcs internes de \( \overrightarrow{T} \) respecte ces conditions :
+                    Etant donné un plan triangulé \( T = (V, E) \), un Schnyder's Woods/Labelling de \( T \) est une 3-orientation 
+                    \( \overrightarrow{T} \) de \( T \) de même qu'une 3-coloration des arcs internes de \( \overrightarrow{T} \) respecte ces conditions :
                     <img src="../img/schnyder_condition.png" style="float:right;"/>
                     <ul>
-                        <li> Chaque vertex possède exactement un arc sortant pour chaque couleur dans \( \overrightarrow{T} \).</li>
+                        <li> Chaque sommet possède exactement un arc sortant pour chaque couleur dans \( \overrightarrow{T} \).</li>
                         <li> 
-                            Les couleurs des arcs sortant autour d'un vertex apparaissent toujours dans le même ordre (horlogique). <br/>
+                            Les couleurs des arcs sortant autour d'un sommet apparaissent toujours dans le même ordre (horloger). <br/>
                         </li>
-                        <li> Les arcs entrant pour une couleur apparaissent toujours entre 2 arcs sortant des 2 autres couleurs.</li>
+                        <li> Les arcs entrant pour une couleur apparaissent toujours entre deux arcs sortant des deux autres couleurs.</li>
                     </ul>
                 </quote>
             </p>
 
             <p>
-                L'algorithme Schnyder's Woods est un procédé simple et itératif. L'algorithme s'exécute en un temps polynomial. Considérons un plan triangulé \( T = (V, E) \). Posons u, v, w les 3 vertex exterieur de T, dans l'ordre horlogique, et posons les couleurs bleu, rouge, vert. À chaque étape i \( \geq \) 0 de l'algorithme, nous allons traiter un sous-graphe \( T_i \) de T dont il est une quasi-triangulation bi-connecté contenant l'arc (u,w). A chaque itération, nous allons choisir un vertex externe \( v_i \) dans \( T_i \) différent de u et w, tel que \( v_i \) a exactement 2 voisins qui sont des vertex externes à \( T_i \). Une fois choisi, on oriente et colore les arcs de \( v_i \) et on recommence en i+1 tel que \( T_{i+1} = T_i\)\{\(v_i\)}. <br/> 
-                Dans un premier temps, on initialise \( T_0 = T\) et \( v_0 = v\). Ensuite, de i allant de 0 à n-3 (dont n est le nombre de points dans le plan), on sait que \( T_i \) est un sous graphe de T. Donc, le processus se déroule comme-ci : 
-                <ul>
-                    <li> on choisit, dans \(T_i\), \(v_i\) qui a exactement 2 voisins \( x_i\) et \(y_i\) qui sont 2 vertex externes. On choisit \(x_i\) le sommet qui est le plus proche de u et on choisit \(y_i\) le sommet qui est le plus proche de w. </li>
-                    <li> Maintenant, on oriente l'arc (\(v_i\), \(y_i\)) en direction de \(y_i\) et on le colore en bleu. On oriente l'arc (\(v_i\), \(x_i\)) dans la direction de \(x_i\) et on le colore en vert. Enfin, on oriente tous les autres arcs de \(v_i\) en direction de lui-même et on les colore en rouge </li>
-                    <li> On recommence depuis l'étape 1 avec \(T_i\)\{\(v_i\)}.
-                </ul>
-                L'iteration arrête lorsqu'on a parcouru au plus tous les vertex internes ou qu'on est colorié tous les arcs internes. Il peut exister plusieurs solutions pour un même plan triangulé. Les différentes solutions peuvent etre trouver dû à un parcours différents des vertex internes. <br/>
-                <img src="../img/schnyder_algo.PNG" />
+                L'algorithme Schnyder's Woods est un procédé simple et itératif. 
+                L'algorithme s'exécute en un temps polynomial. 
+                Considérons un plan triangulé \( T = (V, E) \). 
+                Posons \( u, v, w \) les 3 sommets extérieurs de \( T \), dans le sens horloger, 
+                et posons les couleurs <em>bleu, rouge et vert</em>. 
+                <br/>
+                À chaque étape i \( \geq \) 0 de l'algorithme, nous allons traiter un sous-graphe \( T_i \) 
+                de \(T\) dont il est une quasi-triangulation bi-connecté contenant l'arc (\(u,w\)). 
+                
+                À chaque itération, nous allons choisir un sommet externe \( v_i \) dans \( T_i \) qui est différent de \(u\) et \(w\), 
+                tel que \( v_i \) a exactement 2 voisins qui sont des sommets externes à \( T_i \). 
+                
+                Une fois choisi, on oriente et colorie les arcs de \( v_i \). Et on recommence en \(i+1\) avec \( T_{i+1} = T_i\)\{\(v_i\)}. 
+                <br/> 
+                Dans un premier temps, on initialise \( T_0 = T\) et \( v_0 = v\) et ensuite, de \(i\) allant de 0 à \(n-3\) 
+                (où \(n\) est le nombre de points dans le plan), on sait que \( T_i \) est un sous graphe de \(T\). 
+                
+                Donc, le processus se déroule ainsi : 
+                <ol>
+                    <li> On choisit, dans \(T_i\), \(v_i\) qui a exactement deux voisins \( x_i\) et \(y_i\) qui sont 2 sommets externes.
+                     On choisit \(x_i\) le sommet le plus proche de \(u\) et on choisit \(y_i\) le sommet le plus proche de \(w\). </li>
+                    <li> Maintenant, on oriente l'arc (\(v_i\), \(y_i\)) en direction de \(y_i\) et on le colorie en bleu. 
+                    On oriente l'arc (\(v_i\), \(x_i\)) dans la direction de \(x_i\) et on le colorie en vert. 
+                    Enfin, on oriente tous les autres arcs de \(v_i\) en direction de lui-même et on les colorie en rouge. </li>
+                    <li> On retourne à l'étape 1 avec \(T_i\)\{\(v_i\)}.
+                </ol>
+                L'iteration arrête lorsqu'on a parcouru au plus tous les sommets  
+                internes ou colorié tous les arcs internes. 
+                Il peut exister plusieurs solutions pour un même plan triangulé. 
+                Les différentes solutions peuvent etre trouvées avec un parcours différent des sommets internes. <br/>
             </p>
-
-            <p>
-                Ci-dessous, vous pouvez trouver 3 démonstrations de l'algorithme sur 3 plans triangulé avec des tailles différentes.
+            <div class="text-center"><img src="../img/schnyder_algo.PNG" /></div>
+            <p class="text-center">
+                <br/><br/>
+                Ci-dessous, vous pouvez trouver 3 démonstrations de l'algorithme sur 3 plans triangulés avec des tailles différentes.
             </p>
             ]]>
         </content>
