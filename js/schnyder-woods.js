@@ -99,7 +99,6 @@ function schnyderWoods(){
 		drawArrow(v, end_x);
 		v.colors[2] = true;
 		x.visited = true;
-		v_edges.splice(v_edges.indexOf(x), 1);
 
 		// get the node closer y to w and orient the edge to Y and color it in red
 		y = getEdgeCloser(v_edges, v, w0.pt);
@@ -108,9 +107,9 @@ function schnyderWoods(){
 		drawArrow(v, end_y);
 		v.colors[1] = true;
 		y.visited = true;
-		v_edges.splice(v_edges.indexOf(y), 1);
 
 		// All other edge becomes inner edge and color them in green
+		v_edges = v_edges.slice(v_edges.indexOf(y)+1, v_edges.indexOf(x));
 		for(var j = 0; j < v_edges.length; j++){
 			var end_v = (v_edges[j].p1 == v)? v_edges[j].p2 : v_edges[j].p1;
 			if(!end_v.colors[0]){
@@ -128,6 +127,7 @@ function getEdgeCloser(v_edges, current_point, outter_point){
 	var distances = [];
 
 	for(var i = 0; i < v_edges.length; i++){
+		if(v_edges[i].visited) continue;
 		var end = (v_edges[i].p1 == current_point)? v_edges[i].p2 : v_edges[i].p1;
 		if(end == outter_point){
 			return v_edges[i];
