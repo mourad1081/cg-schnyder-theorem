@@ -171,6 +171,12 @@ h2 {
     background-color: #ffc80080;
 }
 
+#hack-the-nasa {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
 #terminal {
     padding: 20px;
     background-color: rgb(31, 31, 32);
@@ -216,4 +222,23 @@ h2 {
 .bad-answer .swal-content {
     padding: 0 !important;
     color: #593735 !important;
+}
+
+
+#visu-3d #canvas-holder {
+    width: 100%;
+    height: 600px;
+    box-shadow:inset 0 0 10px 3px #666666;
+    margin-bottom: 20px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+98 */
+    background: rgb(206,220,231); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(206,220,231,1) 0%, rgba(89,106,114,1) 98%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 98%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#visu-3d canvas { 
+    width: 100%; 
+    height: 100% 
 }

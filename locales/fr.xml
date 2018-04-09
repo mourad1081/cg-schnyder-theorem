@@ -2,7 +2,7 @@
     <!-- level 1 -->
     <level>
         <name>Niveau 1 - Theorie de l'ordre</name>
-        <title>Les ordres - Introduction</title>
+        <title>Les ordres - Intuition</title>
         <content>
             <![CDATA[
             <p>
@@ -14,51 +14,58 @@
             <p>
                 Les <strong>ordres</strong> sont partout dans notre monde, 
                 nous pouvons notamment les rencontrer dans des domaines 
-                tels que les mathématiques ou l'informatique. En fait, depuis
-                tout petit nous sommes baignés dedans et nous sommes capable d'ordonner
-                énormément de choses. 
+                tels que les mathématiques, l'informatique ou dans notre vie quotidienne. 
+                
+                En fait, depuis tout petit nous sommes baignés dedans et 
+                nous sommes capable d'ordonner énormément de choses. 
             </p>
             <p>
-                Par exemple, dès la primaire, nous établissons une relation d'ordre
-                entre les nombres. 
+                Par exemple, dès la primaire, nous établissons des comparaisons entre les nombres. 
                 <br/>
                 "Deux est plus petit que quatre." - nous disait notre institutrice. 
                 <br/>
                 "Est-ce que Daoud possède plus de points que Mourad ?".
                 <br/>
-                Toutes ces phrases sous-entendent explicitement 
-                qu'il existe une relation d'ordre entre les éléments comparés.
+                Toutes ces phrases sous-entendent explicitement qu'il existe 
+                des moyens de comparer des objets entre eux.
             </p>
             <p>
                 Un autre exemple avec lequel nous sommes tous familier est 
                 l'ordre alphabétique où la lettre "a" vient avant la lettre "b",
                 "x" vient avant "y", etc. Également, dans les arbres généalogiques où
-                notre descendance vient le noeud nous représentant.
+                notre descendance vient avant le noeud nous représentant
+                 (en partant de la racine).
             </p>
             <p>
                 La notion d'ordre est très générale et se définie bien au-delà 
-                des contextes où nous avons l'intuition qu'il existe un ordre 
-                dans telle séquence de nombres, symboles, etc. Il existe des 
-                tas d'ordres possibles. Pensons simplement à la surcharge
-                des opérateurs de comparaisons dans certains langages de
-                programmation tel que le C++.
+                des contextes où nous avons l'intuition qu'il existe un moyen de créer 
+                un ordre dans telle séquence de nombres, symboles, etc. Il peut exister des 
+                tas de relations possibles pour un même ensemble d'objet.
             </p>
             <p>
-                En effet, prenons l'ordre \( \leq \) que l'on connait tous, le 
-                fameux "plus petit que". Si nous considérons les nombres réels ou 
-                les lettres, il est évident qu'une propriété nous apparaît immédiatement :
-                tous les éléments peuvent être comparés avec n'importe quel autre.
+                En effet, prenons la relation \( \leq \) que l'on connait tous, le 
+                fameux "plus petit ou égal". Si nous considérons l'ensemble des nombres réels ou 
+                celui des lettres, une propriété pourrait nous apparaître immédiatement :
+                tous les éléments de ces ensembles peuvent être mis 
+                en relation entre eux (ex. \( 4.2 \leq 5.12, 9 \leq 12.4 \), etc.).
+
+                Lorsqu'une relation permet de mettre tous les éléments en lien entre eux, 
+                cette relation est dite <strong>totale</strong>.
+            </p>
+            <hr/>
+            <p>
+                Une <strong>relation binaire</strong> est une propriété qui décrit 
+                si <strong>deux</strong> objets sont liés d'une manière ou d'une autre. 
                 <br/>
-                Lorsque toutes les paires d'éléments d'un ensemble satisfont la relation d'ordre, 
-                nous disons qu'il existe un <strong>ordre total</strong> dans cet ensemble
-                pour la relation d'ordre qu'on a utilisé.
+                Par exemple, "plus petit que" ( \( x \le y \) ), la divisibilité, l'amitié ("A est un ami de B"), etc.
+                Formellement, lorsqu'une relation binaire \( R \) est donnée, nous écrivons \( aRb \) si et seulement si 
+                \(a\) est en lié avec \(b\) par la relation \( R \). Aussi, formellement, une relation binaire
+                sur un ensemble 
             </p>
             <p>
-                À contrario, il existe d'autres types d'ordre où les entités sont incomparables.
-                Prenons l'ensemble des oiseaux et l'ensemble des chiens. Tout deux appartiennent
-                à l'ensemble des Animaux mais tous les oiseaux du premier ensemble ne peut pas 
-                intuitivement être comparés avec tous les chiens du second ensemble.
-                <br/>
+                Un <strong>ordre partiel</strong> est une relation qui satisfait certaines 
+                propriétés bien précises sur un ensemble. 
+                Nous détaillons cela au niveau suivant.
             </p>
             ]]>
         </content>
@@ -66,28 +73,28 @@
         <questions>
             <!-- Bonne réponse, la troisième donc indice 2 -->
             <question correct-answer="2" type="0">
-                <title>Soit \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et la relation d'ordre usuelle \(\leq\). Existe-t-il un relation d'ordre entre tous les éléments de cet ensemble ?</title>
-                <answer>Oui, on peut mettre tous les éléments en relation avec cet opérateur.</answer>
-                <answer>Non, aucun élément n'est en relation avec les autres avec cet opérateur.</answer>
-                <answer>Partiellement. Certains éléments sont comparables tandis que d'autres non.</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! L'ensemble associé à la relation d'ordre mentionné n'est pas totalement ordonnable car on ne peut, entre autre, pas comparer le tupe (2,1) avec les autres éléments qui sont de simples scalaires/nombres. </explanation>
+                <title>Soit \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et la relation binaire usuelle \(\leq\). La relation d'ordre peut-elle s'appliquer à toute paire d'élément dans cet ensemble ?</title>
+                <answer>Oui, nous savons comparer toute paire d'élément entre eux avec cette relation d'ordre.</answer>
+                <answer>Non, aucune paire d'élément n'est comparable avec la relation donnée.</answer>
+                <answer>Partiellement. Certaines paires d'éléments sont comparables tandis que d'autres non.</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! L'ensemble associé à la relation d'ordre mentionnée n'est pas totalement ordonnable car on ne peut, entre autre, pas comparer le tupe (2,1) avec les autres éléments qui sont de simples nombres. </explanation>
             </question>
             <question correct-answer="0" type="0">
-                <title>On dit qu'un ordre est total si toute paire d'élément d'un ensemble peuvent être mis en relation avec un ordre donné.</title>
+                <title>On dit qu'une paire (A,R) est un ordre total si toute paire d'élément de l'ensemble A peuvent être mis en relation avec la relation d'ordre R.</title>
                 <answer>Oui, c'est vrai.</answer>
                 <answer>Non, ce n'est pas vrai.</answer>
                 <answer>Pas toujours vrai.</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! Un ensemble muni d'une relation d'ordre possède un ordre total lorsque toute paire d'élément de cet ensemble peuvent être mis en relation.</explanation>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! Un ensemble muni d'une relation d'ordre est un ordre total lorsque toute paire d'élément de cet ensemble peuvent être mis en relation avec la relation d'ordre donnée.</explanation>
             </question>
             <question correct-answer="0" type="0">
                 <title>
-                    Soit \(E = \{ 5 \} \) un ensemble d'entiers et la relation d'ordre \( \divideontimes \) 
-                    qui est satisfaite si \( x \divideontimes y \Leftrightarrow x = y, \forall x,y \in E\). 
-                    \(E\) satisfait-il la relation d'ordre \(\divideontimes\) ?
+                    Soit \(E = \{ 5 \} \) un ensemble d'entiers et la relation binaire \( \divideontimes \) 
+                    définie ainsi : \( x \divideontimes y \Leftrightarrow x = y. 
+                    \(E\) satisfait-il la relation binaire \(\divideontimes\) ?
                 </title>
-                <answer>Oui, la relation d'ordre pour cet ensemble est satisfaite.</answer>
+                <answer>Oui, la relation binaire appliquée aux éléments de cet ensemble est satisfaite.</answer>
                 <answer>Non, il faut au moins deux élément pour vérifier cela.</answer>
-                <answer>Non, la relation d'ordre n'est pas satisfaite pour cet ensemble.</answer>
+                <answer>Non, la relation binaire n'est pas satisfaite avec les éléments de cet ensemble.</answer>
                 <explanation>Ce n'est malheureusement pas la bonne réponse ! le nombre 5 étant égal à 5, la relation est satisfaite.</explanation>
             </question>
         </questions>

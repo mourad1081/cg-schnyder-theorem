@@ -29,7 +29,6 @@ require_once("views/partials/header.php");
             <div class="text-center animated bounceIn">
                 <button id="play" class="big-button">Play</button>
                 <button id="options" class="big-button">Best scores</button>
-                <button id="hack-the-nasa" class="big-button">Hack the NASA</button>
                 <small>(Cliquez en haut à droite sur l'icone de son pour retirer le son.)</small>  
             </div>
             
@@ -68,11 +67,17 @@ require_once("views/partials/header.php");
     </div>
    
     <small style="
-    position:fixed;
-    bottom:10px;
-    left:10px;">
-    &copy; Daoud & Mourad - Computational Geometry 2017 - 2018.
-</small>   
+        position:fixed;
+        bottom:10px;
+        left:10px;">
+        &copy; Daoud & Mourad - Computational Geometry 2017 - 2018.
+    </small>
+    <small style="
+        position:fixed;
+        bottom:10px;
+        right:10px;">
+        <button id="hack-the-nasa" class="big-button">Hack the NASA</button>
+    </small>   
 </div>    
 
 <script>
@@ -129,7 +134,7 @@ require_once("views/partials/header.php");
         });
         
         btnOptions.click((event) => {
-            swal('lol');
+            swal('En cours');
         });
 
         $(document).on("click", ".btn-finish-level", (event) => {
@@ -137,7 +142,7 @@ require_once("views/partials/header.php");
         });
 
         $(document).on('click', '.btn-go-to-home', (event) => {
-            swal('go home lol');
+            swal('En cours');
         });
 
         btnHackNasa.click((event) => {
