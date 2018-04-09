@@ -6,6 +6,7 @@
     $name = $xml->woods->name;
     $title = $xml->woods->title;
     $content = $xml->woods->content;
+    $instructions = $xml->woods->instruction;
 ?>
 
 <!DOCTYPE html>
@@ -57,14 +58,25 @@
     <div class="container">
         <div class="row">
             <div class="buttons_demo animated bounceInUp text-center col-12">
-                <button id="demo1" style="display:inline-block;" class="btn big-button" onclick="generateDemo(0)"> Demo 1 </button>
-                <button id="demo2" style="display:inline-block;" class="btn big-button" onclick="generateDemo(1)"> Demo 2 </button>
-                <button id="demo3" style="display:inline-block;" class="btn big-button" onclick="generateDemo(2)"> Demo 3 </button>
+                <button id="demo1" style="display:inline-block;" class="btn big-button" onclick="generateDemo(0)">Demo 1</button>
+                <button id="demo2" style="display:inline-block;" class="btn big-button" onclick="generateDemo(1)">Demo 2</button>
+                <button id="demo3" style="display:inline-block;" class="btn big-button" onclick="generateDemo(2)">Demo 3</button>
             </div> 
             <div class="demo animated bounceInUp text-center col-12">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div id="canvas-holder"></div>    
+                    </div>
+                    <div class="text col-sm-4">
+                        <?php echo $instructions ?>
+                    </div>
+                </div>
+                <div class="row">
                 <div class="col-sm-12">
-                    <div id="canvas-holder"></div>
-                    <button id="clear_sol" class="btn btn-warning" onclick="clear_solution()">Clear</button>
+                        <button id="clear_sol" class="btn btn-warning" onclick="clear_solution()">Clear</button>
+                        <button id="form_drawing" class="btn btn-warning" onclick="switch_type_drawing()">Ligne</button>
+                        <button id="reset" class="btn btn-warning" onclick="reset()">Reset</button>
+                    </div>
                 </div>
                 <div class="col-sm-12">
                     <button id="schnyder-wood" style="display:inline-block; width: auto;" class="btn big-button">Schnyder's Woods</button>
