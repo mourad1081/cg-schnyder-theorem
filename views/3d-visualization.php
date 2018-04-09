@@ -118,16 +118,32 @@
                     <li>
                         Pour un sommet \(v\) d'un schnyder Woods, 
                         nous définissons son <em>face-count vector \((v_1, v_2, v_3)\)</em>
-                        où <br>
+                        (ou <em>vecteur région</em>) où <br>
                         <p class="text-center">
                             \(v_i = \) le nombre de face de \( M \) contenue dans \( R_i(v) \)
                         </p>
                     </li>
                     <li>
-                    Le vecteur défini ci-dessus nous servira pour construire 
-                    une surface orthogonale pour le Schnyder wood. 
-                    Maintenant, posons \(\alpha_1, \alpha_2, \alpha_3\) trois point 
-                    dans le plan et non collinéaires. Grâce à ces trois points et les vecteurs régions
+                        Le vecteur défini ci-dessus nous servira pour construire 
+                        une surface orthogonale pour le Schnyder wood. 
+                        Maintenant, posons \(\alpha_1, \alpha_2, \alpha_3\) trois point 
+                        dans le plan et non collinéaires. 
+                        Grâce à ces trois points et les vecteurs régions, nous pouvons définir
+                        le point embarqué dans \( M \) correspondant au sommet \(v\) du Schnyder wood.
+                        <p>
+                        Un sommet \(v\) sera mis embarqué dans \( M \) via la fonction \(\mu\) :
+                        <br>
+                        \[ \mu : v \rightarrow v_1\alpha_1 + v_2\alpha_2 + v_3\alpha_3 \]
+                        </p>
+                        <p>
+                        Ici, nous pouvons simplifier les calculs en prenant 
+                        \(\alpha_1 = (1, 0, 0), \alpha_2 = (0, 1, 0), \alpha_3 = (0, 0, 1) \),
+                        le point \(v\) sera donc embarqué ainsi via son vecteur région.
+                        </p>
+                    </li>
+                    <li>
+                        Aussi, un arc \(\{u,v\}\) est mappé par \(\mu\) sur le segment 
+                        de droite reliant \(\mu(u)\) et \(\mu(v)\).
                     </li>
                 </ol>
 
@@ -172,6 +188,7 @@
         </div>
     </div>
     <script src="../js/three/build/three.min.js"></script>
+    <script src="../js/three/controls/OrbitControls.js"></script>
     <script src="../js/3d-visualization.js"></script>
     <script>
     renderMathInElement(document.body);

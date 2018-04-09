@@ -1,141 +1,97 @@
 $(function() {
-    var points = [];
-    var edges = []; 
-    var canvas = $("#canvas-holder");
-    var scene  = new THREE.Scene();
-    var w = canvas.width();
-    var h = canvas.height();
-    var camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
+    let canvas = $("#canvas-holder");
+    let scene  = new THREE.Scene();
+    let w = canvas.width();
+    let h = canvas.height();
 
-    var renderer = new THREE.WebGLRenderer({ alpha:true });
-
-
-    //Create a plane that receives shadows (but does not cast them)
-    var planeGeometry = new THREE.PlaneBufferGeometry(120, 120);
-    var planeMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 })
-    var plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.receiveShadow = true;
-
-    // Create a helper for the camera (optional)
-    var helper = new THREE.CameraHelper(camera);
-    // helper normal plane
-    var Nhelper = new THREE.PlaneHelper(plane);
-
-
+    let camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer({ alpha:true });
+    let controls = new THREE.OrbitControls(camera, renderer.domElement);
+    //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
+    controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+    controls.dampingFactor = 0.25;
+    controls.panningMode = THREE.HorizontalPanning; // default is THREE.ScreenSpacePanning
+    controls.minDistance = 1;
+    controls.maxDistance = 50;
+    controls.maxPolarAngle = Math.PI / 2;
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(w, h);
     canvas.append(renderer.domElement);
+    camera.position.z = 5;
+    camera.position.y = 5;
+    let size = 10;
+    let divisions = 10;
+
+    let gridHelper = new THREE.GridHelper( size, divisions );
+    scene.add( gridHelper );
 
 
-    var materialForLine = new THREE.LineBasicMaterial( { color: 0x0000ff } );
 
-    var geometryForLine = new THREE.Geometry();
-
-    geometryForLine.vertices.push(new THREE.Vector3(-2, 0, 0));
-    geometryForLine.vertices.push(new THREE.Vector3( 0, 2, 0));
-    geometryForLine.vertices.push(new THREE.Vector3( 2, 0, 0));
-
-    var line = new THREE.Line(geometryForLine, materialForLine);
-
-
-    scene.add(line);
-    scene.add(helper);
-    scene.add(plane);
-
-
-    // By default, when we call scene.add(), the thing we add will be added to the coordinates (0, 0, 0).
-    // This would cause both the camera and the cube to be inside each other. 
-    // To avoid this, we simply move the camera out a bit.
-    camera.position.z = 20;
-    camera.lookAt(0, 0, 0);
-
+    controls.update();
     function animate() {
         requestAnimationFrame(animate);
-        plane.rotation.x += 0.01;
         renderer.render(scene, camera);
     }
-
+    createSchnyderWoods();
     animate();
 
-    var xi = null;
-    var yi = null;
+    function createSchnyderWoods() {
+        let points = createVertex();
+        let edges = createEdges(points);
+    }
+    function createVertex() {
+        let material = new THREE.PointsMaterial({ size:0.2, color: 0x000000, opacity: 1 });
+        let geometry = new THREE.Geometry();
+        let v0 = new THREE.Vector3(0, 0, -4);
+        let v1 = new THREE.Vector3(4, 0, 4);
+        let v2 = new THREE.Vector3(-4, 0, 4);
+        let v3 = new THREE.Vector3( 1, 0,  1);
+        let v4 = new THREE.Vector3(-2, 0,  2);
+        let v5 = new THREE.Vector3(-1, 0, -1);
+        let v6 = new THREE.Vector3( 0, 0, -2);
 
-    canvas.on('touchstart', (event) => {
-        event.preventDefault();
-        xi = event.touches[0].pageX / 1000;
-        yi = event.touches[0].pageY / 1000;
-    });
+        let pts = [v0, v1, v2, v3, v4, v5, v6];
 
-    canvas.on("touchmove", (event) => {
-        event.preventDefault();
-        var dx = xi - event.touches[0].pageX / 1000;
-        var dy = yi - event.touches[0].pageY / 1000;
-        console.log(dx, dy);
-        camera.position.x += dx;
-        camera.position.y -= dy;
-    });
+        for(let i = 0; i < pts.length; i++)
+            geometry.vertices.push(pts[i]);
 
+        let points = new THREE.Points(geometry, material);
 
-    $("#btn-reset-position-camera").on("click", (event) => {
-        event.preventDefault();
-        camera.position.x = 0;
-        camera.position.y = 0;
-    });
+        scene.add(points);
+
+        return pts;
+    }
     
-    $("#btn-reset-rotation-camera").on("click", (event) => {
-        event.preventDefault();
-        camera.lookAt(0, 0, 0);
-    });
-    
-    $(document).on("keypress", function(event) {
-        // alert(event.which);
-        if(event.which == 122) //  Z -- en avant
-            camera.position.z -= 1;
-        if(event.which == 115) // S -- en arrière
-            camera.position.z += 1;
-        if(event.which == 113) // Q -- à gauche
-            camera.position.x += 1;
-        if(event.which == 100) // D -- à droite
-            camera.position.x -= 1;
-    });
+    function createEdges(points) {
+        let material = new THREE.LineBasicMaterial( { color: 0xff0000, size: 10 } );
+        let geometry = new THREE.Geometry();
+        let edges = [
+            [points[0], points[1]],
+            [points[1], points[2]],
+            [points[2], points[0]],
+            [points[0], points[6]],
+            [points[0], points[5]],
+            [points[5], points[6]],
+            [points[6], points[3]],
+            [points[5], points[4]],
+            [points[5], points[3]],
+            [points[4], points[3]],
+            [points[3], points[1]],
+            [points[4], points[1]],
+            [points[6], points[1]],
+            [points[4], points[2]],
+            [points[5], points[2]],
+        ];
 
-    canvas.mousedown(function () {
-        
-        event.preventDefault();
-
-        var isLeftClick = event.which == 1;
-        var isRightClick = event.which == 3;
-        var isMiddleClick = event.which == 2;
-        var strangeClick = event.which > 3;
-
-        xi = event.pageX / 1000;
-        yi = event.pageY / 1000;
-
-        if (isLeftClick) 
-        {
-            $(this).mousemove(function () {
-                event.preventDefault();
-                var dx = xi - event.pageX / 1000;
-                var dy = yi - event.pageY / 1000;
-                console.log("p", dx, dy);
-                camera.position.x += dx;
-                camera.position.y -= dy;
-            });
+        for(let i = 0; i < edges.length; i++) {
+            geometry.vertices.push(edges[i][0]);
+            geometry.vertices.push(edges[i][1]);
         }
-        else if (isMiddleClick) 
-        {
-            $(this).mousemove(function () {
-                event.preventDefault();
-                var dx = xi - event.pageX / 1000;
-                var dy = yi - event.pageY / 1000;
-                console.log("r", dx, dy);
-                camera.rotation.x += dy;
-                camera.rotation.y -= dx;
-            });
-        }
-    
-    }).mouseup(function () {
-        $(this).unbind('mousemove');
-    }).mouseout(function () {
-        $(this).unbind('mousemove');
-    });
+
+        let line = new THREE.Line(geometry, material);
+
+        scene.add(line);
+
+        return edges;
+    }
 });
