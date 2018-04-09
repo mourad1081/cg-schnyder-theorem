@@ -127,7 +127,7 @@
                     Le vecteur défini ci-dessus nous servira pour construire 
                     une surface orthogonale pour le Schnyder wood. 
                     Maintenant, posons \(\alpha_1, \alpha_2, \alpha_3\) trois point 
-                    dans le plan et non collinéaires.
+                    dans le plan et non collinéaires. Grâce à ces trois points et les vecteurs régions
                     </li>
                 </ol>
 
