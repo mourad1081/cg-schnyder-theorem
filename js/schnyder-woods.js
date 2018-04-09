@@ -1,8 +1,9 @@
 var points = [];
 var edges = [];
 var previous = null;
-var switch_form = false;
+var point_draw = true;
 var myp5 = null;
+var schnyder_steps = false;
 
 $(function() {
 	renderMathInElement(document.body);
@@ -13,7 +14,7 @@ $(function() {
 	})
 
 	$('#schnyder-wood').on("click", function(){
-		schnyderWoods();
+		schnyder_steps = true;
 	})
 
 });
@@ -31,6 +32,38 @@ function draw(){
 	var d = 70;
 	stroke(153);
 
+	$('canvas').on('click', function(){
+		var pt_clic = {
+			x: mouseX,
+			y: mouseY,
+			colors: [false, false, false]
+		}
+
+		if(schnyder_steps){
+			var pt = getPoint(pt_clic);
+
+			vertexConquest(pt);
+		} else if(point_draw){
+			var name = ["v", "w", "u"];
+			ellipse(pt_clic.x, pt_clic.y, 20, 20);
+			points.push(pt_clic);
+			if(points.indexOf(pt_clic) < name.length) text(name[points.indexOf(pt_clic)], pt_clic.x+15, pt_clic.y+15);
+		} else {
+			if(previous == null){
+				var firstPoint = getPoint(pt_clic);
+				if(firstPoint != null){
+					previous = firstPoint;
+				}
+			} else {
+				var secPoint = getPoint(pt_clic);
+				if(secPoint != null){
+					line(secPoint.x, secPoint.y, previous.x, previous.y);
+					edges.push({p1: previous, p2: secPoint, visited: false});
+				}
+				previous = null;
+			}
+		}
+	});
 
 }
 
@@ -38,7 +71,7 @@ function draw(){
 var points_demo1 = [{x: 384,y: 44}, {x: 633,y: 541}, {x: 164,y: 548}, {x: 318,y: 288}, {x: 410,y: 284}, {x: 356,y: 373}, {x: 445,y: 377}];
 var edges_demo1 = ["0:1", "1:2", "2:0", "3:4", "4:6", "6:5", "5:3", "3:2", "5:2", "6:1", "6:2", "4:5", "3:0", "4:0", "6:0"];
 
-var points_demo2 = [{x:357, y:138}, {x:535, y:468}, {x:166, y:456}, {x:307, y:307}, {x:347, y:307}, {x:387, y:307}, {x:280, y:385}, {x:330, y:385}, {x:380, y:385}];
+var points_demo2 = [{x:357, y:138}, {x:535, y:468}, {x:166, y:456}, {x:307, y:307}, {x:347, y:307}, {x:387, y:307}, {x:280, y:385}, {x:330, y:385}, {x:390, y:385}];
 var edges_demo2 = ["0:1", "1:2", "2:0", "3:2", "3:0", "3:4", "3:6", "3:7", "4:5", "4:7", "4:8", "4:0", "5:0", "5:8", "5:1", "6:7", "6:2", "7:8", "7:2", "8:2", "8:1"];
 
 var points_demo3 = [{x: 414,y: 15}, {x: 769,y: 541}, {x: 123,y: 550}, {x: 367,y: 261}, {x: 401,y: 295}, {x: 370,y: 352}, {x: 408,y: 399}, {x: 463,y: 284}, {x: 574,y: 370}, {x: 508,y: 378}, {x: 556,y: 421}, {x: 461,y: 444}];
@@ -82,61 +115,38 @@ function generateDemo(number){
 }
 
 
-function schnyderWoods(){
-	var outerPoints = [points[0], points[1], points[2]];
-	var T = points.slice();
-	T.splice(0, 3); // remove the outer points of the triangle
+function vertexConquest(v){
 	var v0 = {pt: points[0], color: "green"};
 	var w0 = {pt: points[1], color: "red"};
 	var u0 = {pt: points[2], color: "blue"};
-	var v = v0.pt, x = u0, y = w0;
-	for(var i = 0; i <= points.length-3; i++){
-		// get the node closer x to u and orient the the edge to X and color it in blue
-		var v_edges = sortEdgeClockwiseOrder(getEdgeFromV(v), v);
-		x = getEdgeCloser(v_edges, v, u0.pt);
-		var end_x = (x.p1 == v)? x.p2 : x.p1;
-		stroke(u0.color);
-		drawArrow(v, end_x);
-		v.colors[2] = true;
-		x.visited = true;
-		v_edges.splice(v_edges.indexOf(x), 1);
+	var v_edges = sortEdgeClockwiseOrder(getEdgeFromV(v), v);
 
-		// get the node closer y to w and orient the edge to Y and color it in red
-		y = getEdgeCloser(v_edges, v, w0.pt);
-		var end_y = (y.p1 == v)? y.p2 : y.p1;
-		stroke(w0.color);
-		drawArrow(v, end_y);
-		v.colors[1] = true;
-		y.visited = true;
-		v_edges.splice(v_edges.indexOf(y), 1);
+	// shift : colorie en rouge
+	var y = v_edges.shift(); 
+	var end_y = (y.p1 == v)? y.p2 : y.p1; 
+	stroke(w0.color);
+	drawArrow(v, end_y);
+	v.colors[1] = true;
+	y.visited = true;
 
-		// All other edge becomes inner edge and color them in green
-		for(var j = 0; j < v_edges.length; j++){
-			var end_v = (v_edges[j].p1 == v)? v_edges[j].p2 : v_edges[j].p1;
-			if(!end_v.colors[0]){
-				stroke(v0.color);
-				drawArrow(end_v, v);
-				v_edges[j].visited = true;
-			}
+
+	// pop : colorie en bleu
+	var x = v_edges.pop();
+	var end_x = (x.p1 == v)? x.p2 : x.p1;
+	stroke(u0.color);
+	drawArrow(v, end_x);
+	v.colors[2] = true;
+	x.visited = true;
+
+	// All other edge becomes inner edge and color them in green
+	for(var j = 0; j < v_edges.length; j++){
+		var end_v = (v_edges[j].p1 == v)? v_edges[j].p2 : v_edges[j].p1;
+		if(!end_v.colors[0]){
+			stroke(v0.color);
+			drawArrow(end_v, v);
+			v_edges[j].visited = true;
 		}
-		v = T.shift();
 	}
-}
-
-
-function getEdgeCloser(v_edges, current_point, outter_point){
-	var distances = [];
-
-	for(var i = 0; i < v_edges.length; i++){
-		var end = (v_edges[i].p1 == current_point)? v_edges[i].p2 : v_edges[i].p1;
-		if(end == outter_point){
-			return v_edges[i];
-		}
-		var dist = Math.abs(outter_point.x - end.x);
-		distances.push(dist);
-	}
-
-	return v_edges[distances.indexOf(Math.min(...distances))];
 }
 
 
@@ -168,13 +178,13 @@ function sortEdgeClockwiseOrder(edges_node, node){
 		var end = (edges_node[i].p1 != node)? edges_node[i].p1 : edges_node[i].p2;
 		var or = orientation(previous_end, node, end);
 		if(or < 0){
-			if(scalar(segmentData(node, previous_end), segmentData(node, end)) > 0){
+			if(scalar(segmentData(node, previous_end), segmentData(node, end)) >= 0){
 				left_top.push({edge: edges_node[i], value:or});
 			} else {
 				left_bot.push({edge: edges_node[i], value:or});
 			}
 		} else {
-			if(scalar(segmentData(node, previous_end), segmentData(node, end)) > 0){
+			if(scalar(segmentData(node, previous_end), segmentData(node, end)) >= 0){
 				right_top.push({edge: edges_node[i], value:or});
 			} else {
 				right_bot.push({edge: edges_node[i], value:or});
@@ -276,6 +286,7 @@ function reset(){
 	points = [];
 	edges = [];
 	previous = null;
+	schnyder_steps = false;
 }
 
 function clear_solution(){
@@ -283,7 +294,11 @@ function clear_solution(){
 	background(0);
 	stroke(153);
 
+	var name = ["v", "w", "u"];
 	for(var i = 0; i < points.length; i++){
+		if(i < name.length)	{
+			text(name[i], points[i].x+15, points[i].y+15);
+		}
 		points[i].colors = [false, false, false];
 		ellipse(points[i].x, points[i].y, 20, 20);
 	}
@@ -294,6 +309,13 @@ function clear_solution(){
 	}
 
 	previous = null;
+	schnyder_steps = false;
+}
+
+function switch_type_drawing(){
+	point_draw = !point_draw;
+	var txt = (point_draw)? "Ligne" : "Point";
+	$('#form_drawing').text(txt);
 }
 
 // Retrouve le point(arc ou sommet) correspondant aux extremité de la ligne
@@ -312,6 +334,15 @@ function getEdge(previous, point){
 
     // renvoie la structure arc-sommet, car on ne peut pas lier arc-arc ou sommet-sommet
     return {p1:p1, p2:p2, visited:false};
+}
+
+function getPoint(clic){
+	for(var i = 0; i < points.length; i++){
+		if(isIn(clic, points[i]))
+			return points[i];
+	}
+
+	return null;
 }
 
 // Verifie si la position du clic appartient à une ellipse fixée

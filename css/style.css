@@ -68,6 +68,17 @@ h2 {
     padding-right: 20px;
 }
 
+.text {
+    background-color: gold;
+    color: #0c2461;
+    padding: 10px;
+    box-shadow: 0 6px 0px #ff5200;
+    font-family: Pixel, Roboto, serif;
+    font-size: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .explanations h3 {
     font-family: ArcadeClassic, Roboto, serif;
 }
