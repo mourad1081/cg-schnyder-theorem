@@ -501,7 +501,7 @@
                     <ol>
                         <li>Dessiner les 3 points externes correspondants aux 3 couleurs dans l'ordre horlogique en commençant par le point supérieur.</li>
                         <li>Dessiner les points internes et les arcs du plan triangulé. Vous pouvez changer de type de dessin en appuyant sur "Ligne" ou "Point".</li>
-                        <li>Une fois votre dessin terminé, appuyez sur <button class="btn big-button" disabled>Schnyder Woods</button> et cliquez sur les points dans l'ordre que vous voulez et l'algorithme s'appliquera.</li>
+                        <li>Une fois votre dessin terminé, appuyez sur <button class="btn big-button" style="pointer-events: none;">Schnyder Woods</button> et cliquez sur les points dans l'ordre que vous voulez et l'algorithme s'appliquera.</li>
                     </ol>
                 </p>
             ]]>
