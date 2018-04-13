@@ -498,6 +498,20 @@
                 <br/><br/>
                 Ci-dessous, vous pouvez trouver 3 démonstrations de l'algorithme sur 3 plans triangulés avec des tailles différentes.
             </p>
+
+            <pre>Source : 
+                [1] - Lucas Castelli ALEARDI, <i>Schnyder Woods - from graph encoding to graph drawing</i>
+                    <a  target="_blank" href="http://www.enseignement.polytechnique.fr/informatique/INF562/Slides/Amphi_9.pdf">http://www.enseignement.polytechnique.fr/informatique/INF562/Slides/Amphi_9.pdf</a>
+
+                [2] - J. S. SERENI and M. Loebl, gc09_7.pdf.
+                    <a target="_blank" href="http://lbgi.fr/~sereni/Lectures/GC_Spring09/gc09_7.pdf">http://lbgi.fr/~sereni/Lectures/GC_Spring09/gc09_7.pdf</a>
+
+                [3] - Florian Zickfeld STEFAN FELSNER. <i>Schnyder Woods and Orthogonal Surfaces</i>
+                    <a target="_blank" href="http://page.math.tu-berlin.de/~felsner/Paper/swaos.pdf">http://page.math.tu-berlin.de/~felsner/Paper/swaos.pdf</a>
+
+                [4] - Stefan FELSNER, <i>Schnyder Woods and Applications</i>
+                    <a target="_blank" href="http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf">http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf</a>
+                </pre>
             ]]>
         </content>
 
