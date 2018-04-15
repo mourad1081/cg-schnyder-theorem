@@ -2,7 +2,7 @@
     <!-- level 1 -->
     <level>
         <name>Niveau 1 - Theorie de l'ordre</name>
-        <title>Les ordres - Intuition</title>
+        <title>Les ordres - Relations binaires</title>
         <content>
             <![CDATA[
             <p>
@@ -32,70 +32,85 @@
             <p>
                 Un autre exemple avec lequel nous sommes tous familier est 
                 l'ordre alphabétique où la lettre "a" vient avant la lettre "b",
-                "x" vient avant "y", etc. Également, dans les arbres généalogiques où
-                notre descendance vient avant le noeud nous représentant
-                 (en partant de la racine).
+                "x" vient avant "y", etc.
             </p>
             <p>
-                La notion d'ordre est très générale et se définie bien au-delà 
-                des contextes où nous avons l'intuition qu'il existe un moyen de créer 
-                un ordre dans telle séquence de nombres, symboles, etc. Il peut exister des 
-                tas de relations possibles pour un même ensemble d'objet.
-            </p>
-            <p>
-                En effet, prenons la relation \( \leq \) que l'on connait tous, le 
+                Prenons la relation \( \leq \) que l'on connait tous, le
                 fameux "plus petit ou égal". Si nous considérons l'ensemble des nombres réels ou 
                 celui des lettres, une propriété pourrait nous apparaître immédiatement :
                 tous les éléments de ces ensembles peuvent être mis 
                 en relation entre eux (ex. \( 4.2 \leq 5.12, 9 \leq 12.4 \), etc.).
-
-                Lorsqu'une relation permet de mettre tous les éléments en lien entre eux, 
-                cette relation est dite <strong>totale</strong>.
+                <br/>
+                Lorsqu'une relation permet de mettre tous les éléments d'un ensemble
+                en lien entre eux, cette relation est dite <strong>totale</strong>.
             </p>
             <hr/>
             <p>
                 Une <strong>relation binaire</strong> est une propriété qui décrit 
-                si <strong>deux</strong> objets sont liés d'une manière ou d'une autre. 
+                si <strong>deux</strong> objets sont en relation d'une manière ou d'une autre.
                 <br/>
                 Par exemple, "plus petit que" ( \( x \le y \) ), la divisibilité, l'amitié ("A est un ami de B"), etc.
-                Formellement, lorsqu'une relation binaire \( R \) est donnée, nous écrivons \( aRb \) si et seulement si 
-                \(a\) est en lié avec \(b\) par la relation \( R \). Aussi, formellement, une relation binaire
-                sur un ensemble 
+                Formellement, lorsqu'une relation binaire \( R \) est donnée, nous écrivons \( aRb \) ou  \( R(a, b) \)
+                 si et seulement si
+                \(a\) est en en relation avec \(b\) par la relation \( R \). Une relation binaire sur un ensemble \( E \)
+                 est un sous-ensemble de \( E \times E \), il s'agit
+                de paires ordonnées qui représentent les paires pour lesquelles la relation est satisfaite.
+                Pour la relation "plus petit que" sur l'ensemble \( \mathbb{Z}\), nous aurions : \( \{(23, 42), (34, 99), (1,2)...\} \).
             </p>
             <p>
-                Un <strong>ordre partiel</strong> est une relation qui satisfait certaines 
-                propriétés bien précises sur un ensemble. 
-                Nous détaillons cela au niveau suivant.
+                Plus généralement, une relation binaire entre deux ensembles \( A \) et \( B \) est définie
+                par un sous-ensemble du produit cartésien \( A \times B \) où chaque paire est ordonnée et la
+                première composante appartient à l'ensemble \( A \) (le domaine) et la seconde
+                composante appartient à l'ensemble \( B \) (l'image).
             </p>
+            <hr/>
+<pre>
+Références :
+[1] - Stanford, CS103 - Mathematical Foundations of computing CS103, lecture 5 - Graphs and Relations
+      https://web.stanford.edu/class/archive/cs/cs103/cs103.1132/lectures/05/Slides05.pdf
+[2] - Stanford, CS103 - Mathematical Foundations of computing CS103, lecture 6 - Order Relations and Functions
+      https://web.stanford.edu/class/archive/cs/cs103/cs103.1132/lectures/06/Slides06.pdf
+[3] - Wikipedia, Binary relation, https://en.wikipedia.org/wiki/Binary_relation
+</pre>
             ]]>
         </content>
         <!-- Les questions -->
         <questions>
             <!-- Bonne réponse, la troisième donc indice 2 -->
-            <question correct-answer="2" type="0">
-                <title>Soit \(E = \{ 0, 2, 1, 5, (2, 1) \} \) et la relation binaire usuelle \(\leq\). La relation d'ordre peut-elle s'appliquer à toute paire d'élément dans cet ensemble ?</title>
-                <answer>Oui, nous savons comparer toute paire d'élément entre eux avec cette relation d'ordre.</answer>
-                <answer>Non, aucune paire d'élément n'est comparable avec la relation donnée.</answer>
-                <answer>Partiellement. Certaines paires d'éléments sont comparables tandis que d'autres non.</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! L'ensemble associé à la relation d'ordre mentionnée n'est pas totalement ordonnable car on ne peut, entre autre, pas comparer le tupe (2,1) avec les autres éléments qui sont de simples nombres. </explanation>
+            <question correct-answer="1" type="0">
+                <title>
+                    Soit la relation binaire \(\leq\) "plus petit ou égal" sur l'ensemble \(E = \{ 0, 2, 1, 5, 9 \} \).
+                    Pour tout \(a,b \in E\), \( a \leq b \) est satisfait si \(a\) est plus petit que \(b\).
+                    Le couple (2, 1) satisfait-il la relation binaire \( \leq \) ?</title>
+                <answer>Oui</answer>
+                <answer>Non</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse, 2 n'est pas plus petit ou égal à 1. </explanation>
             </question>
-            <question correct-answer="0" type="0">
-                <title>On dit qu'une paire (A,R) est un ordre total si toute paire d'élément de l'ensemble A peuvent être mis en relation avec la relation d'ordre R.</title>
-                <answer>Oui, c'est vrai.</answer>
-                <answer>Non, ce n'est pas vrai.</answer>
-                <answer>Pas toujours vrai.</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! Un ensemble muni d'une relation d'ordre est un ordre total lorsque toute paire d'élément de cet ensemble peuvent être mis en relation avec la relation d'ordre donnée.</explanation>
+            <question correct-answer="2" type="0">
+                <title>
+                    Soit \( \mathbb{Z} \) l'ensemble des entiers.
+                    Une relation binaire \( R \) est définie dans \( \mathbb{Z} \) ainsi : "pour tout \( a,b \in \mathbb{Z} \),
+                    \( aRb \) signifie que \( a \) est un <strong>multiple</strong> de \( b \).
+                    Quel couple, parmi suivants, n'appartient pas à \( R \) ?<br/>
+                    \( (10, 2), (25, 1), (2, 10), (5, 5) \).
+                </title>
+                <answer>(10, 2)</answer>
+                <answer>(25, 1)</answer>
+                <answer>(2, 10)</answer>
+                <answer>(5, 5)</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse, la bonne réponse est (2, 10) car 2 n'est pas un multiple de 10.</explanation>
             </question>
             <question correct-answer="0" type="0">
                 <title>
-                    Soit \(E = \{ 5 \} \) un ensemble d'entiers et la relation binaire \( \divideontimes \) 
-                    définie ainsi : \( x \divideontimes y \Leftrightarrow x = y. 
-                    \(E\) satisfait-il la relation binaire \(\divideontimes\) ?
+                    Soit la relation binaire \( R \) définie entre \( A \) et \( B \).
+                    Nous notons \( aRb \) pour dire que \( a \) est en relation
+                    avec \( b \) (ou \( (a,b) \in R\) ) où \( a \in A \) et \( b \in B \).
+
+                    Quel est l'ensemble qui est le domaine de la relation et lequel est l'image ?
                 </title>
-                <answer>Oui, la relation binaire appliquée aux éléments de cet ensemble est satisfaite.</answer>
-                <answer>Non, il faut au moins deux élément pour vérifier cela.</answer>
-                <answer>Non, la relation binaire n'est pas satisfaite avec les éléments de cet ensemble.</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! le nombre 5 étant égal à 5, la relation est satisfaite.</explanation>
+                <answer>A est le domaine et B est l'image</answer>
+                <answer>A est l'image et B est le domaine</answer>
+                <explanation>Ce n'est malheureusement pas la bonne réponse, A est le domaine et B est l'image de la relation.</explanation>
             </question>
         </questions>
     </level>
@@ -107,69 +122,149 @@
         <content>
             <![CDATA[
                 <p>
-                    Au niveau précédent, nous avons vu qu'il existe des ensembles
-                    où toutes les paires d'éléments ne sont pas nécessairement
-                    comparables. Lorsque les éléments d'un ensemble ne satisfont
-                    pas tous une relation d'ordre donnée, nous disons que cet 
-                    ensemble est <em>un ensemble partiellement ordonné</em> pour
-                    la relation d'ordre spécifiée. Nous abrégons le terme <em>
-                    ensemble partiellement ordonné</em> en <strong>poset</strong>.
+                    Au niveau précédent, nous avons vu comment son définies
+                    les relations binaire. Voyons maintenant les propriétés
+                    peuvent découler des relations binaires appliquées sur
+                    des ensembles. Parmi ces propriétés, certaines permettent
+                    de définir des relations d'ordre dans un ensemble. Cela
+                    nous permettra de nous introduire à la notion de poset qui
+                    est fort utilisée dans le théorème de Schnyder.
                 </p>
                 <p>
-                    Par exemple, si nous prenons la relation d'ordre usuelle
-                    \( \leq \) et l'ensemble \( E = \{ 2, 1, 0, "Hello" \}  \),
-                    alors cet ensemble muni de la relation \( \leq \) est un poset
-                    car tous les éléments ne satisfont pas la relation donnée, en 
-                    l'occurence \( 2 \leq "Hello" \) n'est pas défini.
+                    Parmi la multitude de propriétés qu'une relation binaire
+                    sur un ensemble peut poséder, voici les principales :
+                </p>
+                <h4>Relation d'ordre dans un ensemble</h4>
+                <p>
+                    Une relation d'ordre dans un ensemble est une relation binaire
+                    dans cet ensemble permettant de comparer les élément de celui-ci
+                    entre eux.
+                    Soit une relation binaire \( R \) sur un ensemble \( E \).
+
+                    Pour que \( R \) sur \( E \) soit une relation d'ordre,
+                    il faut qu'elle satisfasse les trois propriétés
+                    suivantes :
+                </p>
+                <ol>
+
+                    <li>
+                        La refléxive ( \(\forall a \in E, aRa \) ), c'est-à-dire que
+                         tout élément
+                        de l'ensemble est en relation avec lui-même.
+                    </li>
+
+                    <li>
+                        L'antisymétrie ( \( \forall a,b\in E, (aRb \wedge bRa) \Rightarrow a = b \) )
+                        , c'est-à-dire qu'il n'y a pas de paire d'élément distincts de \( E \)
+                        où chacun des deux éléments est reliés par \( R \) à l'autre.
+                    </li>
+
+                    <li>
+                        La transitivité (\(\forall x,y,z \in E, (xRy \wedge yRz) \Rightarrow xRz \)), c'est-à-dire
+                         qu'une suite d'éléments en relation consécutivement induit que le
+                         premier soit en relation avec le dernier.
+                    </li>
+                </ol>
+                <p>
+                    Il existe des tas d'autres types de propriétés qu'une relation binaire
+                    sur un ensemble puisse avoir, nous nous limiterons au cas qui nous
+                    intéresse, celui ci-dessus. En effet, le théorème de Schnyder traite surtout
+                    des relations d'ordre sur un ensemble.
                 </p>
                 <p>
-                    Formellement, la théorie de l'ordre nous dit qu'un ordre est 
-                    une relation binaire <em>sur un ensemble \(E\)</em> et est
-                    réflexive, antisymmétrique et transitive. Soit \(E\) un ensemble. 
-                    Une relation interne \( \leq \) sur \(E\) est appelée <em>une 
-                    relation d'ordre</em> si pour chaque éléments \( x, y, z \in E \), 
-                    nous avons :                
+                    Définissons maintenant <em>ordre total</em> et <em>ordre partiel</em>.
+                    Soit \( R \) une relation d'ordre sur \( E \). \( R \) définit ce qu'on appelle
+                    un <strong>ordre total</strong> sur \( E \) lorsque deux éléments de \( E \)
+                    sont toujours en relation via \( R \), plus formellement, nous écrivons :
+                </p>
+                 \[ \forall x \in E, \forall y \in E, xRy \vee yRx \]
+                <p>
+                    Si tous les éléments ne satisfont pas la propriété ci-dessus, nous disons alors
+                    que \( R \) définit un <strong>ordre partiel</strong>.
+                </p>
+                <p>
+                    Par exemple, prenons la relation d'ordre | (divisibilité) sur \( \mathbb{N} \) où
+                    pour tout \( a,b \in \mathbb{N} \), la relation | est satisfaite
+                    si \( a \) est un diviseur de \( b \).
+
+                    Ici, la relation | définit un ordre partiel sur \( \mathbb{N} \) car, par exemple,
+                    ni \( 2 | 5 \), ni \( 5 | 2 \) n'est vrai. Ce qui contredit la propriété ci-dessus.
+                </p>
+                <p>
+                    Enfin, voyons une notion nécessaire pour comprendre la visualisation 3D de Schnyder
+                    wood (défini plus tard). Il s'agit de l'ordre de domination \( \leq \) sur \( \mathbb{R}^3 \)
+                    tel que défini par Stefan Felsner dans [4]. Cet ordre partiel sur \( \mathbb{R}^3 \) nous permet
+                    de comparer des vecteurs entre eux (et donc, des sommets dans un graphe).
                     <br/>
-                    <ul>
-                        <li>\( x \leq x \) (la réfléxivité), c'est-à-dire qu'un 
-                            élément est en relation/comparable avec lui-même.</li>
-
-                        <li>\( (x \leq y \wedge y \leq x) \Rightarrow x = y \), 
-                            (l'antisymmétrie). Deux éléments différents ne peuvent 
-                            pas être reliés dans deux directions différentes
-                            à moins d'être toutes les deux les mêmes.</li>
-
-                        <li>\( (x \leq y \wedge y \leq z) \Rightarrow x \leq z \), 
-                            (la transitivité). Si un élément est en relation avec un 
-                            deuxième tandis que ce dernier l'est aussi avec un troisième, 
-                            alors le premier et le troisième élément sont également en 
-                            relation.</li>
-                    </ul>
+                    Soit deux vecteurs \(u,v \in \mathbb{R}^3 \), \( (u_1, u_2, u_3) \leq (v_1, v_2, v_3) \) si
+                    et seulement si \( u_i \leq v_i \) pour \( i = 1, 2, 3 \).
                 </p>
+                <p>
+                    Ci-dessous, nous voyons en vert tous les points qui sont dominés par le vecteur \( (5, 5) \)
+                    et en bleu, tous les points qui dominent ce vecteur.
+                </p>
+                <p class="text-center">
+                    <img style="max-width: 100%;" src="img/1.1.png" alt="" />
+                </p>
+                <p>
+                    Enfin, nous disons que la paire \((E, R)\) est un poset (ensemble partiellement ordonné)
+                    où \(E\) est un ensemble et \(R\) une relation d'ordre partiel sur \(E\).
+                    Un poset est donc un ensemble muni d'une ordre partiel.
+                    Une ensemble muni d'un ordre total sur cet ensemble est appelée un ensemble totalement ordonné.
+                </p>
+<hr/>
+<pre>
+Références :
+[1] - Stanford, CS103 - Mathematical Foundations of computing CS103, lecture 5 - Graphs and Relations
+      https://web.stanford.edu/class/archive/cs/cs103/cs103.1132/lectures/05/Slides05.pdf
+[2] - Stanford, CS103 - Mathematical Foundations of computing CS103, lecture 6 - Order Relations and Functions
+      https://web.stanford.edu/class/archive/cs/cs103/cs103.1132/lectures/06/Slides06.pdf
+[3] - Old Dominion University, CS381 - Discrete Structures/Discrete Mathematics,
+      http://www.cs.odu.edu/~cs381/cs381content/web_course.html
+[4] - Felsner, S. (2004). Geometric graphs and arrangements: Some chapters from combinatorial
+      geometry. Wiesbaden: Vieweg.
+[5] - Wikipedia, Partially ordered set, https://en.wikipedia.org/wiki/Partially_ordered_set#Formal_definition
+[6] - Wikipedia, Total order, https://en.wikipedia.org/wiki/Total_order
+</pre>
+<hr/>
             ]]>
         </content>
 
         <!-- Les questions -->
         <questions>
             <question correct-answer="1" type="0">
-                <title>Soit \(E = \{0, 2, 5, 4, 2 + 3i \} \) un ensemble contenant des entiers et un complexe. 
-                \(E\) est-il un poset lorsqu'il est muni de la relation d'ordre usuelle \( \leq \) ?</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! Nous ne pouvons pas comparer un entier avec un complexe avant la relation d'ordre donnée.</explanation>
+                <title>Quel couple parmi les suivants n'est pas un poset ? (Z représente l'ensemble des entiers)</title>
+                <answer>(Z, =)</answer>
+                <answer>(Z, ≠)</answer>
+                <explanation>
+                    Ce n'est malheureusement pas la bonne réponse, le couple (Z, ≠) n'est pas un poset.
+                    Contre-exemple : 1 ≠ 3 et 3 ≠ 1, la propriété d'antisymmétrie voudrait donc que 1
+                    soit égal à 3, ce qui n'est pas le cas.
+                </explanation>
             </question>
             <question correct-answer="0" type="1">
-                <title>Soit \( E = \{0, 2, 5, 4, (2,3) \} \) un poset lorsque muni de la relation
-                 d'ordre usuelle \( \leq \). donnez les éléments pouvant être comparés avec la relation usuelle \( \leq \).</title>
+                <title>
+                    Soit l'ensemble \( E = \{1, 2, -50, 5, 4, -200, -400 \} \) et la relation binaire \( \clubsuit \)
+                    où pour tout \( a,b \in E\), \( a \clubsuit b\) est satisfait si \( \sqrt{a+b} \in \mathbb{R}\).
+                    Soit \( B \subset E \).
+
+                    Quels éléments de \( E \) doivent figurer dans \( B \) pour que
+                    pour tout \( a,b \in B\), \( a \clubsuit b \) soit vrai ?
+                </title>
                 <placeholder>Ex : 8,2,5,4</placeholder>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! La bonne réponse est 0, 2, 5, 4.</explanation>
+                <explanation>Ce n'est malheureusement pas la bonne réponse ! La bonne réponse est 1, 2, 5, 4.</explanation>
             </question>
-            <question correct-answer="1" type="0">
-                <title>Quelle est la taille du poset formé par l'ensemble des nombres naturels et la relation d'ordre divisibilité ?</title>
-                <answer>Un taille finie</answer>
-                <answer>Un taille infinie</answer>
-                <answer>Ca dépend</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! Sa taille est infinie puisqu'il existe une infinité de nombre divisible entre eux. Par exemple, 2 et tous ses multiples.</explanation>
+            <question correct-answer="2" type="0">
+                <title>Quelle est la taille (cardinalité) de l'ordre partiel | (divisibilité) appliqué sur \( \mathbb{N} \) ?</title>
+                <answer>L'ensemble est vide</answer>
+                <answer>Une taille finie</answer>
+                <answer>Une taille infinie</answer>
+                <explanation>
+                    Ce n'est malheureusement pas la bonne réponse,
+                    la taille est infinie puisqu'il existe une infinité
+                    de nombre divisible entre eux dans \( \mathbb{N} \).
+                    Par exemple, 2 et tous ses multiples.
+                </explanation>
             </question>
         </questions>
     </level>
@@ -182,13 +277,13 @@
             <![CDATA[
                 <p>
                     Nous approchons tout doucement de la formulation du théorème
-                    de Schnyder. Discutons d'abord de la notion de diagramme de 
-                    Hasse.
-                    Lorsque le poset considéré est de taille fini, il existe
-                    une représentation graphique de celui-ci afin de visualiser
-                    un peu mieux les relations entre les éléments de l'ensemble.
-                    Si jamais l'ensemble considéré est de taille infini, nous
+                    de Schnyder. Discutons d'abord les diagrammes de
+                    Hasse. il s'agit d'un moyen de représenter un poset
+                    fini sous la forme d'un tracé de sa réduction transitive.
+                    Si jamais le poset est de taille infini, nous
                     représentons habituellement qu'une partie de celui-ci.
+                    Ces diagrammes permettent de mieux visualiser la manière
+                    dont les éléments sont en relation dans le poset.
                 </p>
                 <p>
                     Concrètement, dans un diagramme de Hasse, nous représentons
@@ -197,9 +292,12 @@
                     d'un sommet vers l'autre.
                 </p>
                 <p>
-                    Si \( x \leq y \), alors nous placerons le sommet \(x\) plus bas
-                    que le sommet \(y\). Ainsi, les arrêtes des diagrammes de sont
-                    pas dirigés, la hauteur relative d'un sommet par rapport à un autre 
+                    Soit \( (E, \leq) \) un poset où \( E \) est un ensemble
+                    et \( \leq \) une relation d'ordre sur \( E \).
+                    Si \( x \leq y \) avec \(x,y \in E \), alors nous placerons le
+                    sommet \(x\) plus bas que le sommet \(y\).
+                    Les arrêtes des diagrammes ne sont pas dirigés, la hauteur
+                    relative d'un sommet par rapport à un autre
                     indique directement lequel "est plus petit" que l'autre.
                 </p>
                 <p>
@@ -208,14 +306,14 @@
                     Par exemple, \(x \leq x\). Nous ne mettrons pas d'arrête allant de \(x\)
                     vers \(x\) (réfléxivité). Pareil pour \( x \leq y \leq z \), nous
                     mettrons une arrête de \(x\) à \(y\) et de \(y\) à \(z\) mais pas de 
-                    \(x\) à \(z\).
+                    \(x\) à \(z\). (\( x,y,z \in E \))
                 </p>
                 <p>
                     Enfin, nous essayons de ne pas faire croiser les arrêtes sur le diagramme.
-                <\p>
-                <p>
-                    Prenons l'ensemble \( E = \{ 0,1,2,3 \} \) et la relation d'ordre usuelle \( \leq \),
-                    nous obtenons ce diagramme de Hasse pour \( (E, \leq) \) :
+                    Posons l'ensemble \( E = \{ 0,1,2,3 \} \) et la relation d'ordre \( \leq \) sur \( E \) où
+                    pour tout \(a,b \in E\), \(a \leq b\) est satisfait si \(a\) est plus petit que \(b\).
+                    <br/>
+                    Nous obtenons ce diagramme de Hasse pour le poset \( (E, \leq) \) :
                 </p>
                 <p class="text-center">
                     <img src="img/hasse-1.png" style="height:300px"/>
@@ -225,13 +323,9 @@
                      \( \leq \) à ceux au-dessus d'eux.
                 </p>
                 <p>
-                    Prenons une autre relation d'ordre : la divisibilité |. Il s'agit d'une relation d'ordre car
-                    la divisibilité respecte la transitivité, l'antisymmétrie et la réfléxivitité.
-                    Exemple, \( 10 | 50 \)  : 10 divise 50 car 5 * 10 = 50.
-                </p>
-                <p>
-                    Autre exemple de poset : Prenons l'ensemble \( E = \{ 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60 \} \)
-                    et la relation d'ordre | qui est la divisibilité. Le diagramme de Hasse obtenu est :
+                    Autre exemple de diagramme de Hasse :
+                    Posons l'ensemble \( E = \{ 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60 \} \)
+                    et la relation d'ordre | (divisibilité) sur \( E \). Le diagramme de Hasse obtenu est :
                 </p>
                 <p class="text-center">
                     <img src="img/hasse-2.svg" style="height:200px"/>
@@ -244,23 +338,14 @@
             ]]>
         </content>
         <questions>
-            <question correct-answer="0" type="0">
-                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{N} \) muni de la relation de divisibilité, nous pouvons former un poset ?</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! Tous les naturels ne sont pas divisibles entre eux, nous avons donc un poset.</explanation>
-            </question>
             <question correct-answer="1" type="0">
-                <title>Reprenez le deuxième diagramme de Hasse (cliquez sur help) dans la théorie. Est-ce qu'il existe une relation d'ordre entre 15 et 20 ?</title>
+                <title>
+                    Reprenez le deuxième diagramme de Hasse (cliquez sur help) de la partie théorique.
+                    Est-ce qu'il existe une relation d'ordre entre 15 et 20 ?
+                </title>
                 <answer>Oui</answer>
                 <answer>Non</answer>
                 <explanation>Ce n'est malheureusement pas la bonne réponse ! Il est impossible d'aller de 15 à 20, ils ne sont donc pas en relation.</explanation>
-            </question>
-            <question correct-answer="1" type="0">
-                <title>Est-ce qu'en prenant l'ensemble \( \mathbb{Z} \) et la relation de divisibilité, nous pouvons former un poset ?</title>
-                <answer>Oui</answer>
-                <answer>Non</answer>
-                <explanation>Ce n'est malheureusement pas la bonne réponse ! Nous ne pouvons pas construire de poset car la divisibilité ne respecte pas l'antisymmétrie. Par exemple, 2 divise -2 et -2 divise 2 également mais -2 n'est pas égal à 2.</explanation>
             </question>
         </questions>
     </level>
@@ -273,7 +358,7 @@
             <![CDATA[
                 <p>
                     Nous voici dans la première notion directement liée au théorème de Schnyder.
-                    Voici l'énoncé du théorème : 
+                    Voici l'énoncé du théorème de Schnyder :
                 </p>
                 <p class="text-center">
                     <em>
@@ -283,24 +368,28 @@
                     </em>
                 </p>
                 <p>
-                    La première notion à voir est le poset d'incidence. Il s'agit en fait d'un type 
-                    particulier de poset dans le sens où il applique aux graphes non-dirigés et se
+                    La première notion à voir est le <em>poset d'incidence</em>. Il s'agit en fait d'un type
+                    particulier de poset dans le sens où il s'applique aux graphes non-dirigés et se
                     construit d'une certaine manière ressemblant aux diagrammes de Hasse.
+
+                    Le poset d'incidence représente la relation d'incidence entre les sommets et les arcs d'un graphe
+                    non dirigé.
+
                     Premièrement, supposons que nous ayons un graphe \( G(V, E) \) non vide. L'ensemble
                     des éléments dans l'ensemble associé au poset d'incidence est \( V \cup E \).
                     Chaque sommet et arrête de \(G\) est un élément dans l'ensemble associé au poset.
                 </p>
                 <ol>
                     <li>
-                        Tout d'abord, nous plaçons tous les éléments représentant les sommets de G en 
+                        Tout d'abord, nous plaçons tous les éléments représentant les sommets de \( G \) en
                         bas du diagramme (ils sont appelés les éléments minimaux car ils n'existe pas 
-                        d'élément innférieur à eux)
+                        d'élément innférieur à eux).
                     </li>
                     <li>
-                        Ensuite, les éléments représentant les arrêtes de G sont placés plus haut dans
+                        Ensuite, les éléments représentant les arrêtes de \( G \) sont placés plus haut dans
                         le diagramme par rapport aux éléments représentant les sommets. Par exemple, soit
-                        le graphe \( G_1 (\{a,b,c,d\}, \{ab,cd,ad\})  \), alors les deux premières étapes
-                        de la construction du poset d'incidence est se représente comme suit :
+                        le graphe \( G (\{a,b,c,d\}, \{ab,cd,ad\})  \), alors les deux premières étapes
+                        de la construction du poset d'incidence se représentent comme suit :
                         <div class="text-center" style="margin-top: 15px;">
                             <img src="img/iposet-1.png" style="height:200px;"/>
                         </div>
@@ -308,8 +397,8 @@
                     <li>
                         Enfin, il faut relier un élément \( x \) du bas avec un élément \( y \) du haut
                         si et seulement si le sommet \( x \) est une des deux extremités de l'arrête \(y\) dans G.
-                        Dans notre graphe ci-dessus, il faudra relier \(a\) à \(ab\) car \(a\) est une 
-                        extremité de l'arrête \( ab \). Nous obtenons donc un poset d'incidence tel que 
+                        Dans notre graphe ci-dessus, il faudra relier \(a\) à \(ab\) car \(a\) est une
+                        extremité de l'arrête \( ab \). Nous obtenons donc un poset d'incidence tel que
                         ci-dessous :
                         <div class="text-center" style="margin-top: 15px;">
                             <img src="img/iposet-2.png" style="height:200px;"/>
@@ -335,25 +424,30 @@
             <![CDATA[
                 <p>
                     Nous voici enfin arrivés au dernier niveau théorique du Schnyder's Game !
-                    La seconde partie sera plus... pratique !    
+                    Les deuxièmes et troisièmes partie seront plus... dense !
                 </p>
                 <p>
-                    Le dernier niveau concerne la dimension d'ordre d'un poset. Nous disons 
-                    qu'un poset possède une dimension d'au moins \(K\) lorsque nous faisons
-                    <strong>l'intersection</strong> de \( K \) ordres totaux différents et 
-                    obtenons le poset.
+                    Ce dernier niveau concerne la dimension d'ordre d'un poset. Nous disons
+                    qu'un poset possède une dimension d'au moins \(K\) si lorsque nous faisons
+                    <strong>l'intersection</strong> de \( K \) ordres totaux différents, nous obtenons
+                    obtenons l'ordre partiel.
                 </p>
                 <p>
-                    Imaginons que nous ayons l'ensemble \( E = \{a,b,c,d,e,f\} \) et avec la
-                    relation d'ordre \( \leq_1 \), nous avons l'ordre total \( b \leq_1 a
-                    \leq_1 d \leq_1 c \leq_1 e \leq_1 f\) et qu'avec la relation d'ordre 
-                    \( \leq_2 \), nous avons l'ordre total \( f \leq_2 e \leq_2 c \leq_2 a
-                    \leq_2 b \leq_2 d \).
+                    Supposons que nous ayons l'ensemble \( E = \{a,b,c,d,e,f\} \), la
+                    relation d'ordre \( \leq_1 \) sur \( E \) et que \( \leq_1 \)
+                    définisse l'ordre total  suivant sur \( E \) : \( b \leq_1 a \leq_1 d \leq_1 c \leq_1 e \leq_1 f\).
+                    <br/>
+                    Également, supposons que nous ayons la relation d'ordre \( \leq_2 \) sur \( E \) définissant l'ordre
+                    total suivant sur \( E \) :  \( f \leq_2 e \leq_2 c \leq_2 a \leq_2 b \leq_2 d \).
                 </p>
                 <p>
-                    L'intersection \( \leq \) des relations \( \leq_1 \) et \( \leq_2 \) est
-                    définie comme suit : \( a \leq b \Leftrightarrow a \leq_1 b \wedge a 
-                    \leq_2 b \).
+                    L'intersection \( \leq \) des relations d'ordre \( \leq_1 \) et \( \leq_2 \) sur \( E \) est
+                    définie comme suit.
+                </p>
+                \[ \forall a,b \in E, a \leq b \Leftrightarrow a \leq_1 b \wedge a \leq_2 b \]
+                <p>
+                    C'est-à-dire qu'un couple appartiendra à la relation d'ordre \( \leq \) sur \( E \) si et seulement
+                    si elle l'est également dans les deux ordres totaux \( \leq_1, \leq_2 \)  sur \( E \).
                 </p>
                 <p>
                     Par exemple, prenons le diagramme de Hasse ci-dessous où nous avons créé
@@ -374,8 +468,8 @@
         <questions>
             <question correct-answer="0" type="0">
                 <title>
-                    Soit les ordres suivant : \( a \leq_1 b \leq_1 c \) et \( b \leq_2 c \leq_2 a \). 
-                    Quelle relation d'ordre existe-t-il lorsque nous faisons l'intersection \( \leq \) de \( \leq_1 \) et \( \leq_2 \) ?
+                    Soit l'ensemble \( E = \{a,b,c\}\) et les ordres totaux sur \( E \) suivant : \( a \leq_1 b \leq_1 c \) et \( b \leq_2 c \leq_2 a \).
+                    Quelle relation d'ordre sur \( E \) existe-t-il lorsque nous faisons l'intersection \( \leq \) de \( \leq_1 \) avec \( \leq_2 \) ?
                 </title>
                 <answer>b ≤ c</answer>
                 <answer>a ≤ b ≤ c</answer>

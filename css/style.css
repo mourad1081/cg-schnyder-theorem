@@ -92,7 +92,7 @@ h2 {
 }
 
 #game-container {
-    text-align: justify;
+
 }
 
 .text-center {
@@ -238,7 +238,7 @@ h2 {
 
 #visu-3d #canvas-holder {
     width: 100%;
-    height: 600px;
+    height: 800px;
     box-shadow:inset 0 0 10px 3px #666666;
     margin-bottom: 20px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+98 */

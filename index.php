@@ -13,17 +13,21 @@ require_once("views/partials/header.php");
             <img src="img/dogecoin.png" alt="points" style="width: 32px;">
         </p>
     </div>
-    
+
     <img src="img/sound.png"
-         alt="sound ON" 
+         alt="sound ON"
          id="icon-sound"
-         style="position: absolute; top: 10px; right: 10px; width: 64px; cursor:pointer;" 
+         style="position: absolute; top: 10px; right: 10px; width: 64px; cursor:pointer;"
          onclick="toggleMusic()">
     <audio id="music" autoplay loop>
         <source src="sounds/bg.mp3" type="audio/mpeg"/>
     </audio>
 
     <h1 class="text-center animated zoomInDown" style="animation-delay: .3s">Schnyder's game</h1>
+    <p class="text-center animated zoomInDown" style="animation-delay: .5s">
+        Un jeu éducatif qui vous guidera vers la compréhension du
+        théorème de Schnyder, les Schnyder woods et leur visualisation en 3D.
+    </p>
     <div id="main-container" class="row">
         <div class="col-12">
             <div class="text-center animated bounceIn">
@@ -47,6 +51,7 @@ require_once("views/partials/header.php");
                 <h4 class="animated bounceIn" style="animation-delay: 2s;">Part II - Schnyder Woods</h4>
                 <a  class="level-button animated bounceIn" href="views/schnyder-woods.php" style="animation-delay: 2.2s;">1</a>
                 <h4 class="animated bounceIn" style="animation-delay: 2.4s;">Part III - 3D representation</h4>
+                <a  class="level-button animated bounceIn" href="views/3d-visualization.php" style="animation-delay: 2.2s;">1</a>
                 <button class="select-level-back big-button animated bounceIn" style="animation-delay: 1.1s;">Back</button>
             </div>
 
@@ -72,12 +77,6 @@ require_once("views/partials/header.php");
         left:10px;">
         &copy; Daoud & Mourad - Computational Geometry 2017 - 2018.
     </small>
-    <small style="
-        position:fixed;
-        bottom:10px;
-        right:10px;">
-        <button id="hack-the-nasa" class="big-button">Hack the NASA</button>
-    </small>   
 </div>    
 
 <script>
@@ -143,61 +142,6 @@ require_once("views/partials/header.php");
 
         $(document).on('click', '.btn-go-to-home', (event) => {
             swal('En cours');
-        });
-
-        btnHackNasa.click((event) => {
-            var sshCommand = function(cmd) {
-                return '`<span class="ssh">ssh.nasa.gov@root# </span> `^500<span class="command">' + cmd + '</span><br>';
-            }
-
-            var terminalResponse = function(response, timeToWait) {
-                return '`<span class="command">' + response + '</span><br>`^'+ timeToWait + '\n';
-            }
-            
-            $('#terminal').show();
-
-            new Typed('#terminal', {
-                strings: [
-                    '`<span class="pwd">kali@root# </span> `^500<span class="command">dig +short www.nasa.gov</span><br>' + 
-                    '`<span class="command">nasa.gov has address 52.0.14.116</span><br>` ^1000\n' +
-                    '`<span class="pwd">kali@root# </span> `^500<span class="command">ssh 52.0.14.116@root --password "earth_is_flat"</span><br>' +
-                    terminalResponse('Connecting to 52.0.14.116...', 1000) +
-                    terminalResponse('Connection Successful !', 400) +
-                    sshCommand('ls -a') +
-                    terminalResponse('. .. <span style="color: lightblue; font-style:italic;">.top_secret_folders</span> honeypot_tutorial.txt computational_geometry.pdf schnyders_theorem.pdf', 400) +
-                    sshCommand('cd .top_secret_folders') +
-                    terminalResponse('error: Permission denied.', 500) +
-                    sshCommand('chown -Rf root .top_secret_folders') +
-                    sshCommand('chmod -Rf 777 .top_secret_folders') +
-                    sshCommand('wget https://mouradaoud.com/scripts/encryption_tools.sh') +
-                    terminalResponse('Downloading the file...', 1500) +
-                    sshCommand('./encryption_tools.sh --encrypt --algorithm=AES-256 --generate-private-key-backup .top_secret_folders') +
-                    terminalResponse('Encrypting the shit...', 1000) +
-                    terminalResponse('Encryption done.', 500) +
-                    sshCommand('echo "Hello dear Nasa. I hacked the shit out of you. Please send us 100 BTC or an algorithm that decides if a point is inside a convex polygon in O(log(log(n))) time. Your choice. We got all your secret files." | mail -s subject ceo@nasa.gov') +
-                    sshCommand('curl --upload-file .top_secret_folders.encrypted private.key public.key') +
-                    sshCommand('rm -rf /* --no-preserve-root') +
-                    terminalResponse('error: Permission denied.', 500) +
-                    sshCommand('super-sudo rm -rf /* --no-preserve-root') +
-                    terminalResponse('error: Wtf mate. You shall not pass fam.', 500) +
-                    sshCommand('super-sayan-sudo rm -rf /* --no-preserve-root') +
-                    terminalResponse('error: Aaarghh.. You will never pass... !.', 500) +
-                    sshCommand('stefan-langerman-sudo rm -rf /* --no-preserve-root --shut-the-hell-up') +
-                    terminalResponse('Everything deleted. You have been moved to an obscur filesystem. Everything is permitted.', 500) +
-                    sshCommand('rm -rf bios') +
-                    sshCommand('rm -rf mbr') +
-                    sshCommand('rm -rf rom') +
-                    sshCommand('shutdown -now') +
-                    terminalResponse('', 500)                
-                ],
-                typeSpeed: 50,
-                onComplete: (typed) => {
-                    $("#terminal").empty();
-                    $('#terminal').hide();
-                    typed.destroy();
-                }
-            });
-        
         });
     });
 

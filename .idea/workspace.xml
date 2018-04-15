@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="259328ce-8d7c-43a7-b781-0e5640797af8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/THREE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cg-schnyder-theorem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cg-schnyder-theorem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/3D-0.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/img/3D-0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/3D-1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/img/3D-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/3D-2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/img/3D-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/3d-visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/3d-visualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/level-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/level-2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/fr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/locales/fr.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/3d-visualization.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/3d-visualization.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,11 +25,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="3d-visualization.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3d-visualization.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/3d-visualization.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="803">
-              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+            <state>
+              <caret line="282" column="30" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
+              <caret line="283" column="30" selection-start-line="283" selection-start-column="30" selection-end-line="283" selection-end-column="30" />
+              <caret line="284" column="30" selection-start-line="284" selection-start-column="30" selection-end-line="284" selection-end-column="30" />
+              <folding>
+                <element signature="e#1400#2363#0" />
+                <element signature="e#2396#3803#0" />
+                <element signature="e#3833#4549#0" />
+                <element signature="e#4588#7596#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fr.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/locales/fr.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2908">
+              <caret line="475" column="123" lean-forward="true" selection-start-line="475" selection-start-column="123" selection-end-line="475" selection-end-column="123" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="level-2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/level-2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-492" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="level-2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/level-2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -34,11 +84,29 @@
       <file leaf-file-name="3d-visualization.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="187" column="14" lean-forward="true" selection-start-line="187" selection-start-column="14" selection-end-line="187" selection-end-column="14" />
+            <state relative-caret-position="642">
+              <caret line="207" column="16" lean-forward="true" selection-start-line="207" selection-start-column="16" selection-end-line="209" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#4007#4031#0" expanded="true" />
+                <element signature="e#5603#5627#0" expanded="true" />
+                <element signature="e#5978#6002#0" expanded="true" />
+                <element signature="e#9767#9791#0" expanded="true" />
+                <element signature="e#10016#10040#0" expanded="true" />
+                <element signature="e#10384#10408#0" expanded="true" />
+                <element signature="e#11368#11392#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#small#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
             </state>
           </provider>
         </entry>
@@ -49,6 +117,11 @@
     <findStrings>
       <find>let</find>
       <find>var</find>
+      <find>bingo</find>
+      <find>geodes</find>
+      <find>autopl</find>
+      <find>jus</find>
+      <find>ju</find>
     </findStrings>
     <replaceStrings>
       <replace>var</replace>
@@ -63,8 +136,12 @@
       <list>
         <option value="$PROJECT_DIR$/js/core.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/views/3d-visualization.php" />
         <option value="$PROJECT_DIR$/js/3d-visualization.js" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/views/3d-visualization.php" />
+        <option value="$PROJECT_DIR$/js/level-2.js" />
+        <option value="$PROJECT_DIR$/locales/fr.xml" />
       </list>
     </option>
   </component>
@@ -81,16 +158,16 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="465" />
-    <option name="y" value="-18" />
-    <option name="width" value="1498" />
-    <option name="height" value="1000" />
+    <option name="x" value="440" />
+    <option name="width" value="1487" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,30 +178,27 @@
             <path>
               <item name="cg-schnyder-theorem" type="b2602c69:ProjectViewProjectNode" />
               <item name="cg-schnyder-theorem" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cg-schnyder-theorem" type="b2602c69:ProjectViewProjectNode" />
               <item name="cg-schnyder-theorem" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="three" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cg-schnyder-theorem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cg-schnyder-theorem" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cg-schnyder-theorem" type="b2602c69:ProjectViewProjectNode" />
               <item name="cg-schnyder-theorem" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cg-schnyder-theorem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cg-schnyder-theorem" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -135,7 +209,7 @@
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="settings.editor.splitter.proportion" value="0.28195122" />
   </component>
   <component name="RecentsManager">
@@ -168,33 +242,35 @@
       <workItem from="1521799356763" duration="656000" />
       <workItem from="1523306736407" duration="24000" />
       <workItem from="1523306819820" duration="9149000" />
+      <workItem from="1523371422007" duration="41008000" />
+      <workItem from="1523529614986" duration="23606000" />
+      <workItem from="1523785862398" duration="15758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9829000" />
+    <option name="totallyTimeSpent" value="90201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22239584" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11927083" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +280,142 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/3d-visualization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2560">
+          <caret line="282" column="30" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
+          <caret line="283" column="30" selection-start-line="283" selection-start-column="30" selection-end-line="283" selection-end-column="30" />
+          <caret line="284" column="30" selection-start-line="284" selection-start-column="30" selection-end-line="284" selection-end-column="30" />
+          <folding>
+            <element signature="e#1400#2363#0" />
+            <element signature="e#2396#3803#0" />
+            <element signature="e#3833#4549#0" />
+            <element signature="e#4588#7596#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="68" column="3" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6500">
+          <caret line="325" column="78" selection-start-line="325" selection-start-column="78" selection-end-line="325" selection-end-column="78" />
+          <folding>
+            <element signature="e#4007#4031#0" expanded="true" />
+            <element signature="e#5603#5627#0" expanded="true" />
+            <element signature="e#5978#6002#0" expanded="true" />
+            <element signature="e#9767#9791#0" expanded="true" />
+            <element signature="e#10016#10040#0" expanded="true" />
+            <element signature="e#10384#10408#0" expanded="true" />
+            <element signature="e#11368#11392#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#small#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1880">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locales/fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3240">
+          <caret line="162" column="39" selection-start-line="162" selection-start-column="39" selection-end-line="162" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/3d-visualization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4180">
+          <caret line="209" selection-start-line="209" selection-end-line="209" />
+          <folding>
+            <element signature="e#1400#2363#0" />
+            <element signature="e#2396#3803#0" />
+            <element signature="e#3833#4549#0" />
+            <element signature="e#4588#7596#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5320">
+          <caret line="266" column="33" selection-start-line="266" selection-start-column="33" selection-end-line="266" selection-end-column="33" />
+          <folding>
+            <element signature="e#4007#4031#0" expanded="true" />
+            <element signature="e#5603#5627#0" expanded="true" />
+            <element signature="e#5978#6002#0" expanded="true" />
+            <element signature="e#9767#9791#0" expanded="true" />
+            <element signature="e#10016#10040#0" expanded="true" />
+            <element signature="e#10384#10408#0" expanded="true" />
+            <element signature="e#11368#11392#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#small#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/3d-visualization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1640">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding>
+            <element signature="e#1400#2363#0" />
+            <element signature="e#2396#3803#0" />
+            <element signature="e#3833#4549#0" />
+            <element signature="e#4588#7596#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3740">
+          <caret line="187" column="14" lean-forward="true" selection-start-line="187" selection-start-column="14" selection-end-line="187" selection-end-column="14" />
+          <folding>
+            <element signature="e#4007#4031#0" expanded="true" />
+            <element signature="e#5603#5627#0" expanded="true" />
+            <element signature="e#5978#6002#0" expanded="true" />
+            <element signature="e#9767#9791#0" expanded="true" />
+            <element signature="e#10016#10040#0" expanded="true" />
+            <element signature="e#10384#10408#0" expanded="true" />
+            <element signature="e#11368#11392#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#small#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/core.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3780">
@@ -239,9 +451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/level-1.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/core.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
@@ -253,23 +462,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/three/build/three.module.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
+    <entry file="file://$PROJECT_DIR$/views/schnyder-woods.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="187" column="14" lean-forward="true" selection-start-line="187" selection-start-column="14" selection-end-line="187" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/3d-visualization.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+        <state>
+          <caret line="282" column="30" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
+          <caret line="283" column="30" selection-start-line="283" selection-start-column="30" selection-end-line="283" selection-end-column="30" />
+          <caret line="284" column="30" selection-start-line="284" selection-start-column="30" selection-end-line="284" selection-end-column="30" />
+          <folding>
+            <element signature="e#1400#2363#0" />
+            <element signature="e#2396#3803#0" />
+            <element signature="e#3833#4549#0" />
+            <element signature="e#4588#7596#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/level-2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-492" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="207" column="16" lean-forward="true" selection-start-line="207" selection-start-column="16" selection-end-line="209" selection-end-column="20" />
+          <folding>
+            <element signature="e#4007#4031#0" expanded="true" />
+            <element signature="e#5603#5627#0" expanded="true" />
+            <element signature="e#5978#6002#0" expanded="true" />
+            <element signature="e#9767#9791#0" expanded="true" />
+            <element signature="e#10016#10040#0" expanded="true" />
+            <element signature="e#10384#10408#0" expanded="true" />
+            <element signature="e#11368#11392#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#small#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/level-2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locales/fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2908">
+          <caret line="475" column="123" lean-forward="true" selection-start-line="475" selection-start-column="123" selection-end-line="475" selection-end-column="123" />
         </state>
       </provider>
     </entry>

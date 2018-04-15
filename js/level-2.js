@@ -52,7 +52,7 @@ $(function() {
     	var answer = $('#text-answer-2-level-' + currentLevel).val();
     	var numbers = answer.replace(",", " ");
     	
-        if(numbers.indexOf("0") !== -1 && 
+        if(numbers.indexOf("1") !== -1 &&
            numbers.indexOf("2") !== -1 && 
            numbers.indexOf("5") !== -1 && 
            numbers.indexOf("4") !== -1)
@@ -73,7 +73,7 @@ $(function() {
 	            game.nextLevel();
 	        }
 	    } else {
-	    	swal('Aaah.. c\'est faux..');
+	    	swal('Ce n\'est malheureusement pas la bonne réponse, la bonne réponse est 1, 2, 5, 4.');
 	    }
 });
 
