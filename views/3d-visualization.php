@@ -51,26 +51,26 @@
                 </p>
                 <p>
                     Tout d'abord, quelques définitions sur les termes employés :
-                    <ul>
-                        <li>
+                </p>
+                <ul>
+                    <li>
                         Une map planaire \(M\) est un graphe planaire \(G\) associé
-                        à un <em>planar embedding</em> de \(G\) dans le plan.
-                        </li>
+                        à un <em>embedding planaire</em> de \(G\) dans le plan.
+                    </li>
 
-                        <li>
-                        Soit \(a_1, a_2, a_3\) trois sommets différents 
+                    <li>
+                        Soit \(a_1, a_2, a_3\) trois sommets différents
                         apparaissant dans le sens horloger sur la face externe de \( M \).
                         Une suspension \(M^\sigma\) s'obtient en créant un demi-arc qui
                         relie chacun de ces sommets spéciaux à la face externe.
-                        </li>
-                    </ul>
-                </p>
+                    </li>
+                </ul>
                 <hr>
                 <h5><strong>Partition en régions</strong></h5>
                 <hr>
                 <p>
                     La première étape consiste à pouvoir être capable de diviser
-                    le schnyder Wood en trois régions (et ce, pour chaque commet).
+                    le Wchnyder wood en trois régions (et ce, pour chaque sommet).
                     Prenons le Schnyder wood ci-dessous comme exemple :
                 </p>
                 <p class="text-center">
@@ -89,7 +89,7 @@
                 <p>
                     Ces chemins seront toujours acycliques et simples.
                     Aussi, nous en déduisons que les chemins
-                    \(P_i(v)\) et \(P_j(v)\) ont pour seul sommet commun \(v\) 
+                    \(P_i(v)\) et \(P_j(v)\) ont pour seul sommet commun \(v\),
                     et ce, pour \(i \neq j\). Les preuves peuvent être trouvées
                     dans les références en bas du niveau (sources [2] et [3]).
                 </p>
@@ -103,7 +103,7 @@
                 <p class="text-center">
                     <img style="max-width: 100%;" src="../img/3D-1.png" alt="" />
                     <br>
-                    <small>Source: [1] Schnyder Woods and Orthogonal Surfaces</small>
+                    <small>Source: [1] - Schnyder Woods and Orthogonal Surfaces</small>
                 </p>
 
                 <p>
@@ -118,7 +118,7 @@
                 <hr>
                 La deuxième chose que nous devons être capable de faire est 
                 de convertir un sommet de \(M^\sigma\) en sa représentation
-                3D sur base d'un Schnyder Wood.
+                3D sur base d'un Schnyder wood.
                 Pour ce faire, la méthode est assez simple,
                 pour un sommet \(v\) de \(M\), nous définissons son
                 <em>face-count vector \((v_1, v_2, v_3)\)</em> (ou
@@ -126,10 +126,10 @@
                 <br>
                 <p class="text-center">
                     \(v_i = \) le nombre de faces de \( M \) contenue dans \( R_i(v) \)
-                    selon un Schnyder Wood donné de \(M\)
+                    selon un Schnyder wood donné de \(M\)
                 </p>
                 Le vecteur défini ci-dessus nous servira pour construire
-                un <em>geodesic embedding</em>.
+                un <em>embedding géodésique</em>.
                 Les sommets \( a_1, a_2, a_3 \) de \(M^\sigma\)
                 valent respectivement \( (f-1, 0, 0), (0, f-1, 0) \) et \( (0, 0, f-1) \),
                 et pour tout vecteur région, nous avons \(v_1 + v_2 + v_3 = f-1 \).
@@ -162,14 +162,14 @@
                     \((-2, 3, 12) \vee (0, -10, 0) = (-2, -10, 0) \).
                 </p>
                 <p>
-                    Aussi, posons \(\mathcal{V} \) un sous-ensemble de \(\mathbb{Z}^3\) et qui est
+                    Aussi, posons \(\mathcal{V} \) un sous-ensemble de \(\mathbb{Z}^3\) et est
                     une antichaîne, c'est-à-dire un ensemble où chaque paire d'élément est incomparable.
                     Dans \(\mathbb{R}^3\), \(\mathcal{V} \) génère un filtre qui est l'ensemble défini ainsi :
                     \[\langle \mathcal{V} \rangle = \{a\in\mathbb{R}^3 | a \geq v \text{, pour certains } v \in \mathcal{V} \} \]
                 </p>
                 <p>
                     De plus, nous appelons \(S_\mathcal{V}\) la surface orthogonale générée par
-                    \(\mathcal{V} \) et représente les bornes du filtre \langle \mathcal{V} \rangle de
+                    \(\mathcal{V} \) et cela représente les bornes du filtre \langle \mathcal{V} \rangle de
                     \(\mathcal{V} \).
                 </p>
                 <p>
@@ -217,7 +217,7 @@
                     (dans la direction de l'axe \( y \) et \( x \)) et un arc
                     non-borné (dans la direction de l'axe \( z \) ). Un corollaire
                     de cette observation est qu'un coude géodésique \( u \vee v \)
-                    possède nécessaire au moins un arc orthogonal borné du fait qu'il
+                    possède nécessairement au moins un arc orthogonal borné du fait qu'il
                     est la jointure de \(u,v \in \mathcal{V}\).
                 </p>
                 <p>
@@ -244,11 +244,11 @@
                 </div>
 
                 <hr>
-                <h5><strong>Embedding géodésiques</strong></h5>
+                <h5><strong>Embedding géodésique</strong></h5>
                 <hr>
 
                 <p>
-                    Toute la section précédente nous sert pour comprendre
+                    Toute la section précédente nous a servi dans le but de comprendre
                     le théorème suivant dont une partie nous permettra de produire un
                     embedding géodésique à partir d'un Schnyder Wood.
                 </p>
@@ -259,9 +259,9 @@
                     <p style="text-align: justify;">
                         Soit \( \mathcal{V} \) une antichaîne axiale et
                         \( M \hookrightarrow S_\mathcal{V} \) un embedding géodésique.
-                        Cet embedding induit un Schnyder Wood de \( M^\sigma \).
+                        Cet embedding induit un Schnyder wood de \( M^\sigma \).
                         <strong>
-                            Et inversement, soit donné un Schnyder Wood d'un graphe planaire \( M^\sigma \),
+                            Et inversement, soit donné un Schnyder wood d'un graphe planaire \( M^\sigma \),
                             nous définissons \( \mathcal{V} \) comme l'ensemble des vecteurs régions des sommets de
                             \( M^\sigma \). Ceci produit un embedding géodésique de \( M \hookrightarrow S_\mathcal{V} \)
                             avec \( \mathcal{V} \) qui est axial.
@@ -292,21 +292,21 @@
                 <hr/>
                 <p>
                     Nous savons donc maintenant comment procéder.
-                    Sur la scène ci-dessous, vous pouvez constater un plan 2D.
+                    Sur la scène ci-dessous, vous pouvez constater un plan.
                     Cliquez sur le bouton "Etape 1 - ..." pour
-                    générer le Schnyder Wood d'un graphe planaire et calculer les i-chemin
+                    générer le Schnyder wood d'un graphe planaire et calculer les i-chemin
                     (et donc les régions) de chaque sommet.
-                    Vous pouvez masquer le résultat avec le premier bouton.
+                    <em>Vous pouvez masquer la petite fenêtre grise dans le coin avec le premier bouton.</em>
                 </p>
                 <p>
                     Ensuite, vous pourrez cliquer sur le bouton "Etape 2 - ..." pour générer
                     les points 3D correspondant aux sommets du Schnyder Wood associé
                     au graphe planaire. Sont affichés sur la scène des petits segments blancs qui
-                    indiquent quel point 3D correspond à quel sommet du Schnyder Wood.
+                    indiquent quel point 3D correspond à quel sommet du Schnyder wood.
                 </p>
                 <p>
                     Enfin, vous pourrez cliquer sur le bouton "Etape 3 - ..." pour créer
-                    l'embedding géodésique et ainsi voir en même temps le Schnyder Wood
+                    l'embedding géodésique et ainsi voir en même temps le Schnyder wood
                     et son embedding sur la même scène.
                 </p>
 

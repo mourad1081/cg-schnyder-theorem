@@ -335,6 +335,12 @@ Références :
                     ne divise pas 30 et donc, aucune arrête ne relie ces deux éléments. Par transitivité, nous voyons que 5 divise
                     60 car 60 est relié à 30, lui-même relié 15, lui-même relié à 5.
                 </p>
+<hr/>
+<pre>
+[1] - TheTrevTutor, [Discrete Math 1] Partial orders, <a href="https://www.youtube.com/watch?v=R36F8CWAi2k">https://www.youtube.com/watch?v=R36F8CWAi2k</a>
+
+[2] - Wikipédia, Diagramme de Hasse, <a href="https://fr.wikipedia.org/wiki/Diagramme_de_Hasse">https://fr.wikipedia.org/wiki/Diagramme_de_Hasse</a>
+</pre>
             ]]>
         </content>
         <questions>
@@ -405,6 +411,15 @@ Références :
                         </div>
                     </li>
                 </ol>
+<hr/>
+<pre>
+[1] - W. T. Trotter, R. Wang, Incidence posets and cover graphs
+      <a href="http://www.math.louisville.edu/~biro/ams/wang.pdf">http://www.math.louisville.edu/~biro/ams/wang.pdf</a>
+
+[2] - A Brief lesson by Mr. J. Cardinal after a Data Structures and Algorithms course (I can provide pictures of the black board)
+
+[3] - Wikipédia, Incidence poset, <a href="https://en.wikipedia.org/wiki/Incidence_poset">https://en.wikipedia.org/wiki/Incidence_poset</a>
+</pre>
             ]]>
         </content>
         <questions>
@@ -463,6 +478,15 @@ Références :
                     que \( a_1 < b_2 \) et nous retrouvons cette relation dans les quatres
                     ordres totaux.
                 </p>
+<hr/>
+<pre>
+[1] - S. Felsner, I. Mustata, M. Pergel, The Complexity of the Partial Order Dimension Problem – Closing the Gap,
+      <a href="https://arxiv.org/pdf/1501.01147.pdf">https://arxiv.org/pdf/1501.01147.pdf</a>
+
+[2] - Wikipédia, Order dimension, <a href="https://en.wikipedia.org/wiki/Order_dimension">https://en.wikipedia.org/wiki/Order_dimension</a>
+
+[3] - A Brief lesson by Mr. J. Cardinal after a Data Structures and Algorithms course (I can provide pictures of the black board)
+</pre>
             ]]>
         </content>
         <questions>
