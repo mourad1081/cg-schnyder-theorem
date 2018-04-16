@@ -483,7 +483,7 @@ Références :
         <content>
             <![CDATA[
             <p>
-                Avant d'entamer la définition d'un Schnyder's Woods, nous allons introduire 
+                Avant d'entamer la définition d'un Schnyder's Wood, nous allons introduire
                 la notion de 3-orientation et de quasi-triangulation d'un plan.
             </p>
             <p>
@@ -539,11 +539,12 @@ Références :
                 </div>
             </div>
             <p>
-                Maintenant que toutes les notions et bases ont été définies, nous pouvons discuter de Schnyder's Woods. 
+                Maintenant que toutes les notions et bases ont été définies, nous pouvons discuter de Schnyder Wood.
                 Sa définition est la suivante : <br/>
                 <quote>
-                    Etant donné un plan triangulé \( T = (V, E) \), un Schnyder's Woods/Labelling de \( T \) est une 3-orientation 
-                    \( \overrightarrow{T} \) de \( T \) de même qu'une 3-coloration des arcs internes de \( \overrightarrow{T} \) respecte ces conditions :
+                    Etant donné un plan triangulé \( T = (V, E) \), un Schnyder Wood/Labelling de \( T \) est une 3-orientation
+                    \( \overrightarrow{T} \) de \( T \) de même qu'une 3-coloration des arcs internes de \( \overrightarrow{T} \)
+                    respectant ces conditions :
                     <img src="../img/schnyder_condition.png" style="float:right;"/>
                     <ul>
                         <li> Chaque sommet possède exactement un arc sortant pour chaque couleur dans \( \overrightarrow{T} \).</li>
@@ -556,13 +557,13 @@ Références :
             </p>
 
             <p>
-                L'algorithme Schnyder's Woods est un procédé simple et itératif. 
+                L'algorithme Schnyder Wood est un procédé simple et itératif.
                 L'algorithme s'exécute en un temps polynomial. 
                 Considérons un plan triangulé \( T = (V, E) \). 
                 Posons \( u, v, w \) les 3 sommets extérieurs de \( T \), dans le sens horloger, 
                 et posons les couleurs <em>bleu, rouge et vert</em>. 
                 <br/>
-                À chaque étape i \( \geq \) 0 de l'algorithme, nous allons traiter un sous-graphe \( T_i \) 
+                À chaque étape \( i  \geq  0 \) de l'algorithme, nous allons traiter un sous-graphe \( T_i \)
                 de \(T\) dont il est une quasi-triangulation bi-connecté contenant l'arc (\(u,w\)). 
                 
                 À chaque itération, nous allons choisir un sommet externe \( v_i \) dans \( T_i \) qui est différent de \(u\) et \(w\), 
@@ -575,15 +576,17 @@ Références :
                 
                 Donc, le processus se déroule ainsi : 
                 <ol>
-                    <li> On choisit, dans \(T_i\), \(v_i\) qui a exactement deux voisins \( x_i\) et \(y_i\) qui sont 2 sommets externes.
+                    <li> On choisit, dans \(T_i\), un \(v_i\) qui a exactement deux voisins \( x_i\) et \(y_i\) qui sont 2 sommets externes.
                      On choisit \(x_i\) le sommet le plus proche de \(u\) et on choisit \(y_i\) le sommet le plus proche de \(w\). </li>
-                    <li> Maintenant, on oriente l'arc (\(v_i\), \(y_i\)) en direction de \(y_i\) et on le colorie en bleu. 
+
+                    <li> Maintenant, on oriente l'arc (\(v_i\), \(y_i\)) en direction de \(y_i\) et on le colorie en bleu.
                     On oriente l'arc (\(v_i\), \(x_i\)) dans la direction de \(x_i\) et on le colorie en vert. 
                     Enfin, on oriente tous les autres arcs de \(v_i\) en direction de lui-même et on les colorie en rouge. </li>
+
                     <li> On retourne à l'étape 1 avec \(T_i\)\{\(v_i\)}.
                 </ol>
-                L'iteration arrête lorsqu'on a parcouru au plus tous les sommets  
-                internes ou colorié tous les arcs internes. 
+                Les itérations s'arrêtent lorsqu'on a parcouru au plus tous les sommets
+                internes ou qu'on ait colorié tous les arcs internes.
                 Il peut exister plusieurs solutions pour un même plan triangulé. 
                 Les différentes solutions peuvent etre trouvées avec un parcours différent des sommets internes. <br/>
             </p>
@@ -592,20 +595,21 @@ Références :
                 <br/><br/>
                 Ci-dessous, vous pouvez trouver 3 démonstrations de l'algorithme sur 3 plans triangulés avec des tailles différentes.
             </p>
+<hr/>
+<pre>
+Références :
+    [1] - Lucas Castelli ALEARDI, <i>Schnyder Woods - from graph encoding to graph drawing</i>
+        <a  target="_blank" href="http://www.enseignement.polytechnique.fr/informatique/INF562/Slides/Amphi_9.pdf">http://www.enseignement.polytechnique.fr/informatique/INF562/Slides/Amphi_9.pdf</a>
 
-            <pre>Source : 
-                [1] - Lucas Castelli ALEARDI, <i>Schnyder Woods - from graph encoding to graph drawing</i>
-                    <a  target="_blank" href="http://www.enseignement.polytechnique.fr/informatique/INF562/Slides/Amphi_9.pdf">http://www.enseignement.polytechnique.fr/informatique/INF562/Slides/Amphi_9.pdf</a>
+    [2] - J. S. SERENI and M. Loebl, gc09_7.pdf.
+        <a target="_blank" href="http://lbgi.fr/~sereni/Lectures/GC_Spring09/gc09_7.pdf">http://lbgi.fr/~sereni/Lectures/GC_Spring09/gc09_7.pdf</a>
 
-                [2] - J. S. SERENI and M. Loebl, gc09_7.pdf.
-                    <a target="_blank" href="http://lbgi.fr/~sereni/Lectures/GC_Spring09/gc09_7.pdf">http://lbgi.fr/~sereni/Lectures/GC_Spring09/gc09_7.pdf</a>
+    [3] - Florian Zickfeld STEFAN FELSNER. <i>Schnyder Woods and Orthogonal Surfaces</i>
+        <a target="_blank" href="http://page.math.tu-berlin.de/~felsner/Paper/swaos.pdf">http://page.math.tu-berlin.de/~felsner/Paper/swaos.pdf</a>
 
-                [3] - Florian Zickfeld STEFAN FELSNER. <i>Schnyder Woods and Orthogonal Surfaces</i>
-                    <a target="_blank" href="http://page.math.tu-berlin.de/~felsner/Paper/swaos.pdf">http://page.math.tu-berlin.de/~felsner/Paper/swaos.pdf</a>
-
-                [4] - Stefan FELSNER, <i>Schnyder Woods and Applications</i>
-                    <a target="_blank" href="http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf">http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf</a>
-                </pre>
+    [4] - Stefan FELSNER, <i>Schnyder Woods and Applications</i>
+        <a target="_blank" href="http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf">http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf</a>
+</pre>
             ]]>
         </content>
 
