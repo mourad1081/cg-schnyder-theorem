@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="259328ce-8d7c-43a7-b781-0e5640797af8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/locales/fr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/locales/fr.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/3d-visualization.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/3d-visualization.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fr.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fr.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/locales/fr.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1455">
-              <caret line="337" column="5" lean-forward="true" selection-start-line="337" selection-start-column="5" selection-end-line="337" selection-end-column="5" />
+            <state relative-caret-position="4338">
+              <caret line="241" column="59" lean-forward="true" selection-start-line="241" selection-start-column="59" selection-end-line="241" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -71,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3d-visualization.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3d-visualization.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-605">
@@ -130,8 +129,8 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/level-2.js" />
-        <option value="$PROJECT_DIR$/locales/fr.xml" />
         <option value="$PROJECT_DIR$/views/3d-visualization.php" />
+        <option value="$PROJECT_DIR$/locales/fr.xml" />
       </list>
     </option>
   </component>
@@ -235,12 +234,12 @@
       <workItem from="1523371422007" duration="41008000" />
       <workItem from="1523529614986" duration="23606000" />
       <workItem from="1523785862398" duration="15758000" />
-      <workItem from="1523806054008" duration="4124000" />
+      <workItem from="1523806054008" duration="4498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94325000" />
+    <option name="totallyTimeSpent" value="94699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -575,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locales/fr.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1455">
-          <caret line="337" column="5" lean-forward="true" selection-start-line="337" selection-start-column="5" selection-end-line="337" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/3d-visualization.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-605">
@@ -598,6 +590,13 @@
             <element signature="n#style#0;n#small#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locales/fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4338">
+          <caret line="241" column="59" lean-forward="true" selection-start-line="241" selection-start-column="59" selection-end-line="241" selection-end-column="59" />
         </state>
       </provider>
     </entry>

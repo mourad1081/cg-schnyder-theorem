@@ -256,7 +256,7 @@ Références :
             </question>
             <question correct-answer="2" type="0">
                 <title>Quelle est la taille (cardinalité) de l'ordre partiel | (divisibilité) appliqué sur \( \mathbb{N} \) ?</title>
-                <answer>L'ensemble est vide</answer>
+                <answer>0</answer>
                 <answer>Une taille finie</answer>
                 <answer>Une taille infinie</answer>
                 <explanation>
@@ -502,12 +502,12 @@ Références :
         </questions>
     </level>
     <woods>
-        <name>Part II - Schnyder's Woods</name>
-        <title>Schnyder's Woods</title>
+        <name>Part II - Schnyder Woods</name>
+        <title>Schnyder Woods</title>
         <content>
             <![CDATA[
             <p>
-                Avant d'entamer la définition d'un Schnyder's Wood, nous allons introduire
+                Avant d'entamer la définition d'un Schnyder Wood, nous allons introduire
                 la notion de 3-orientation et de quasi-triangulation d'un plan.
             </p>
             <p>
